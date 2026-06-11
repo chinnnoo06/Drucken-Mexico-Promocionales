@@ -54,35 +54,6 @@ body {
   min-height: 100vh;
 }
 
-.nav-responsive{
-  display: none;
-}
-
-/* Responsive para móviles */
-@media (max-width: 1100px) {
-  .header-container .container-logo-nav{
-    gap: 20px
-  }
-  .header-container .desktop-nav{
-    gap: 20px
-  }
-  
-  .header-container .container-social-media{
-    gap: 20px
-  } 
-}
-
-@media (max-width: 900px) {
-  .nav-responsive{
-    display: flex;
-  }
-
-  .header-container .desktop-nav,
-  .header-container .container-social-media{
-    display: none;
-  }
-}
-
 @media (max-width: 1250px) {
  .container-main-content{
   padding-left: 10px;
@@ -133,8 +104,6 @@ body {
   transform: scale(1.1);
   color: #7C3E13;
 }
-
-
 
 @keyframes fadeIn {
   from { opacity: 0; }

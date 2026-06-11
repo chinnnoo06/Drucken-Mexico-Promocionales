@@ -8,63 +8,63 @@ export const InfoProduct = ({ product, selectedColor, setSelectedColor }) => {
     return (
         <>
             <div className='w-full md:w-1/2 flex flex-col justify-center'>
-                <h3 className='text-[#9F531B] font-semibold text-[20px] sm:text-[22px] md:text-[25px] lg:text-[30px] mb-2'>
+                <h3 className='text-[#9F531B] font-semibold text-xl lg:text-3xl mb-2'>
                     {product.name} ({product.key})
                 </h3>
 
-                <span className='text-[#1A1615] text-[11px] sm:text-[13px] md:text-[15px] lg:text-[16px] mt-2 block mb-5 whitespace-pre-line'>
+                <span className='text-[#1A1615] text-xs lg:text-base mt-2 block mb-5 whitespace-pre-line'>
                     {product.description}
                 </span>
 
                 {/* Información del producto mejorada */}
                 <div className="mb-5 border border-[#9F531B]/20 rounded-lg p-2 bg-[#F9F5F0]">
-                    <h4 className='text-[#9F531B] font-semibold text-[16px] sm:text-[16px] md:text-[18px] lg:text-[20px] mb-3'>
+                    <h4 className='text-[#9F531B] font-semibold text-base lg:text-xl mb-3'>
                         Especificaciones del producto
                     </h4>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <div className="flex flex-col sm:col-span-2">
-                            <span className="text-[#7C3E13] text-[13px] sm:text-[14px] font-medium mb-1 flex items-center gap-2">
+                            <span className="text-[#7C3E13] text-sm font-medium mb-1 flex items-center gap-2">
                                 <i className="fa-solid fa-list"></i>
                                 Categoría
                             </span>
-                            <span className="text-[#1A1615] text-[14px] sm:text-[15px] bg-white/50 
+                            <span className="text-[#1A1615] text-sm lg:text-base bg-white/50 
                             rounded-lg px-3 py-2 border border-[#9F531B]/10">
                                 {product.category}
                             </span>
                         </div>
                         {product.material && (
                             <div className="flex flex-col">
-                                <span className="text-[#7C3E13] text-[13px] sm:text-[14px] font-medium">Material</span>
-                                <span className="text-[#1A1615] text-[14px] sm:text-[15px]">{product.material}</span>
+                                <span className="text-[#7C3E13] text-sm font-medium">Material</span>
+                                <span className="text-[#1A1615] text-sm lg:text-base">{product.material}</span>
                             </div>
                         )}
 
                         {product.printingTechnique && (
                             <div className="flex flex-col">
-                                <span className="text-[#7C3E13] text-[13px] sm:text-[14px] font-medium">Técnica de impresión</span>
-                                <span className="text-[#1A1615] text-[14px] sm:text-[15px]">{product.printingTechnique}</span>
+                                <span className="text-[#7C3E13] text-sm font-medium">Técnica de impresión</span>
+                                <span className="text-[#1A1615] text-sm lg:text-base">{product.printingTechnique}</span>
                             </div>
                         )}
 
                         {product.measures && (
                             <div className="flex flex-col">
-                                <span className="text-[#7C3E13] text-[13px] sm:text-[14px] font-medium">Medidas</span>
-                                <span className="text-[#1A1615] text-[14px] sm:text-[15px]">{product.measures}</span>
+                                <span className="text-[#7C3E13] text-sm font-medium">Medidas</span>
+                                <span className="text-[#1A1615] text-sm lg:text-base">{product.measures}</span>
                             </div>
                         )}
 
                         {product.printingMeasures && (
                             <div className="flex flex-col">
-                                <span className="text-[#7C3E13] text-[13px] sm:text-[14px] font-medium">Medidas de impresión</span>
-                                <span className="text-[#1A1615] text-[14px] sm:text-[15px]">{product.printingMeasures}</span>
+                                <span className="text-[#7C3E13] text-sm font-medium">Medidas de impresión</span>
+                                <span className="text-[#1A1615] text-sm lg:text-base">{product.printingMeasures}</span>
                             </div>
                         )}
                     </div>
                 </div>
 
                 <div className='mb-5'>
-                    <h4 className='text-[#9F531B] font-semibold text-[16px] sm:text-[16px] md:text-[18px] lg:text-[20px] mb-2'>Colores disponibles</h4>
+                    <h4 className='text-[#9F531B] font-semibold text-base lg:text-xl mb-2'>Colores disponibles</h4>
                     <div className="flex flex-wrap gap-3">
                         {product.colors.map((c, index) => (
                             <div className='flex flex-col gap-2 items-center' key={index}>
@@ -86,7 +86,7 @@ export const InfoProduct = ({ product, selectedColor, setSelectedColor }) => {
                 </div>
 
                 <div className='mb-7'>
-                    <label htmlFor='quantity' className='block font-semibold text-[#9F531B] mb-2 text-[16px] sm:text-[16px] md:text-[18px] lg:text-[20px]'>Cantidad</label>
+                    <label htmlFor='quantity' className='block font-semibold text-[#9F531B] mb-2 text-base lg:text-xl'>Cantidad</label>
                     <input
                         type="number"
                         id='quantity'
@@ -103,7 +103,7 @@ export const InfoProduct = ({ product, selectedColor, setSelectedColor }) => {
                 </div>
 
                 <button
-                    className='w-full md:w-56 px-3.5 py-1.5 text-sm md:px-5 md:py-2 md:text-lg rounded-xl font-semibold 
+                    className='w-full md:w-56 px-3.5 py-1.5 text-sm md:px-5 md:py-2 lg:text-lg rounded-xl font-semibold 
                         text-[#EEEEEF] bg-[#9F531B] flex items-center justify-center gap-2 hover:bg-[#7C3E13] transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1'
                     onClick={() => saveProductLocalStorage()}
                 >

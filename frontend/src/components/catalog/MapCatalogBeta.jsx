@@ -21,7 +21,7 @@ export const MapCatalogBeta = ({ products, loading, page, searchCategory, isAdmi
                             className="relative w-full bg-transparent flex flex-col items-center transition-all duration-200 group"
                         >
                             {/* Etiqueta destacado */}
-                            <span className="absolute top-1 left-1 bg-[#9F531B] text-[#EEEEEF] text-[10px] px-1 py-0 md:px-2 md:py-1 md:text-xs rounded z-10">
+                            <span className="absolute top-1 left-1 bg-[#9F531B] text-[#EEEEEF] text-xs px-1 py-0 md:px-2 md:py-1 rounded z-10">
                                 {product.span}
                             </span>
 
@@ -52,7 +52,7 @@ export const MapCatalogBeta = ({ products, loading, page, searchCategory, isAdmi
                             <div className="w-full px-1 sm:px-2">
                                 {/* Nombre del producto */}
                                 <div className='min-h-[40px] sm:min-h-[50px] flex items-center'>
-                                    <h3 className="text-sm sm:text-base font-semibold leading-tight uppercase line-clamp-2">
+                                    <h3 className="text-sm lg:text-base font-semibold leading-tight uppercase line-clamp-2">
                                         {product.name} ({product.key})
                                     </h3>
                                 </div>
@@ -63,8 +63,8 @@ export const MapCatalogBeta = ({ products, loading, page, searchCategory, isAdmi
                 </div>
             ) : (
                 <div className='flex flex-col justify-center items-center h-52 text-[#9F531B]'>
-                    <i className="fa-solid fa-circle-exclamation text-6xl md:text-8xl mb-2"></i>
-                    <h3 className="font-semibold text-base md:text-2xl">No hay resultados</h3>
+                    <i className="fa-solid fa-circle-exclamation text-6xl lg:text-8xl mb-2"></i>
+                    <h3 className="font-semibold text-base lg:text-2xl">No hay resultados</h3>
                 </div>
             )}
 

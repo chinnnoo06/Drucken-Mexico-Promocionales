@@ -51,7 +51,7 @@ export const MapCategory = ({ categories, loading, adding, setAdding, saveCatego
                             <div className="p-4 flex  justify-between gap-5 items-center">
 
                                 <button
-                                    className='w-full md:w-56 px-3.5 py-1.5 text-sm md:px-5 md:py-2 md:text-base rounded-xl font-semibold 
+                                    className='w-full md:w-56 px-3.5 py-1.5 text-sm md:px-5 md:py-2 lg:text-base rounded-xl font-semibold 
                                         border border-[#9F531B] text-[#9F531B] hover:bg-[#9F531B] hover:text-[#EEEEEF] flex items-center justify-center gap-2 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1'
                                     onClick={() => editing(category)}
                                 >
@@ -59,7 +59,7 @@ export const MapCategory = ({ categories, loading, adding, setAdding, saveCatego
                                     Editar
                                 </button>
                                 <button
-                                    className='w-full md:w-56 px-3.5 py-1.5 text-sm md:px-5 md:py-2 md:text-base rounded-xl font-semibold 
+                                    className='w-full md:w-56 px-3.5 py-1.5 text-sm md:px-5 md:py-2 lg:text-base rounded-xl font-semibold 
                                         border border-[#9F531B] text-[#9F531B] hover:bg-[#9F531B] hover:text-[#EEEEEF] flex items-center justify-center gap-2 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1'
                                     onClick={() => manageShowModal(category)}
                                 >
@@ -79,7 +79,7 @@ export const MapCategory = ({ categories, loading, adding, setAdding, saveCatego
 
                 {!adding && (
                     <button
-                        className='mt-10 w-full md:w-40 px-3.5 py-1.5 text-sm md:px-5 md:py-2 md:text-base rounded-xl font-semibold 
+                        className='mt-10 w-full md:w-40 px-3.5 py-1.5 text-sm md:px-5 md:py-2 lg:text-base rounded-xl font-semibold 
                                 text-[#EEEEEF] bg-[#9F531B] flex items-center justify-center gap-2 hover:bg-[#7C3E13] transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1'
                         onClick={() => setAdding(true)}
                     >

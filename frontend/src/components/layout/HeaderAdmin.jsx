@@ -1,17 +1,18 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import DruckenLogo from '../../assets/logodrucken.png';
+import DruckenLogo from '../../assets/logodrucken.webp';
 import { closeSession } from '../../helpers/CloseSession';
 import { useHeaderFooter } from '../../hooks/useHeaderFooter';
 
 export const HeaderAdmin = () => {
-    const { toggleMenu, menuVisible, showHeader } = useHeaderFooter();
+    const { toggleMenu, menuVisible } = useHeaderFooter();
 
     return (
-        <div className={`header-container bg-[#f8dcc6] fixed top-0 left-0 w-full z-[9999] transition-transform duration-300 ${showHeader ? 'translate-y-0' : '-translate-y-full'}`}>
-            {/* Header principal */}
-            <header className="max-w-[1500px] mx-auto h-auto flex justify-between items-center px-4 py-4">
-                <div className='container-logo-nav flex items-center gap-10'>
+        <>
+            {/* Navbar flotante tipo "pill" */}
+            <div className="fixed top-4 inset-x-4 z-[9999] flex justify-center pointer-events-none">
+                <header className="pointer-events-auto w-full max-w-[1300px] flex justify-between items-center gap-4 px-5 lg:px-8 py-2.5 rounded-full border border-[#9F531B]/20 shadow-lg shadow-black/5 backdrop-blur-md bg-[#f8dcc6]/90">
+                <div className='container-logo-nav flex items-center gap-5 lg:gap-10'>
                     <div className='logo transition-transform duration-300 hover:scale-105'>
                         <Link to="/" className='no-underline'>
                             <img
@@ -23,7 +24,7 @@ export const HeaderAdmin = () => {
                     </div>
 
                     {/* Menú de navegación para desktop */}
-                    <nav className='desktop-nav flex gap-8 items-center'>
+                    <nav className='desktop-nav hidden lg:flex gap-5 items-center'>
                         {(
                             // Enlaces internos cuando estamos en la página de inicio
                             [
@@ -38,7 +39,7 @@ export const HeaderAdmin = () => {
                                             key={index}
                                             to={item.to}
                                             className={({ isActive }) =>
-                                                `relative px-2 py-1 font-[400] text-lg transition-colors duration-300 cursor-pointer
+                                                `relative px-2 py-1 font-[400] text-base xl:text-lg transition-colors duration-300 cursor-pointer
                                         ${isActive ? 'text-[#9F531B]' : 'text-[#1A1615] hover:text-[#9F531B]'}
                                         after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 
                                         after:bg-[#9F531B] after:transition-all after:duration-300
@@ -51,7 +52,7 @@ export const HeaderAdmin = () => {
                                         <button
                                             key={index}
                                             onClick={item.action}
-                                            className={`relative px-2 py-1 font-[400] text-lg transition-colors duration-300 cursor-pointer
+                                            className={`relative px-2 py-1 font-[400] text-base xl:text-lg transition-colors duration-300 cursor-pointer
                                     after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 
                                     after:bg-[#9F531B] after:transition-all after:duration-300
                                     hover:after:w-full`}
@@ -64,8 +65,7 @@ export const HeaderAdmin = () => {
                     </nav>
                 </div>
 
-                {/* Iconos redes sociales */}
-                <div className='container-social-media flex gap-8 items-center'>
+                <div className='container-social-media hidden lg:flex gap-8 items-center'>
                     {[
                         { icon: "fab fa-facebook", url: "https://www.facebook.com/share/1BaikYetVw/?mibextid=wwXIfr" },
                         { icon: "fab fa-instagram", url: "https://www.instagram.com/drucken.promocionales?igsh=eGtjOHFldnR4aGE5" },
@@ -76,7 +76,7 @@ export const HeaderAdmin = () => {
                             href={social.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-2xl text-[#1A1615] hover:text-[#9F531B] transition-colors duration-300 hover:scale-110"
+                            className="text-xl xl:text-2xl text-[#1A1615] hover:text-[#9F531B] transition-colors duration-300 hover:scale-110"
                         >
                             <i className={social.icon}></i>
                         </a>
@@ -85,13 +85,13 @@ export const HeaderAdmin = () => {
 
                 {/*Boton de menú responsive*/}
                 <div
-                    className="nav-responsive text-[#9F531B] text-[1.6rem] pr-[0.2rem] cursor-pointer hover:text-[#9F531B]"
+                    className="nav-responsive flex lg:hidden items-center text-[#9F531B] text-xl xl:text-2xl pr-[0.2rem] cursor-pointer hover:text-[#9F531B]"
                     onClick={toggleMenu}
                 >
                     <i className="fa-solid fa-bars"></i>
                 </div>
             </header>
-
+            </div>
 
             <div className={`menu-lateral fixed top-0 right-0 h-screen bg-[#f8dcc6] w-64 transform ${menuVisible ? "translate-x-0" : "translate-x-full"
                 } transition-transform duration-300 ease-in-out z-[10000] flex flex-col`}>
@@ -121,7 +121,7 @@ export const HeaderAdmin = () => {
                                             `relative py-2 font-[400] transition-colors duration-300 cursor-pointer text-left
                                             ${isActive ? 'text-[#9F531B]' : 'text-[#1A1615] hover:text-[#9F531B]'}
                                             after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 
-                                            after:bg-[#9F531B] after:transition-all after:duration-300
+                                            after:bg-[#9F531B] after:transition-all after:duration-300 text-base
                                             hover:after:w-[80px] ${isActive ? 'after:w-[80px]' : ''}`
                                         }
                                     >
@@ -134,7 +134,7 @@ export const HeaderAdmin = () => {
                                         className={`relative py-2 font-[400] transition-colors duration-300 cursor-pointer text-left
                                         
                                         after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 
-                                        after:bg-[#9F531B] after:transition-all after:duration-300
+                                        after:bg-[#9F531B] after:transition-all after:duration-300 text-base
                                         hover:after:w-[80px]`}
                                     >
                                         {item.text}
@@ -164,6 +164,6 @@ export const HeaderAdmin = () => {
                 </div>
             </div>
 
-        </div>
+        </>
     );
 };

@@ -1,5 +1,5 @@
 import React from 'react'
-import DruckenLogo from '../../assets/logodrucken.png';
+import DruckenLogo from '../../assets/logodrucken.webp';
 import { Link } from 'react-router-dom';
 
 export const HeaderLogin = () => {

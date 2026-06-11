@@ -23,14 +23,14 @@ export const FormLogin = () => {
             <div className=' bg-gradient-to-br from-[#9F531B]/5 to-[#7C3E13]/10 border border-[#9F531B]/20 rounded-2xl p-4 sm:p-6  w-full md:w-1/2'>
 
                 <div className="text-center mb-8">
-                    <h3 className="text-[#9F531B] font-bold text-[20px] sm:text-[22px] md:text-[25px] lg:text-[30px] mb-2 flex items-center justify-center gap-2">
+                    <h3 className="text-[#9F531B] font-bold text-xl lg:text-3xl mb-2 flex items-center justify-center gap-2">
                         <i className="fa-solid fa-circle-user"></i>
                         Iniciar Sesión
                     </h3>
-                    <p className="text-gray-600 text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px]">
+                    <p className="text-gray-600 text-sm lg:text-base">
                         Ingresa tus credenciales correctamente para poder iniciar sesión
                     </p>
-                    {message && <p className="mt-2 text-red-600 text-center text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px]">{message}</p>}
+                    {message && <p className="mt-2 text-red-600 text-center text-sm lg:text-base">{message}</p>}
 
                 </div>
 
@@ -38,7 +38,7 @@ export const FormLogin = () => {
 
                     <div className="flex-1 space-y-6">
                         <div className="form-group">
-                            <label htmlFor="username" className="block font-semibold text-[#9F531B] mb-2 text-sm sm:text-base ">
+                            <label htmlFor="username" className="block font-semibold text-[#9F531B] mb-2 text-sm lg:text-base ">
                                 <i className="fas fa-user mr-2"></i>
                                 Usuario
                             </label>
@@ -50,7 +50,7 @@ export const FormLogin = () => {
                                 className="w-full px-4 py-3 rounded-xl bg-white text-gray-700 border-2 border-[#9F531B]/30
                                 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#9F531B] 
                                 focus:border-[#9F531B] focus:bg-white transition-all duration-300 
-                                text-xs sm:text-sm md:text-base hover:border-[#9F531B]/50"
+                                text-xs lg:text-base hover:border-[#9F531B]/50"
                                 onChange={manageChange}
                                 value={formData.username}
                             />
@@ -64,7 +64,7 @@ export const FormLogin = () => {
                         </div>
 
                         <div className="form-group">
-                            <label htmlFor="password" className="block font-semibold text-[#9F531B] mb-2 text-sm sm:text-base">
+                            <label htmlFor="password" className="block font-semibold text-[#9F531B] mb-2 text-sm lg:text-base">
                                 <i className="fas fa-lock mr-2"></i>
                                 Contraseña
                             </label>
@@ -78,7 +78,7 @@ export const FormLogin = () => {
                                     className="w-full px-4 py-3 rounded-xl bg-white text-gray-700 border-2 border-[#9F531B]/30
                                     placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#9F531B] 
                                     focus:border-[#9F531B] focus:bg-white transition-all duration-300 
-                                    text-xs sm:text-sm md:text-base hover:border-[#9F531B]/50"
+                                    text-xs lg:text-base hover:border-[#9F531B]/50"
                                     onChange={manageChange}
                                     value={formData.password}
                                 />
@@ -103,7 +103,7 @@ export const FormLogin = () => {
 
                     <div className='flex justify-center pt-4'>
                         <button
-                            className={`px-7 py-1 text-sm md:px-10 md:py-2 md:text-lg rounded-xl font-semibold transition-all duration-300
+                            className={`px-7 py-1 text-sm md:px-10 md:py-2 lg:text-lg rounded-xl font-semibold transition-all duration-300
                             text-[#EEEEEF] ${loading ? 'bg-[#8e8e92] cursor-not-allowed hover:-translate-y-1' : 'bg-[#9F531B] hover:bg-[#7C3E13] hover:-translate-y-1'}
                             shadow-lg hover:shadow-xl flex items-center gap-2`}
                             type="submit"

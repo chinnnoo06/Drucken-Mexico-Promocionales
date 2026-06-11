@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink, Link, useLocation, useNavigate } from 'react-router-dom';
-import DruckenLogo from '../../assets/logodrucken.png';
+import DruckenLogo from '../../assets/logodrucken.webp';
 import { useHeaderFooter } from '../../hooks/useHeaderFooter';
 
 export const Footer = () => {

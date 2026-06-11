@@ -26,7 +26,7 @@ export const FormCategory = ({ setAdding, setEditing, saveCategory, formErrors, 
                         className="w-full px-4 py-2 rounded-xl bg-white text-gray-700 border-2 border-[#9F531B]/30 
                 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#9F531B] 
                 focus:border-[#9F531B] focus:bg-white transition-all duration-300 
-                text-xs sm:text-sm md:text-base hover:border-[#9F531B]/50"
+                text-xs lg:text-base hover:border-[#9F531B]/50"
                     />
                     {formErrors.name && (
                         <span className="text-red-500 text-xs flex items-center mt-1">
@@ -42,14 +42,14 @@ export const FormCategory = ({ setAdding, setEditing, saveCategory, formErrors, 
                     {setAdding ? (
                         <>
                             <button
-                                className='w-full md:w-56 px-3.5 py-1.5 text-sm md:px-5 md:py-2 md:text-base rounded-xl font-semibold 
+                                className='w-full md:w-56 px-3.5 py-1.5 text-sm md:px-5 md:py-2 lg:text-base rounded-xl font-semibold 
                                         text-[#EEEEEF] bg-[#9F531B] flex items-center justify-center gap-2 hover:bg-[#7C3E13] transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1'
                                 onClick={(e) => saveCategory(e, formData, setAdding, setEditing, false)}
                             >
                                 {loadingAction ? 'Cargando...' : 'Guardar'}
                             </button>
                             <button
-                                className='w-full md:w-56 px-3.5 py-1.5 text-sm md:px-5 md:py-2 md:text-base rounded-xl font-semibold 
+                                className='w-full md:w-56 px-3.5 py-1.5 text-sm md:px-5 md:py-2 lg:text-base rounded-xl font-semibold 
                                         text-[#EEEEEF] bg-[#9F531B] flex items-center justify-center gap-2 hover:bg-[#7C3E13] transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1'
                                 onClick={() => setAdding(false)}
                             >
@@ -60,14 +60,14 @@ export const FormCategory = ({ setAdding, setEditing, saveCategory, formErrors, 
                     ) : (
                         <>
                             <button
-                                className='w-full md:w-56 px-3.5 py-1.5 text-sm md:px-5 md:py-2 md:text-base rounded-xl font-semibold 
+                                className='w-full md:w-56 px-3.5 py-1.5 text-sm md:px-5 md:py-2 lg:text-base rounded-xl font-semibold 
                                         text-[#EEEEEF] bg-[#9F531B] flex items-center justify-center gap-2 hover:bg-[#7C3E13] transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1'
                                 onClick={(e) => saveCategory(e, formData, setAdding, setEditing, true, idCategoryEdit)}
                             >
                                 {loadingAction ? 'Cargando...' : 'Guardar'}
                             </button>
                             <button
-                                className='w-full md:w-56 px-3.5 py-1.5 text-sm md:px-5 md:py-2 md:text-base rounded-xl font-semibold 
+                                className='w-full md:w-56 px-3.5 py-1.5 text-sm md:px-5 md:py-2 lg:text-base rounded-xl font-semibold 
                                         text-[#EEEEEF] bg-[#9F531B] flex items-center justify-center gap-2 hover:bg-[#7C3E13] transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1'
                                 onClick={() => setEditing(false)}
                             >

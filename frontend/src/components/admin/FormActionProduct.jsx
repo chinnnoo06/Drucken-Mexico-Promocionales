@@ -8,7 +8,7 @@ export const FormActionProduct = ({ handleAddColor, handleRemoveColor, handleCol
         <div className='form-container flex flex-col justify-center items-center'>
             <div className='bg-gradient-to-br from-[#9F531B]/5 to-[#7C3E13]/10 border border-[#9F531B]/20 rounded-2xl p-4 sm:p-6 w-full md:w-3/4'>
                 <div className="text-center mb-8">
-                    <h3 className="text-[#9F531B] font-bold text-[20px] sm:text-[22px] md:text-[25px] lg:text-[30px] mb-2 flex items-center justify-center gap-2">
+                    <h3 className="text-[#9F531B] font-bold text-xl lg:text-3xl mb-2 flex items-center justify-center gap-2">
                         {isEdit ? (
                             <>
                                 <i className="fa-solid fa-pencil"></i>
@@ -22,7 +22,7 @@ export const FormActionProduct = ({ handleAddColor, handleRemoveColor, handleCol
                         )}
 
                     </h3>
-                    <p className="text-gray-600 text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px]">
+                    <p className="text-gray-600 text-sm lg:text-base">
                         {isEdit ? ' Ingrese los datos del producto a actualizar' : 'Ingrese los datos del producto a agregar'}
                     </p>
                 </div>
@@ -32,7 +32,7 @@ export const FormActionProduct = ({ handleAddColor, handleRemoveColor, handleCol
                         {/* --- Campos generales --- */}
                         <div className="flex flex-col sm:flex-row gap-6 sm:gap-4">
                             <div className="form-group flex-1">
-                                <label htmlFor="name" className="block font-semibold text-[#9F531B] mb-2 text-sm sm:text-base">
+                                <label htmlFor="name" className="block font-semibold text-[#9F531B] mb-2 text-sm lg:text-base">
                                     <i className="fas fa-tag mr-2"></i>
                                     Nombre
                                 </label>
@@ -44,7 +44,7 @@ export const FormActionProduct = ({ handleAddColor, handleRemoveColor, handleCol
                                     className="w-full px-4 py-3 rounded-xl bg-white text-gray-700 border-2 border-[#9F531B]/30 
                                 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#9F531B] 
                                 focus:border-[#9F531B] focus:bg-white transition-all duration-300 
-                                text-xs sm:text-sm md:text-base hover:border-[#9F531B]/50"
+                                text-xs lg:text-base hover:border-[#9F531B]/50"
                                     onChange={manageChange}
                                     value={formData.name}
                                 />
@@ -57,7 +57,7 @@ export const FormActionProduct = ({ handleAddColor, handleRemoveColor, handleCol
                             </div>
 
                             <div className="form-group flex-1">
-                                <label htmlFor="key" className="block font-semibold text-[#9F531B] mb-2 text-sm sm:text-base">
+                                <label htmlFor="key" className="block font-semibold text-[#9F531B] mb-2 text-sm lg:text-base">
                                     <i className="fa-solid fa-key mr-2"></i>
                                     Clave
                                 </label>
@@ -69,7 +69,7 @@ export const FormActionProduct = ({ handleAddColor, handleRemoveColor, handleCol
                                     className="w-full px-4 py-3 rounded-xl bg-white text-gray-700 border-2 border-[#9F531B]/30 
                                 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#9F531B] 
                                 focus:border-[#9F531B] focus:bg-white transition-all duration-300 
-                                text-xs sm:text-sm md:text-base hover:border-[#9F531B]/50"
+                                text-xs lg:text-base hover:border-[#9F531B]/50"
                                     onChange={manageChange}
                                     value={formData.key}
                                 />
@@ -83,7 +83,7 @@ export const FormActionProduct = ({ handleAddColor, handleRemoveColor, handleCol
                         </div>
 
                         <div className="form-group">
-                            <label htmlFor="description" className="block font-semibold text-[#9F531B] mb-2 text-sm sm:text-base">
+                            <label htmlFor="description" className="block font-semibold text-[#9F531B] mb-2 text-sm lg:text-base">
                                 <i className="fas fa-align-left mr-2"></i>
                                 Descripción
                             </label>
@@ -95,7 +95,7 @@ export const FormActionProduct = ({ handleAddColor, handleRemoveColor, handleCol
                                 className="w-full px-4 py-3 rounded-xl bg-white text-gray-700 border-2 border-[#9F531B]/30
                                 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#9F531B] 
                                 focus:border-[#9F531B] focus:bg-white transition-all duration-300 
-                                text-xs sm:text-sm md:text-base hover:border-[#9F531B]/50"
+                                text-xs lg:text-base hover:border-[#9F531B]/50"
                                 onChange={manageChange}
                                 value={formData.description}
                             />
@@ -107,7 +107,7 @@ export const FormActionProduct = ({ handleAddColor, handleRemoveColor, handleCol
                             )}
                         </div>
                         <div className="form-group">
-                            <label htmlFor="printingTechnique" className="block font-semibold text-[#9F531B] mb-2 text-sm sm:text-base">
+                            <label htmlFor="printingTechnique" className="block font-semibold text-[#9F531B] mb-2 text-sm lg:text-base">
                                 <i className="fa-solid fa-paintbrush mr-2"></i>
                                 Técnica(s) de Impresión
                             </label>
@@ -119,7 +119,7 @@ export const FormActionProduct = ({ handleAddColor, handleRemoveColor, handleCol
                                 className="w-full px-4 py-3 rounded-xl bg-white text-gray-700 border-2 border-[#9F531B]/30 
                                 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#9F531B] 
                                 focus:border-[#9F531B] focus:bg-white transition-all duration-300 
-                                text-xs sm:text-sm md:text-base hover:border-[#9F531B]/50"
+                                text-xs lg:text-base hover:border-[#9F531B]/50"
                                 onChange={manageChange}
                                 value={formData.printingTechnique}
                             />
@@ -133,7 +133,7 @@ export const FormActionProduct = ({ handleAddColor, handleRemoveColor, handleCol
 
                         <div className="flex flex-col sm:flex-row gap-6 sm:gap-4">
                             <div className="form-group flex-1">
-                                <label htmlFor="category" className="block font-semibold text-[#9F531B] mb-2 text-sm sm:text-base">
+                                <label htmlFor="category" className="block font-semibold text-[#9F531B] mb-2 text-sm lg:text-base">
                                     <i className="fa-solid fa-list mr-2"></i>
                                     Categoria
                                 </label>
@@ -141,7 +141,7 @@ export const FormActionProduct = ({ handleAddColor, handleRemoveColor, handleCol
                                     <select
                                         id="category"
                                         name="category"
-                                        className="text-sm md:text-base w-full px-4 py-3 pr-10 rounded-lg bg-white text-[#9F531B] border-2 border-[#9F531B]/30 focus:outline-none focus:ring-2 focus:ring-[#9F531B]/50 focus:border-[#9F531B] transition-all duration-300 hover:border-[#9F531B]/50 appearance-none"
+                                        className="text-sm lg:text-base w-full px-4 py-3 pr-10 rounded-lg bg-white text-[#9F531B] border-2 border-[#9F531B]/30 focus:outline-none focus:ring-2 focus:ring-[#9F531B]/50 focus:border-[#9F531B] transition-all duration-300 hover:border-[#9F531B]/50 appearance-none"
                                         onChange={manageChange}
                                         value={formData.category}
                                     >
@@ -168,7 +168,7 @@ export const FormActionProduct = ({ handleAddColor, handleRemoveColor, handleCol
                             </div>
 
                             <div className="form-group flex-1">
-                                <label htmlFor="material" className="block font-semibold text-[#9F531B] mb-2 text-sm sm:text-base">
+                                <label htmlFor="material" className="block font-semibold text-[#9F531B] mb-2 text-sm lg:text-base">
                                     <i className="fas fa-box mr-2"></i>
                                     Material
                                 </label>
@@ -180,7 +180,7 @@ export const FormActionProduct = ({ handleAddColor, handleRemoveColor, handleCol
                                     className="w-full px-4 py-3 rounded-xl bg-white text-gray-700 border-2 border-[#9F531B]/30 
                                 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#9F531B] 
                                 focus:border-[#9F531B] focus:bg-white transition-all duration-300 
-                                text-xs sm:text-sm md:text-base hover:border-[#9F531B]/50"
+                                text-xs lg:text-base hover:border-[#9F531B]/50"
                                     onChange={manageChange}
                                     value={formData.material}
                                 />
@@ -195,7 +195,7 @@ export const FormActionProduct = ({ handleAddColor, handleRemoveColor, handleCol
 
                         <div className="flex flex-col sm:flex-row gap-6 sm:gap-4">
                             <div className="form-group flex-1">
-                                <label htmlFor="measures" className="block font-semibold text-[#9F531B] mb-2 text-sm sm:text-base">
+                                <label htmlFor="measures" className="block font-semibold text-[#9F531B] mb-2 text-sm lg:text-base">
                                     <i className="fa-solid fa-ruler-vertical mr-2"></i>
                                     Medidas
                                 </label>
@@ -207,7 +207,7 @@ export const FormActionProduct = ({ handleAddColor, handleRemoveColor, handleCol
                                     className="w-full px-4 py-3 rounded-xl bg-white text-gray-700 border-2 border-[#9F531B]/30 
                                 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#9F531B] 
                                 focus:border-[#9F531B] focus:bg-white transition-all duration-300 
-                                text-xs sm:text-sm md:text-base hover:border-[#9F531B]/50"
+                                text-xs lg:text-base hover:border-[#9F531B]/50"
                                     onChange={manageChange}
                                     value={formData.measures}
                                 />
@@ -220,7 +220,7 @@ export const FormActionProduct = ({ handleAddColor, handleRemoveColor, handleCol
                             </div>
 
                             <div className="form-group flex-1">
-                                <label htmlFor="printingMeasures" className="block font-semibold text-[#9F531B] mb-2 text-sm sm:text-base">
+                                <label htmlFor="printingMeasures" className="block font-semibold text-[#9F531B] mb-2 text-sm lg:text-base">
                                     <i className="fa-solid fa-ruler-combined mr-2"></i>
                                     Medidas de Impresión
                                 </label>
@@ -232,7 +232,7 @@ export const FormActionProduct = ({ handleAddColor, handleRemoveColor, handleCol
                                     className="w-full px-4 py-3 rounded-xl bg-white text-gray-700 border-2 border-[#9F531B]/30 
                                 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#9F531B] 
                                 focus:border-[#9F531B] focus:bg-white transition-all duration-300 
-                                text-xs sm:text-sm md:text-base hover:border-[#9F531B]/50"
+                                text-xs lg:text-base hover:border-[#9F531B]/50"
                                     onChange={manageChange}
                                     value={formData.printingMeasures}
                                 />
@@ -246,7 +246,7 @@ export const FormActionProduct = ({ handleAddColor, handleRemoveColor, handleCol
                         </div>
 
                         <div className="form-group flex-1">
-                            <label htmlFor="minQuantity" className="block font-semibold text-[#9F531B] mb-2 text-sm sm:text-base">
+                            <label htmlFor="minQuantity" className="block font-semibold text-[#9F531B] mb-2 text-sm lg:text-base">
                                 <i className="fa-solid fa-layer-group mr-2"></i>
                                 Cantidad mínima
                             </label>
@@ -258,7 +258,7 @@ export const FormActionProduct = ({ handleAddColor, handleRemoveColor, handleCol
                                 className="w-full px-4 py-3 rounded-xl bg-white text-gray-700 border-2 border-[#9F531B]/30 
                                     placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#9F531B] 
                                     focus:border-[#9F531B] focus:bg-white transition-all duration-300 
-                                    text-xs sm:text-sm md:text-base hover:border-[#9F531B]/50"
+                                    text-xs lg:text-base hover:border-[#9F531B]/50"
                                 onChange={manageChange}
                                 value={formData.minQuantity}
                             />
@@ -274,14 +274,14 @@ export const FormActionProduct = ({ handleAddColor, handleRemoveColor, handleCol
                         {/* --- Sección de colores dinámicos --- */}
                         <div className="colors-section">
                             <div className="flex justify-between items-center mb-4">
-                                <label className="block font-semibold text-[#9F531B] text-sm sm:text-base">
+                                <label className="block font-semibold text-[#9F531B] text-sm lg:text-base">
                                     <i className="fas fa-palette mr-2"></i>
                                     Colores del producto
                                 </label>
                                 <button
                                     type="button"
                                     onClick={handleAddColor}
-                                    className="px-3 py-1 text-xs md:px-4 md:py-1 md:text-sm rounded-lg font-semibold transition-all duration-300
+                                    className="px-3 py-1 text-xs md:px-4 md:py-1 lg:text-sm rounded-lg font-semibold transition-all duration-300
                                     text-[#EEEEEF] bg-[#9F531B] hover:bg-[#7C3E13]
                                     shadow hover:shadow-md flex items-center gap-1"
                                 >
@@ -316,7 +316,7 @@ export const FormActionProduct = ({ handleAddColor, handleRemoveColor, handleCol
                                                 placeholder="Ej: Blanco"
                                                 className="w-full px-3 py-2 rounded-lg bg-white text-gray-700 border border-[#9F531B]/30 
                                                 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#9F531B] 
-                                                focus:border-[#9F531B] text-xs sm:text-sm"
+                                                focus:border-[#9F531B] text-xs lg:text-sm"
                                             />
                                             {formErrors[`colors[${index}].color`] && (
                                                 <span className="text-red-500 text-xs flex items-center mt-1">
@@ -337,7 +337,7 @@ export const FormActionProduct = ({ handleAddColor, handleRemoveColor, handleCol
                                                     placeholder="#FFFFFF"
                                                     className="w-full px-3 py-2 rounded-lg bg-white text-gray-700 border border-[#9F531B]/30 
                                                     placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#9F531B] 
-                                                    focus:border-[#9F531B] text-xs sm:text-sm"
+                                                    focus:border-[#9F531B] text-xs lg:text-sm"
                                                 />
                                                 {colorGroup.hex && (
                                                     <div
@@ -391,7 +391,7 @@ export const FormActionProduct = ({ handleAddColor, handleRemoveColor, handleCol
 
                     {formData.colors.length > 1 && (
                         <div className="form-group">
-                            <label htmlFor="minQuantity" className="block font-semibold text-[#9F531B] mb-2 text-sm sm:text-base">
+                            <label htmlFor="minQuantity" className="block font-semibold text-[#9F531B] mb-2 text-sm lg:text-base">
                                 <i className="fa-solid fa-image mr-2"></i>
                                 Imagen general de todos los colores
                             </label>
@@ -402,7 +402,7 @@ export const FormActionProduct = ({ handleAddColor, handleRemoveColor, handleCol
                                 className="w-full px-4 py-3 rounded-xl bg-white text-gray-700 border-2 border-[#9F531B]/30 
                                 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#9F531B] 
                                 focus:border-[#9F531B] focus:bg-white transition-all duration-300 
-                                text-xs sm:text-sm md:text-base hover:border-[#9F531B]/50"
+                                text-xs lg:text-base hover:border-[#9F531B]/50"
                                 accept=".jpg, .jpeg, .png"
                             />
                             {formData.generalImage && (
@@ -424,7 +424,7 @@ export const FormActionProduct = ({ handleAddColor, handleRemoveColor, handleCol
 
                     <div className='flex justify-center pt-4'>
                         <button
-                            className={`px-7 py-1 text-sm md:px-10 md:py-2 md:text-lg rounded-xl font-semibold transition-all duration-300
+                            className={`px-7 py-1 text-sm md:px-10 md:py-2 lg:text-lg rounded-xl font-semibold transition-all duration-300
                             text-[#EEEEEF] ${loading ? 'bg-[#8e8e92] cursor-not-allowed hover:-translate-y-1' : 'bg-[#9F531B] hover:bg-[#7C3E13] hover:-translate-y-1'}
                             shadow-lg hover:shadow-xl flex items-center gap-2`}
                             type="submit"

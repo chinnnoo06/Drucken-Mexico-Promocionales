@@ -6,7 +6,7 @@ export const MapOrder = ({ orders, setOrders }) => {
   const { handleAmount, deleteProduct, groupedOrders } = useCart(orders, setOrders);
 
   return (
-    <div className="col1 flex flex-col flex-[70%] min-h-[400px]">
+    <div className="flex flex-col flex-[70%] min-h-[400px]">
 
       <div className="space-y-2">
         {groupedOrders.map(group => {

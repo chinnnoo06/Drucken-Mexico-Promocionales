@@ -4,8 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 export const useHeaderFooter = () => {
     const [menuVisible, setMenuVisible] = useState(false);
     const [activeSection, setActiveSection] = useState('inicio');
-    const [showHeader, setShowHeader] = useState(true);
-    const [lastScrollY, setLastScrollY] = useState(0);
+    const [scrolled, setScrolled] = useState(false);
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -39,22 +38,13 @@ export const useHeaderFooter = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            if (menuVisible) return;
-
-            const currentScrollY = window.scrollY;
-
-            if (currentScrollY > lastScrollY && currentScrollY > 100) {
-                setShowHeader(false); // Ocultar al bajar
-            } else {
-                setShowHeader(true);  // Mostrar al subir
-            }
-
-            setLastScrollY(currentScrollY);
+            setScrolled(window.scrollY > 50);
         };
 
         window.addEventListener('scroll', handleScroll);
+        handleScroll();
         return () => window.removeEventListener('scroll', handleScroll);
-    }, [lastScrollY, menuVisible]);
+    }, []);
 
     useEffect(() => {
         const handleResize = () => {
@@ -94,5 +84,5 @@ export const useHeaderFooter = () => {
         setMenuVisible(!menuVisible);
     };
 
-    return {scrollToSection, navigateToSection, toggleMenu, menuVisible, activeSection, showHeader, isInicio};
+    return {scrollToSection, navigateToSection, toggleMenu, menuVisible, activeSection, scrolled, isInicio};
 }

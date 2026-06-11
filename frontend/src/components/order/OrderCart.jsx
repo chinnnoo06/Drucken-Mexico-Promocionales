@@ -5,7 +5,7 @@ export const OrderCart = ({ group, totalQuantity, handleAmount, deleteProduct })
 
     return (
         <div className="p-4 bg-gradient-to-br from-[#9F531B]/5 to-[#7C3E13]/10 border border-[#9F531B]/20 hover:shadow-md transition-shadow duration-300 rounded-lg" key={group.ProductID}>
-            <h3 className="font-semibold text-[#9F531B] text-[17px] sm:text-[19px] md:text-[21px] lg:text-[23px] mb-3 w-full">
+            <h3 className="font-semibold text-[#9F531B] text-lg lg:text-2xl mb-3 w-full">
                 {group.ProductName} ({group.ProductKey})
             </h3>
 
@@ -31,7 +31,7 @@ export const OrderCart = ({ group, totalQuantity, handleAmount, deleteProduct })
                                 <div className="flex flex-row gap-10 sm:items-center">
                                     {/* Color */}
                                     <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
-                                        <span className="text-[13px] sm:text-[13px] md:text-[15px] lg:text-[16px] text-[#9f531b]">
+                                        <span className="text-sm lg:text-base text-[#9f531b]">
                                             Color:
                                         </span>
                                         <div className="flex items-center space-x-2">
@@ -41,7 +41,7 @@ export const OrderCart = ({ group, totalQuantity, handleAmount, deleteProduct })
                                                     backgroundColor: order.ProductHexColor || "#ccc",
                                                 }}
                                             ></span>
-                                            <span className="text-[13px] sm:text-[13px] md:text-[15px] lg:text-[16px] text-gray-700">
+                                            <span className="text-sm lg:text-base text-gray-700">
                                                 {order.ProductColor}
                                             </span>
                                         </div>
@@ -49,7 +49,7 @@ export const OrderCart = ({ group, totalQuantity, handleAmount, deleteProduct })
                                 </div>
 
                                 <button onClick={() => deleteProduct(order.ProductID, order.ProductColor)}>
-                                    <i className="fa-solid fa-trash text-[#9F531B] hover:text-[#7C3E13] text-[11px] sm:text-[13px] md:text-[15px] lg:text-[16px]"></i>
+                                    <i className="fa-solid fa-trash text-[#9F531B] hover:text-[#7C3E13] text-xs lg:text-base"></i>
                                 </button>
                             </div>
 
@@ -58,7 +58,7 @@ export const OrderCart = ({ group, totalQuantity, handleAmount, deleteProduct })
                                     {order.OrderQuantity > 1 && (
                                         <>
                                             <button
-                                                className="px-3 py-1 text-[13px] sm:text-[13px] md:text-[15px] lg:text-[16px] text-[#EEEEEF] bg-[#9F531B] hover:bg-[#7C3E13]"
+                                                className="px-3 py-1 text-sm lg:text-base text-[#EEEEEF] bg-[#9F531B] hover:bg-[#7C3E13]"
                                                 onClick={() => handleAmount(order.ProductID, order.ProductColor, 0)}
                                             >
                                                 -
@@ -66,11 +66,11 @@ export const OrderCart = ({ group, totalQuantity, handleAmount, deleteProduct })
                                         </>
                                     )}
 
-                                    <span className="text-[13px] sm:text-[13px] md:text-[15px] lg:text-[16px] py-1 bg-[#EEEEEF] text-center w-12">
+                                    <span className="text-sm lg:text-base py-1 bg-[#EEEEEF] text-center w-12">
                                         {order.OrderQuantity}
                                     </span>
                                     <button
-                                        className="px-3 py-1 text-[13px] sm:text-[13px] md:text-[15px] lg:text-[16px] text-[#EEEEEF] bg-[#9F531B] hover:bg-[#7C3E13]"
+                                        className="px-3 py-1 text-sm lg:text-base text-[#EEEEEF] bg-[#9F531B] hover:bg-[#7C3E13]"
                                         onClick={() => handleAmount(order.ProductID, order.ProductColor, 1)}
                                     >
                                         +
@@ -84,20 +84,20 @@ export const OrderCart = ({ group, totalQuantity, handleAmount, deleteProduct })
             </div>
 
             <div className="pt-3">
-                <p className="text-xs sm:text-sm text-gray-700">
+                <p className="text-xs lg:text-sm text-gray-700">
                     Cantidad total seleccionada:{" "}
                     <span className="font-semibold">{totalQuantity}</span>
                 </p>
-                <p className="text-xs sm:text-sm text-gray-700">
+                <p className="text-xs lg:text-sm text-gray-700">
                     Cantidad mínima requerida:{" "}
                     <span className="font-semibold">{group.minQuantity}</span>
                 </p>
                 {totalQuantity < group.minQuantity ? (
-                    <p className="text-xs sm:text-sm text-red-500 mt-1">
+                    <p className="text-xs lg:text-sm text-red-500 mt-1">
                         * Debes alcanzar al menos la cantidad mínima para este producto.
                     </p>
                 ) : (
-                    <p className="text-xs sm:text-sm text-green-600 mt-1">
+                    <p className="text-xs lg:text-sm text-green-600 mt-1">
                         Has alcanzado la cantidad mínima de compra.
                     </p>
                 )}

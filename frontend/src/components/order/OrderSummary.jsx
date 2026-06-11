@@ -10,11 +10,11 @@ export const OrderSummary = ({ orders }) => {
             <div className='flex flex-col space-y-6'>
       
                 <div className="space-y-3">
-                    <h3 className="text-[17px] sm:text-[17px] md:text-[18px] lg:text-[22px] font-semibold text-[#9F531B] border-b pb-2 border-[#9F531B]/20">
+                    <h3 className="text-lg lg:text-2xl font-semibold text-[#9F531B] border-b pb-2 border-[#9F531B]/20">
                         Resumen del pedido
                     </h3>
 
-                    <div className="flex justify-between items-center text-[14px] sm:text-[15px] md:text-[15px] lg:text-[17px]">
+                    <div className="flex justify-between items-center text-sm lg:text-lg">
                         <span className="text-[#1A1615]">Productos:</span>
                         <span className="font-medium">{orders.length}</span>
                     </div>
@@ -27,8 +27,8 @@ export const OrderSummary = ({ orders }) => {
                         <button
                             className={`w-full 
                             px-3 py-1 text-base        /* base (xs) → pequeño */
-                            sm:px-5 sm:py-2 sm:text-base /* sm → más grande */
-                            md:px-3 md:py-1 md:text-base /* md → más pequeño */
+                            sm:px-5 sm:py-2 /* sm → más grande */
+                            md:px-3 md:py-1 /* md → más pequeño */
                             lg:px-5 lg:py-2 lg:text-lg /* lg → normal */
                             rounded-xl font-semibold transition-all duration-300
                             text-[#EEEEEF] flex items-center justify-center gap-3 
@@ -53,9 +53,9 @@ export const OrderSummary = ({ orders }) => {
                         <button
                             className="w-full 
                             px-3 py-1 text-base        /* base */
-                            sm:px-5 sm:py-2 sm:text-base /* sm más grande */
-                            md:px-3 md:py-1 md:text-base /* md más pequeño */
-                            lg:px-5 lg:py-2 lg:text-base /* lg normal */
+                            sm:px-5 sm:py-2 /* sm más grande */
+                            md:px-3 md:py-1 /* md más pequeño */
+                            lg:px-5 lg:py-2 /* lg normal */
                             rounded-xl font-semibold transition-all duration-300
                             text-[#9F531B] bg-transparent hover:bg-[#9F531B]/10
                             border-2 border-[#9F531B] flex items-center justify-center gap-3"

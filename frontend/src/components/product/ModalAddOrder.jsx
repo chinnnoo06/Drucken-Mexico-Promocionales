@@ -15,7 +15,7 @@ export const ModalAddOrder = ({ order, showModal, setShowModal }) => {
 
                 <div className='container-modal flex flex-col text-center'>
 
-                    <h3 className="text-[#9F531B] font-bold text-[16px] sm:text-[18px] md:text-[20px] lg:text-[25px] mb-4">
+                    <h3 className="text-[#9F531B] font-bold text-base lg:text-2xl mb-4">
                         ¡Producto agregado!
                     </h3>
 
@@ -35,14 +35,14 @@ export const ModalAddOrder = ({ order, showModal, setShowModal }) => {
 
                         {/* Product Details */}
                         <div className="w-full md:w-3/4 flex flex-col ">
-                            <h4 className="text-[#9F531B] font-semibold text-left text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] mb-2">{order.ProductName} ({order.ProductKey})</h4>
+                            <h4 className="text-[#9F531B] font-semibold text-left text-base lg:text-2xl mb-2">{order.ProductName} ({order.ProductKey})</h4>
 
                             <div className="space-y-2 mb-2">
-                                <div className="flex items-center gap-2 text-[13px] sm:text-[13px] md:text-[15px] lg:text-[17px]">
+                                <div className="flex items-center gap-2 text-sm lg:text-lg">
                                     <span className="text-[#9F531B]">Color:</span>
                                     <span className="font-medium text-gray-600">{order.ProductColor}</span>
                                 </div>
-                                <div className="flex items-center gap-2 text-[13px] sm:text-[13px] md:text-[15px] lg:text-[17px]">
+                                <div className="flex items-center gap-2 text-sm lg:text-lg">
                                     <span className="text-[#9F531B]">Cantidad:</span>
                                     <span className="font-medium text-gray-600">{order.OrderQuantity}</span>
                                 </div>
@@ -50,7 +50,7 @@ export const ModalAddOrder = ({ order, showModal, setShowModal }) => {
 
                             {order.ProductCategory == "Agendas" && (
                                 <div className="bg-transparent border border-[#9F531B] rounded-lg p-2 md:p-3 w-full">
-                                    <div className="flex justify-between items-center text-[13px] sm:text-[13px] md:text-[15px] lg:text-[17px]">
+                                    <div className="flex justify-between items-center text-sm lg:text-lg">
                                         <span className="font-semibold text-[#9F531B]">Subtotal:</span>
                                         <span className="font-bold text-[#9F531B]">
                                             MXN {order.Subtotal.toLocaleString('es-MX', { minimumFractionDigits: 2 })}
@@ -65,7 +65,7 @@ export const ModalAddOrder = ({ order, showModal, setShowModal }) => {
                     {/* Actions */}
                     <div className="flex flex-col sm:flex-row gap-3 justify-center">
                         <button
-                            className="w-full md:w-1/2 px-3.5 py-1.5 text-sm md:px-5 md:py-2 md:text-lg rounded-xl font-semibold
+                            className="w-full md:w-1/2 px-3.5 py-1.5 text-sm md:px-5 md:py-2 lg:text-lg rounded-xl font-semibold
                                     text-[#9F531B] bg-transparent hover:bg-[#9F531B]/10
                                     border-2 border-[#9F531B] flex items-center justify-center gap-3 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1"
                             onClick={() => setShowModal(false)}
@@ -76,7 +76,7 @@ export const ModalAddOrder = ({ order, showModal, setShowModal }) => {
 
                         <Link
                             to="/pedido"
-                            className='w-full md:w-1/2 px-3.5 py-1.5 text-sm md:px-5 md:py-2 md:text-lg rounded-xl font-semibold
+                            className='w-full md:w-1/2 px-3.5 py-1.5 text-sm md:px-5 md:py-2 lg:text-lg rounded-xl font-semibold
                                     text-[#EEEEEF] bg-[#9F531B] flex items-center justify-center gap-3
                                     hover:bg-[#7C3E13] transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1'
                         >

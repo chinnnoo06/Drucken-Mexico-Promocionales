@@ -27,10 +27,10 @@ export const ServiceCard = ({ service }) => {
         />
       </div>
       <div className="p-6">
-        <h3 className="text-[#9F531B] font-semibold text-[17px] sm:text-[19px] md:text-[21px] lg:text-[23px] mb-3">
+        <h3 className="text-[#9F531B] font-semibold text-lg lg:text-2xl mb-3">
           {service.name}
         </h3>
-        <p className="text-gray-700 text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px] leading-relaxed">
+        <p className="text-gray-700 text-sm lg:text-base leading-relaxed">
           {service.description}
         </p>
       </div>

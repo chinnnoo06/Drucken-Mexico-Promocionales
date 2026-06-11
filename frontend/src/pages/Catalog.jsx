@@ -13,13 +13,13 @@ export const Catalog = () => {
   useScrollElementFromLocation({ products })
 
   return (
-    <SectionWrapper className='container-main-content flex flex-col pt-32 pb-20 gap-5 mx-auto max-w-[1300px]'>
+    <SectionWrapper className='container-main-content flex flex-col pt-28 pb-10 gap-5 mx-auto max-w-[1300px]'>
       <div className="text-center">
-        <h1 className='text-[#9F531B] titulo-seccion font-bold text-[48px] sm:text-[52px] md:text-[55px] lg:text-[60px] mb-6 relative inline-block'>
+        <h1 className='text-[#9F531B] titulo-seccion font-bold text-5xl lg:text-6xl mb-6 relative inline-block'>
           Catálogo
-          <span className="absolute left-1/2 transform -translate-x-1/2 bottom-[-10px] w-24 h-1.5 bg-[#9F531B] rounded-full"></span>
+          <span className="absolute left-1/2 transform -translate-x-1/2 bottom-[-20px] w-24 h-1.5 bg-[#9F531B] rounded-full"></span>
         </h1>
-        <p className="text-gray-700 text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] font-medium mt-2 block">
+        <p className="text-gray-700 text-base lg:text-2xl font-medium mt-2 block">
           Explora nuestros productos promocionales y revisa los catálogos completos en los siguientes enlaces.
         </p>
 
@@ -42,17 +42,17 @@ export const Catalog = () => {
               hover:border-[#D9773B] hover:bg-gradient-to-r hover:from-[#FBE8D3] hover:to-[#FFD8A8]
             `}
             >
-              <div className={`text-lg sm:text-xl transition-transform duration-300 group-hover:scale-110 flex-shrink-0`}>
+              <div className={`text-lg lg:text-xl transition-transform duration-300 group-hover:scale-110 flex-shrink-0`}>
                 {catalog.icon}
               </div>
 
               <div className="flex-1 min-w-0">
-                <h3 className={`font-semibold text-[#9F531B] text-xs sm:text-sm leading-tight truncate`}>
+                <h3 className={`font-semibold text-[#9F531B] text-xs lg:text-sm leading-tight truncate`}>
                   {catalog.title}
                 </h3>
               </div>
 
-              <div className={`w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#9F531B] flex items-center justify-center text-white text-[10px] sm:text-xs transform transition-transform duration-300 group-hover:translate-x-0.5 flex-shrink-0`}>
+              <div className={`w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#9F531B] flex items-center justify-center text-white text-xs transform transition-transform duration-300 group-hover:translate-x-0.5 flex-shrink-0`}>
                 <i className="fa-solid fa-square-up-right"></i>
               </div>
             </a>
@@ -74,7 +74,7 @@ export const Catalog = () => {
             placeholder="Buscar por nombre o clave..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="text-sm md:text-base w-full pl-10 pr-4 py-2 rounded-lg border-2 border-[#9F531B]/30 focus:outline-none focus:ring-2 focus:ring-[#9F531B]/50 focus:border-[#9F531B] transition-all duration-300 hover:border-[#9F531B]/50"
+            className="text-sm lg:text-base w-full pl-10 pr-4 py-2 rounded-lg border-2 border-[#9F531B]/30 focus:outline-none focus:ring-2 focus:ring-[#9F531B]/50 focus:border-[#9F531B] transition-all duration-300 hover:border-[#9F531B]/50"
           />
         </div>
 

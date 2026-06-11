@@ -52,7 +52,7 @@ export const Product = () => {
     }
 
     return (
-        <SectionWrapper className='container-main-content pt-32 pb-20 flex flex-col justify-center gap-2 mx-auto max-w-[1300px]'>
+        <SectionWrapper className='container-main-content pt-28 pb-10 flex flex-col justify-center gap-2 mx-auto max-w-[1300px]'>
             {product ? (
                 <>
                     <nav className="border-b border-amber-700/20 pb-2">
@@ -67,8 +67,8 @@ export const Product = () => {
                             }}
                         >
                             <div className="flex items-center gap-2">
-                                <i className="fas fa-arrow-left text-[12px] sm:text-[14px] md:text-[16px] lg:text-[18px]"></i>
-                                <span className="font-medium text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px]">Volver al catálogo</span>
+                                <i className="fas fa-arrow-left text-xs lg:text-lg"></i>
+                                <span className="font-medium text-sm lg:text-xl">Volver al catálogo</span>
                             </div>
                         </Link>
                     </nav>

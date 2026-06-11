@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import DruckenLogo from '../../assets/logodrucken.png';
+import DruckenLogo from '../../assets/logodrucken.webp';
 import { closeSession } from '../../helpers/CloseSession'; 
 
 export const FooterAdmin = () => {
