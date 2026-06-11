@@ -18,7 +18,7 @@ export const Home = () => {
         style={{ backgroundImage: `url(${heroBg})` }}
       >
         <div className="absolute inset-0 bg-black/15 z-[1] pointer-events-none" aria-hidden="true"></div>
-        <SectionWrapper className="container-main-content relative z-[2] flex flex-col lg:flex-row min-h-screen justify-center items-center gap-8 lg:gap-10 mx-auto max-w-[1300px] pt-24 lg:pt-0">
+        <SectionWrapper className="container-main-content relative z-[2] flex flex-col lg:flex-row min-h-screen justify-center items-center gap-8 lg:gap-10 mx-auto max-w-[1300px] pt-24">
           <HomeMainContent />
         </SectionWrapper>
       </div>
