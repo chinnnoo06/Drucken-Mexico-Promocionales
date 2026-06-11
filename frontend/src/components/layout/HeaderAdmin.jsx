@@ -18,7 +18,7 @@ export const HeaderAdmin = () => {
                             <img
                                 src={DruckenLogo}
                                 alt="Logo de Drucken México"
-                                className="h-12 object-contain"
+                                className="h-10 lg:h-12 object-contain"
                             />
                         </Link>
                     </div>

@@ -18,11 +18,11 @@ export const FooterAdmin = () => {
                             <img
                                 src={DruckenLogo}
                                 alt="Logo de Drucken México"
-                                className="h-20 object-contain"
+                                className="h-18 lg:h-20 object-contain"
                             />
                         </Link>
                         <div className="text-center md:text-left">
-                            <p className="text-[#1A1615] text-sm leading-relaxed">
+                            <p className="text-[#1A1615] text-sm lg:text-base leading-relaxed">
                                 Empresa mexicana dedicada a la distribución de artículos promocionales desde 2016.
                                 Calidad, innovación y servicio al cliente.
                             </p>
@@ -46,7 +46,7 @@ export const FooterAdmin = () => {
                                         key={index}
                                         to={item.to}
                                         className={({ isActive }) =>
-                                            `relative py-1 font-medium text-sm transition-all duration-300 hover:translate-x-1 block text-left
+                                            `relative py-1 font-medium text-sm lg:text-base transition-all duration-300 hover:translate-x-1 block text-left
                                             ${isActive ? 'text-[#9F531B] font-semibold' : 'text-[#1A1615] hover:text-[#9F531B]'}
                                             after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 
                                             after:bg-[#9F531B] after:transition-all after:duration-300
@@ -59,7 +59,7 @@ export const FooterAdmin = () => {
                                     <button
                                         key={index}
                                         onClick={item.action}
-                                        className="relative py-1 font-medium text-sm transition-all duration-300 hover:translate-x-1 block text-left w-full
+                                        className="relative py-1 font-medium text-sm lg:text-base transition-all duration-300 hover:translate-x-1 block text-left w-full
                                         text-[#1A1615] hover:text-[#9F531B]
                                         after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 
                                         after:bg-[#9F531B] after:transition-all after:duration-300
@@ -89,7 +89,7 @@ export const FooterAdmin = () => {
                                 "Diseños Especiales 3D",
                                 "Impresion DTF Textil"
                             ].map((service) => (
-                                <span key={service} className="text-[#1A1615] text-sm hover:text-[#9F531B] transition-colors duration-300 cursor-pointer">
+                                <span key={service} className="text-[#1A1615] text-sm lg:text-base hover:text-[#9F531B] transition-colors duration-300 cursor-pointer">
                                     {service}
                                 </span>
                             ))}
@@ -120,7 +120,7 @@ export const FooterAdmin = () => {
                             ))}
                         </div>
 
-                        <div className="flex flex-col gap-2 text-sm text-[#1A1615] text-center md:text-left">
+                        <div className="flex flex-col gap-2 text-sm lg:text-base text-[#1A1615] text-center md:text-left">
                             <div className="flex items-center gap-2 justify-center md:justify-start">
                                 <i className="fa-solid fa-phone text-[#9F531B]"></i>
                                 <span>+52 33 1587 6207</span>
@@ -155,13 +155,13 @@ export const FooterAdmin = () => {
 
                         {/* Derechos de autor */}
                         <div className="text-center md:text-left">
-                            <p className="text-[#1A1615] text-sm">
+                            <p className="text-[#1A1615] text-sm lg:text-base">
                                 &copy; {new Date().getFullYear()} Drucken México Promocionales. Todos los derechos reservados.
                             </p>
                         </div>
 
                         {/* Enlaces legales */}
-                        <div className="flex flex-wrap justify-center gap-6 text-sm">
+                        <div className="flex flex-wrap justify-center gap-6 text-sm lg:text-base">
                             <Link to="/terminos" className="text-[#1A1615] hover:text-[#9F531B] transition-colors duration-300">
                                 Términos y Condiciones
                             </Link>
@@ -172,7 +172,7 @@ export const FooterAdmin = () => {
 
                         {/* Información adicional */}
                         <div className="text-center md:text-right">
-                            <p className="text-[#1A1615] text-sm">
+                            <p className="text-[#1A1615] text-sm lg:text-base">
                                 <i className="fa-solid fa-shield-halved text-[#9F531B] mr-1"></i>
                                 Sitio web seguro
                             </p>

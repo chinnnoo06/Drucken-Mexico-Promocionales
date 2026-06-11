@@ -19,7 +19,7 @@ export const ServiceCard = ({ service }) => {
 
   return (
     <div className="max-w-md w-full mx-auto bg-gradient-to-br from-[#9F531B]/5 to-[#7C3E13]/10 border border-[#9F531B]/20 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-      <div className="h-96 overflow-hidden">
+      <div className="h-80 lg:h-96 overflow-hidden">
         <img
           src={currentImage}
           alt={service.name}
@@ -27,7 +27,7 @@ export const ServiceCard = ({ service }) => {
         />
       </div>
       <div className="p-6">
-        <h3 className="text-[#9F531B] font-semibold text-lg lg:text-2xl mb-3">
+        <h3 className="text-[#9F531B] font-semibold text-lg lg:text-xl mb-3">
           {service.name}
         </h3>
         <p className="text-gray-700 text-sm lg:text-base leading-relaxed">
