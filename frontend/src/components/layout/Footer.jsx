@@ -14,15 +14,15 @@ export const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
 
                     {/* Logo y información de la empresa */}
-                    <div className="flex flex-col items-center md:items-start gap-4" translate="no">
+                    <div className="flex flex-col items-center lg:items-start gap-4" translate="no">
                         <Link to="/" className='no-underline hover:scale-105 transition-transform duration-300'>
                             <img
                                 src={DruckenLogo}
                                 alt="Logo de Drucken México"
-                                className="h-18 lg:h-20 object-contain"
+                                className="h-14 lg:h-20 object-contain"
                             />
                         </Link>
-                        <div className="text-center md:text-left">
+                        <div className="text-center lg:text-left">
                             <p className="text-[#1A1615] text-sm lg:text-base leading-relaxed">
                                 Empresa mexicana dedicada a la distribución de artículos promocionales desde 2016.
                                 Calidad, innovación y servicio al cliente.
@@ -31,7 +31,7 @@ export const Footer = () => {
                     </div>
 
                     {/* Menú de navegación (igual al header) */}
-                    <div className="flex flex-col items-center md:items-start gap-4">
+                    <div className="flex flex-col items-center lg:items-start gap-4">
                         <h3 className="text-[#9F531B] font-bold uppercase text-lg border-b-2 border-[#9F531B] pb-2">
                             Navegación
                         </h3>
@@ -105,7 +105,7 @@ export const Footer = () => {
                     </div>
 
                     {/* Servicios */}
-                    <div className="flex flex-col items-center md:items-start gap-4">
+                    <div className="flex flex-col items-center lg:items-start gap-4">
                         <h3 className="text-[#9F531B] font-bold uppercase text-lg border-b-2 border-[#9F531B] pb-2">
                             Nuestros Servicios
                         </h3>
@@ -129,9 +129,9 @@ export const Footer = () => {
                     </div>
 
                     {/* Contacto y redes sociales */}
-                    <div className="flex flex-col items-center md:items-start gap-4">
+                    <div className="flex flex-col items-center lg:items-start gap-4">
                         <h3 className="text-[#9F531B] font-bold uppercase text-lg border-b-2 border-[#9F531B] pb-2">
-                            Conocenos
+                            Conocenossad
                         </h3>
                         <div className="flex gap-4">
                             {[
