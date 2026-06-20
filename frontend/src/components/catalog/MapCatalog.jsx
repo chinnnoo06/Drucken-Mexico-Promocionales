@@ -2,6 +2,7 @@ import LoadingSpinner from '../ui/LoadingSpinner'
 import { useNavigate } from 'react-router-dom';
 import { GlobalImage } from '../../helpers/Global';
 import { thirdButton } from '../../helpers/StyleClasses';
+import { FaCircleExclamation } from 'react-icons/fa6';
 
 export const MapCatalog = ({ products, loading, currentPage, currentCategory, isAdmin }) => {
     const navigate = useNavigate();
@@ -57,7 +58,7 @@ export const MapCatalog = ({ products, loading, currentPage, currentCategory, is
                 </div>
             ) : (
                 <div className='flex flex-col justify-center items-center h-52 text-[#9F531B]'>
-                    <i className="fa-solid fa-circle-exclamation text-5xl lg:text-6xl mb-2"></i>
+                    <FaCircleExclamation className="h-12 w-12 lg:h-14 lg:w-14 mb-2" />
                     <h3 className="font-medium text-base lg:text-lg">No hay resultados</h3>
                 </div>
             )}

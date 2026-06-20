@@ -4,6 +4,7 @@ import { useProduct } from '../../hooks/useProduct';
 import { primaryButton } from '../../helpers/StyleClasses';
 import { ModalTrigger } from "../ui/ModalTrigger"
 import { QuantityButtons } from '../order/QuantityButtons';
+import { FaBagShopping } from 'react-icons/fa6';
 
 export const InfoProduct = ({ product, selectedColor, setSelectedColor }) => {
     const { quantity, order, increaseQuantity, decreaseQuantity, saveProductLocalStorage } = useProduct(product, selectedColor);
@@ -81,7 +82,7 @@ export const InfoProduct = ({ product, selectedColor, setSelectedColor }) => {
                             saveProductLocalStorage()
                             onOpen()
                         }}>
-                            <i className="fa-solid fa-bag-shopping"></i>
+                            <FaBagShopping className="h-4 w-4 lg:h-5 lg:w-5" />
                             Agregar al pedido
                         </button>
                     )}

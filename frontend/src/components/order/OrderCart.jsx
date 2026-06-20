@@ -1,6 +1,7 @@
 import React from 'react'
 import { GlobalImage } from '../../helpers/Global'
 import { QuantityButtons } from './QuantityButtons'
+import { FaTrash } from 'react-icons/fa6'
 
 export const OrderCart = ({ group, totalQuantity, handleAmount, deleteProduct }) => {
 
@@ -48,7 +49,7 @@ export const OrderCart = ({ group, totalQuantity, handleAmount, deleteProduct })
                                 </div>
 
                                 <button onClick={() => deleteProduct(order.ProductID, order.ProductColor)}>
-                                    <i className="fa-solid fa-trash text-[#9F531B] hover:text-[#7C3E13] text-xs lg:text-base"></i>
+                                    <FaTrash className="h-4 w-4 lg:h-5 lg:w-5 text-[#9F531B] hover:text-[#7C3E13]" />
                                 </button>
                             </div>
 

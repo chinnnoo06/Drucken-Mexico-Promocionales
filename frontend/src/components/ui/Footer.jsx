@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink, Link, useLocation, useNavigate } from 'react-router-dom';
 import DruckenLogo from '../../assets/logodrucken.webp';
 import { useHeaderFooter } from '../../hooks/useHeaderFooter';
+import { FaFacebook, FaInstagram, FaWhatsapp, FaPhone, FaEnvelope, FaLocationDot, FaShieldHalved } from 'react-icons/fa6';
 
 export const Footer = () => {
     const {scrollToSection, navigateToSection, isInicio} = useHeaderFooter();
@@ -135,9 +136,9 @@ export const Footer = () => {
                         </h3>
                         <div className="flex gap-4">
                             {[
-                                { icon: "fab fa-facebook", url: "https://www.facebook.com/share/1BaikYetVw/?mibextid=wwXIfr", name: "Facebook" },
-                                { icon: "fab fa-instagram", url: "https://www.instagram.com/drucken.promocionales?igsh=eGtjOHFldnR4aGE5", name: "Instagram" },
-                                { icon: "fab fa-whatsapp", url: "https://wa.me/523315876207", name: "WhatsApp" }
+                                { icon: FaFacebook, url: "https://www.facebook.com/share/1BaikYetVw/?mibextid=wwXIfr", name: "Facebook" },
+                                { icon: FaInstagram, url: "https://www.instagram.com/drucken.promocionales?igsh=eGtjOHFldnR4aGE5", name: "Instagram" },
+                                { icon: FaWhatsapp, url: "https://wa.me/523315876207", name: "WhatsApp" }
                             ].map((social, index) => (
                                 <a
                                     key={index}
@@ -147,22 +148,22 @@ export const Footer = () => {
                                     className="text-2xl text-[#1A1615] hover:text-[#9F531B] transition-all duration-300 hover:scale-110 hover:rotate-3"
                                     title={social.name}
                                 >
-                                    <i className={social.icon}></i>
+                                    <social.icon className="h-4 w-4 lg:h-5 lg:w-5" />
                                 </a>
                             ))}
                         </div>
 
                         <div className="flex flex-col gap-2 text-sm lg:text-base text-[#1A1615] text-center md:text-left">
                             <div className="flex items-center gap-2 justify-center md:justify-start">
-                                <i className="fa-solid fa-phone text-[#9F531B]"></i>
+                                <FaPhone className="h-4 w-4 lg:h-5 lg:w-5 text-[#9F531B]" />
                                 <span>+52 33 1587 6207</span>
                             </div>
                             <div className="flex items-center gap-2 justify-center md:justify-start">
-                                <i className="fa-solid fa-envelope text-[#9F531B]"></i>
+                                <FaEnvelope className="h-4 w-4 lg:h-5 lg:w-5 text-[#9F531B]" />
                                 <span>drucken2016@hotmail.com</span>
                             </div>
                             <div className="flex items-center gap-2 justify-center md:justify-start">
-                                <i className="fa-solid fa-location-dot text-[#9F531B]"></i>
+                                <FaLocationDot className="h-4 w-4 lg:h-5 lg:w-5 text-[#9F531B]" />
                                 <span>Ramón corona 454<br />Unidad República Zapopan Jalisco 45146</span>
                             </div>
                             <div className="w-full h-[200px]">
@@ -205,7 +206,7 @@ export const Footer = () => {
                         {/* Información adicional */}
                         <div className="text-center md:text-right">
                             <p className="text-[#1A1615] text-sm lg:text-base">
-                                <i className="fa-solid fa-shield-halved text-[#9F531B] mr-1"></i>
+                                <FaShieldHalved className="inline-block h-4 w-4 lg:h-5 lg:w-5 text-[#9F531B] mr-1" />
                                 Sitio web seguro
                             </p>
                         </div>

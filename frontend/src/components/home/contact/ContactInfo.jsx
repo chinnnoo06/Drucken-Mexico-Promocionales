@@ -3,15 +3,16 @@ import { primaryButton, secondaryButton } from '../../../helpers/StyleClasses';
 import { motion } from "framer-motion"
 import { slideInBottomInView } from "../../../helpers/Motion"
 import { contactDetails } from '../../../data/constants.';
+import { FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa6';
 
 export const ContactInfo = () => {
 
     return (
         <motion.div {...slideInBottomInView} className='w-full md:w-1/2 flex flex-col'>
             <div className='divide-y divide-[#9F531B]/25'>
-                {contactDetails.map(({ icon, label, value, href }) => (
+                {contactDetails.map(({ icon: Icon, label, value, href }) => (
                     <div key={label} className='flex items-center gap-4 py-6'>
-                        <i className={`${icon} text-[#9F531B] text-base w-5 mt-1 text-center`}></i>
+                        <Icon className="h-4 w-4 lg:h-5 lg:w-5 text-[#9F531B] mt-1" />
                         <div className='flex-1'>
                             <p className='text-[10px] lg:text-xs font-semibold tracking-[0.18em] uppercase text-[#1A1615]/75 mb-1'>
                                 {label}
@@ -56,15 +57,15 @@ export const ContactInfo = () => {
                 <div className='flex gap-3'>
                     <a href='https://www.facebook.com/share/1BaikYetVw/?mibextid=wwXIfr' target='_blank' rel='noopener noreferrer' aria-label='Facebook'
                         className="w-10 h-10 rounded-full border border-[#9F531B]/25 text-[#9F531B] flex items-center justify-center hover:bg-[#9F531B] hover:text-white transition-all duration-300">
-                        <i className='fab fa-facebook'></i>
+                        <FaFacebook className="h-4 w-4 lg:h-5 lg:w-5" />
                     </a>
                     <a href='https://www.instagram.com/drucken.promocionales?igsh=eGtjOHFldnR4aGE5' target='_blank' rel='noopener noreferrer' aria-label='Instagram'
                         className='w-10 h-10 rounded-full border border-[#9F531B]/25 text-[#9F531B] flex items-center justify-center hover:bg-[#9F531B] hover:text-white transition-all duration-300'>
-                        <i className='fab fa-instagram'></i>
+                        <FaInstagram className="h-4 w-4 lg:h-5 lg:w-5" />
                     </a>
                     <a href='https://wa.me/523315876207' target='_blank' rel='noopener noreferrer' aria-label='WhatsApp'
                         className='w-10 h-10 rounded-full border border-[#9F531B]/25 text-[#9F531B] flex items-center justify-center hover:bg-[#9F531B] hover:text-white transition-all duration-300'>
-                        <i className='fab fa-whatsapp'></i>
+                        <FaWhatsapp className="h-4 w-4 lg:h-5 lg:w-5" />
                     </a>
                 </div>
             </div>

@@ -4,6 +4,7 @@ import { CategoryForm } from './CategoryForm';
 import { primaryButton, secondaryButton } from '../../helpers/StyleClasses';
 import { ModalTrigger } from "../ui/ModalTrigger"
 import { ConfirmationModal } from '../ui/ConfirmationModal';
+import { FaPenToSquare, FaTrash, FaPlus } from 'react-icons/fa6';
 
 export const MapCategory = ({ categories, loading, adding, setAdding, saveCategory, formErrors, setFormErrors, loadingAction, setEditing, setCategoryEdit, setIdCategoryEdit, removeCategory }) => {
     const [idCategoryDeleted, setIdCategoryDeleted] = useState(null);
@@ -48,7 +49,7 @@ export const MapCategory = ({ categories, loading, adding, setAdding, saveCatego
                         <div className="p-4 flex  justify-between gap-5 items-center">
 
                             <button className={`${secondaryButton} w-full flex items-center justify-center gap-2`} onClick={() => editing(category)}>
-                                <i className="fas fa-edit"></i>
+                                <FaPenToSquare className="h-4 w-4 lg:h-5 lg:w-5" />
                                 Editar
                             </button>
 
@@ -58,7 +59,7 @@ export const MapCategory = ({ categories, loading, adding, setAdding, saveCatego
                                         setIdCategoryDeleted(category._id)
                                         onOpen()
                                     }}>
-                                        <i className="fas fa-trash w-4 h-4"></i>
+                                        <FaTrash className="h-4 w-4 lg:h-5 lg:w-5" />
                                         Eliminar
                                     </button>
                                 )}
@@ -85,7 +86,7 @@ export const MapCategory = ({ categories, loading, adding, setAdding, saveCatego
 
             {!adding && (
                 <button className={`${primaryButton} mt-8 flex items-center justify-center gap-2`} onClick={() => setAdding(true)}>
-                    <i className="fa-solid fa-plus"></i>
+                    <FaPlus className="h-4 w-4 lg:h-5 lg:w-5" />
                     Agregar
                 </button>
             )}

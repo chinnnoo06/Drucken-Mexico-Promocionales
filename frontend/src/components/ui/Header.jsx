@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import DruckenLogo from '../../assets/logodrucken.webp';
 import { useHeaderFooter } from '../../hooks/useHeaderFooter';
+import { FaFacebook, FaInstagram, FaWhatsapp, FaBars, FaXmark } from 'react-icons/fa6';
 
 export const Header = () => {
     const { scrollToSection, navigateToSection, toggleMenu, menuVisible, activeSection, scrolled, isInicio } = useHeaderFooter();
@@ -105,9 +106,9 @@ export const Header = () => {
                     {/* Iconos redes sociales */}
                     <div className='container-social-media hidden lg:flex gap-8 items-center'>
                         {[
-                            { icon: "fab fa-facebook", url: "https://www.facebook.com/share/1BaikYetVw/?mibextid=wwXIfr" },
-                            { icon: "fab fa-instagram", url: "https://www.instagram.com/drucken.promocionales?igsh=eGtjOHFldnR4aGE5" },
-                            { icon: "fab fa-whatsapp", url: "https://wa.me/523315876207" }
+                            { icon: FaFacebook, url: "https://www.facebook.com/share/1BaikYetVw/?mibextid=wwXIfr" },
+                            { icon: FaInstagram, url: "https://www.instagram.com/drucken.promocionales?igsh=eGtjOHFldnR4aGE5" },
+                            { icon: FaWhatsapp, url: "https://wa.me/523315876207" }
                         ].map((social, index) => (
                             <a
                                 key={index}
@@ -116,7 +117,7 @@ export const Header = () => {
                                 rel="noopener noreferrer"
                                 className="text-xl xl:text-2xl text-[#1A1615] hover:text-[#9F531B] transition-colors duration-300 hover:scale-110"
                             >
-                                <i className={social.icon}></i>
+                                <social.icon className="h-4 w-4 lg:h-5 lg:w-5" />
                             </a>
                         ))}
                     </div>
@@ -126,7 +127,7 @@ export const Header = () => {
                         className="nav-responsive flex lg:hidden items-center text-[#9F531B] text-xl xl:text-2xl pr-[0.2rem] cursor-pointer hover:text-[#9F531B]"
                         onClick={toggleMenu}
                     >
-                        <i className="fa-solid fa-bars"></i>
+                        <FaBars className="h-4 w-4 lg:h-5 lg:w-5" />
                     </div>
                 </header>
             </div>
@@ -148,7 +149,7 @@ export const Header = () => {
                             transition-all duration-300
                             group"
                     >
-                        <i className="fa-solid fa-xmark text-sm transition-transform duration-300 group-hover:rotate-180" />
+                        <FaXmark className="h-4 w-4 lg:h-5 lg:w-5 transition-transform duration-300 group-hover:rotate-180" />
 
                     </button>
                 </div>
@@ -236,9 +237,9 @@ export const Header = () => {
                 {/* Redes sociales en menú móvil */}
                 <div className='mt-auto p-4 flex justify-center gap-6 border-t border-[#9F531B]'>
                     {[
-                        { icon: "fab fa-facebook", url: "https://www.facebook.com/share/1BaikYetVw/?mibextid=wwXIfr" },
-                        { icon: "fab fa-instagram", url: "https://www.instagram.com/drucken.promocionales?igsh=eGtjOHFldnR4aGE5" },
-                        { icon: "fab fa-whatsapp", url: "https://wa.me/523315876207" }
+                        { icon: FaFacebook, url: "https://www.facebook.com/share/1BaikYetVw/?mibextid=wwXIfr" },
+                        { icon: FaInstagram, url: "https://www.instagram.com/drucken.promocionales?igsh=eGtjOHFldnR4aGE5" },
+                        { icon: FaWhatsapp, url: "https://wa.me/523315876207" }
                     ].map((social, index) => (
                         <a
                             key={index}
@@ -247,7 +248,7 @@ export const Header = () => {
                             rel="noopener noreferrer"
                             className="text-xl text-[#1A1615] hover:text-[#9F531B] transition-colors duration-300 hover:scale-110"
                         >
-                            <i className={social.icon}></i>
+                            <social.icon className="h-4 w-4 lg:h-5 lg:w-5" />
                         </a>
                     ))}
                 </div>

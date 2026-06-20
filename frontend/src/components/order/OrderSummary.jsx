@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import { useSummary } from '../../hooks/useSummary';
 import { primaryButton, secondaryButton } from '../../helpers/StyleClasses';
+import { FaWhatsapp, FaArrowLeft } from 'react-icons/fa6';
 
 export const OrderSummary = ({ orders }) => {
     const { isDisabled, sendOrder } = useSummary(orders);
@@ -29,7 +30,7 @@ export const OrderSummary = ({ orders }) => {
                             disabled={isDisabled}
                             onClick={sendOrder}
                         >
-                            <i className="fab fa-whatsapp"></i>
+                            <FaWhatsapp className="h-4 w-4 lg:h-5 lg:w-5" />
                             Realizar Pedido
                         </button>
                         {isDisabled && (
@@ -45,7 +46,7 @@ export const OrderSummary = ({ orders }) => {
                             className="no-underline w-full"
                         >
                             <button className={`${secondaryButton} w-full flex gap-2 items-center justify-center`} >
-                                <i className="fas fa-arrow-left"></i>
+                                <FaArrowLeft className="h-4 w-4 lg:h-5 lg:w-5" />
                                 Comprar Más
                             </button>
                         </Link>

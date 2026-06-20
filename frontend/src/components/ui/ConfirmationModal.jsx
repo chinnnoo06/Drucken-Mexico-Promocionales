@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { primaryButton, secondaryButton } from '../../helpers/StyleClasses';
 import { useLockBodyScroll } from '../../hooks/useLockBodyScroll'
+import { FaArrowLeft, FaCheck } from 'react-icons/fa6';
 
 export const ConfirmationModal = ({ onClose, isOpen, onConfirm, title, context }) => {
     useLockBodyScroll(isOpen)
@@ -25,11 +26,11 @@ export const ConfirmationModal = ({ onClose, isOpen, onConfirm, title, context }
 
                     <div className="flex gap-3 justify-center">
                         <button className={`${secondaryButton} flex gap-2 items-center justify-center w-full sm:w-1/2`} onClick={() => onClose()}>
-                            <i className="fa-solid fa-arrow-left"></i>
+                            <FaArrowLeft className="h-4 w-4 lg:h-5 lg:w-5" />
                             Cancelar
                         </button>
                         <button className={`${primaryButton} flex gap-2 items-center justify-center w-full sm:w-1/2`} onClick={() => onConfirm()}>
-                            <i className="fa-solid fa-check"></i>
+                            <FaCheck className="h-4 w-4 lg:h-5 lg:w-5" />
                             Confirmar
                         </button>
                     </div>

@@ -1,6 +1,7 @@
 import React from 'react'
 import { useCategorys } from '../../hooks/useCategorys';
 import { errorSpan, input, label, primaryButton, select } from '../../helpers/StyleClasses';
+import { FaTag, FaCircleExclamation, FaKey, FaAlignLeft, FaPaintbrush, FaList, FaBox, FaRulerVertical, FaRulerCombined, FaLayerGroup, FaPalette, FaPlus, FaTrash, FaImage, FaPencil, FaCirclePlus } from 'react-icons/fa6';
 
 export const ProductForm = ({ handleAddColor, handleRemoveColor, handleColorChange, handleImageChange, sendProduct, formErrors, loading, formData, manageChange, colors, isEdit = false }) => {
     const { categories } = useCategorys();
@@ -12,7 +13,7 @@ export const ProductForm = ({ handleAddColor, handleRemoveColor, handleColorChan
                     <div className="flex flex-col sm:flex-row gap-6">
                         <div className="form-group flex-1">
                             <label htmlFor="name" className={label}>
-                                <i className="fas fa-tag mr-2"></i>
+                                <FaTag className="inline-block h-4 w-4 lg:h-5 lg:w-5 mr-2" />
                                 Nombre
                             </label>
                             <input
@@ -26,7 +27,7 @@ export const ProductForm = ({ handleAddColor, handleRemoveColor, handleColorChan
                             />
                             {formErrors.name && (
                                 <span className={errorSpan}>
-                                    <i className="fas fa-exclamation-circle mr-1"></i>
+                                    <FaCircleExclamation className="inline-block h-4 w-4 lg:h-5 lg:w-5 mr-1" />
                                     {formErrors.name}
                                 </span>
                             )}
@@ -34,7 +35,7 @@ export const ProductForm = ({ handleAddColor, handleRemoveColor, handleColorChan
 
                         <div className="form-group flex-1">
                             <label htmlFor="key" className={label}>
-                                <i className="fa-solid fa-key mr-2"></i>
+                                <FaKey className="inline-block h-4 w-4 lg:h-5 lg:w-5 mr-2" />
                                 Clave
                             </label>
                             <input
@@ -48,7 +49,7 @@ export const ProductForm = ({ handleAddColor, handleRemoveColor, handleColorChan
                             />
                             {formErrors.key && (
                                 <span className={errorSpan}>
-                                    <i className="fas fa-exclamation-circle mr-1"></i>
+                                    <FaCircleExclamation className="inline-block h-4 w-4 lg:h-5 lg:w-5 mr-1" />
                                     {formErrors.key}
                                 </span>
                             )}
@@ -57,7 +58,7 @@ export const ProductForm = ({ handleAddColor, handleRemoveColor, handleColorChan
 
                     <div className="form-group">
                         <label htmlFor="description" className={label}>
-                            <i className="fas fa-align-left mr-2"></i>
+                            <FaAlignLeft className="inline-block h-4 w-4 lg:h-5 lg:w-5 mr-2" />
                             Descripción
                         </label>
                         <textarea
@@ -71,14 +72,14 @@ export const ProductForm = ({ handleAddColor, handleRemoveColor, handleColorChan
                         />
                         {formErrors.description && (
                             <span className={errorSpan}>
-                                <i className="fas fa-exclamation-circle mr-1"></i>
+                                <FaCircleExclamation className="inline-block h-4 w-4 lg:h-5 lg:w-5 mr-1" />
                                 {formErrors.description}
                             </span>
                         )}
                     </div>
                     <div className="form-group">
                         <label htmlFor="printingTechnique" className={label}>
-                            <i className="fa-solid fa-paintbrush mr-2"></i>
+                            <FaPaintbrush className="inline-block h-4 w-4 lg:h-5 lg:w-5 mr-2" />
                             Técnica(s) de Impresión
                         </label>
                         <input
@@ -92,7 +93,7 @@ export const ProductForm = ({ handleAddColor, handleRemoveColor, handleColorChan
                         />
                         {formErrors.printingTechnique && (
                             <span className={errorSpan}>
-                                <i className="fas fa-exclamation-circle mr-1"></i>
+                                <FaCircleExclamation className="inline-block h-4 w-4 lg:h-5 lg:w-5 mr-1" />
                                 {formErrors.printingTechnique}
                             </span>
                         )}
@@ -101,7 +102,7 @@ export const ProductForm = ({ handleAddColor, handleRemoveColor, handleColorChan
                     <div className="flex flex-col sm:flex-row gap-6">
                         <div className="form-group flex-1">
                             <label htmlFor="category" className={label}>
-                                <i className="fa-solid fa-list mr-2"></i>
+                                <FaList className="inline-block h-4 w-4 lg:h-5 lg:w-5 mr-2" />
                                 Categoria
                             </label>
                             <div className="relative">
@@ -128,7 +129,7 @@ export const ProductForm = ({ handleAddColor, handleRemoveColor, handleColorChan
                             </div>
                             {formErrors.category && (
                                 <span className={errorSpan}>
-                                    <i className="fas fa-exclamation-circle mr-1"></i>
+                                    <FaCircleExclamation className="inline-block h-4 w-4 lg:h-5 lg:w-5 mr-1" />
                                     {formErrors.category}
                                 </span>
                             )}
@@ -136,7 +137,7 @@ export const ProductForm = ({ handleAddColor, handleRemoveColor, handleColorChan
 
                         <div className="form-group flex-1">
                             <label htmlFor="material" className={label}>
-                                <i className="fas fa-box mr-2"></i>
+                                <FaBox className="inline-block h-4 w-4 lg:h-5 lg:w-5 mr-2" />
                                 Material
                             </label>
                             <input
@@ -150,7 +151,7 @@ export const ProductForm = ({ handleAddColor, handleRemoveColor, handleColorChan
                             />
                             {formErrors.material && (
                                 <span className={errorSpan}>
-                                    <i className="fas fa-exclamation-circle mr-1"></i>
+                                    <FaCircleExclamation className="inline-block h-4 w-4 lg:h-5 lg:w-5 mr-1" />
                                     {formErrors.material}
                                 </span>
                             )}
@@ -160,7 +161,7 @@ export const ProductForm = ({ handleAddColor, handleRemoveColor, handleColorChan
                     <div className="flex flex-col sm:flex-row gap-6">
                         <div className="form-group flex-1">
                             <label htmlFor="measures" className={label}>
-                                <i className="fa-solid fa-ruler-vertical mr-2"></i>
+                                <FaRulerVertical className="inline-block h-4 w-4 lg:h-5 lg:w-5 mr-2" />
                                 Medidas
                             </label>
                             <input
@@ -174,7 +175,7 @@ export const ProductForm = ({ handleAddColor, handleRemoveColor, handleColorChan
                             />
                             {formErrors.measures && (
                                 <span className={errorSpan}>
-                                    <i className="fas fa-exclamation-circle mr-1"></i>
+                                    <FaCircleExclamation className="inline-block h-4 w-4 lg:h-5 lg:w-5 mr-1" />
                                     {formErrors.measures}
                                 </span>
                             )}
@@ -182,7 +183,7 @@ export const ProductForm = ({ handleAddColor, handleRemoveColor, handleColorChan
 
                         <div className="form-group flex-1">
                             <label htmlFor="printingMeasures" className={label}>
-                                <i className="fa-solid fa-ruler-combined mr-2"></i>
+                                <FaRulerCombined className="inline-block h-4 w-4 lg:h-5 lg:w-5 mr-2" />
                                 Medidas de Impresión
                             </label>
                             <input
@@ -196,7 +197,7 @@ export const ProductForm = ({ handleAddColor, handleRemoveColor, handleColorChan
                             />
                             {formErrors.printingMeasures && (
                                 <span className={errorSpan}>
-                                    <i className="fas fa-exclamation-circle mr-1"></i>
+                                    <FaCircleExclamation className="inline-block h-4 w-4 lg:h-5 lg:w-5 mr-1" />
                                     {formErrors.printingMeasures}
                                 </span>
                             )}
@@ -205,7 +206,7 @@ export const ProductForm = ({ handleAddColor, handleRemoveColor, handleColorChan
 
                     <div className="form-group flex-1">
                         <label htmlFor="minQuantity" className={label}>
-                            <i className="fa-solid fa-layer-group mr-2"></i>
+                            <FaLayerGroup className="inline-block h-4 w-4 lg:h-5 lg:w-5 mr-2" />
                             Cantidad mínima
                         </label>
                         <input
@@ -219,7 +220,7 @@ export const ProductForm = ({ handleAddColor, handleRemoveColor, handleColorChan
                         />
                         {formErrors.minQuantity && (
                             <span className={errorSpan}>
-                                <i className="fas fa-exclamation-circle mr-1"></i>
+                                <FaCircleExclamation className="inline-block h-4 w-4 lg:h-5 lg:w-5 mr-1" />
                                 {formErrors.minQuantity}
                             </span>
                         )}
@@ -228,7 +229,7 @@ export const ProductForm = ({ handleAddColor, handleRemoveColor, handleColorChan
                     <div className="colors-section">
                         <div className="flex justify-between items-center">
                             <label className={label}>
-                                <i className="fas fa-palette mr-2"></i>
+                                <FaPalette className="inline-block h-4 w-4 lg:h-5 lg:w-5 mr-2" />
                                 Colores del producto
                             </label>
                             <button
@@ -236,7 +237,7 @@ export const ProductForm = ({ handleAddColor, handleRemoveColor, handleColorChan
                                 onClick={handleAddColor}
                                 className={`${primaryButton} flex gap-2 items-center justify-center !text-xs !lg:text-sm`}
                             >
-                                <i className="fa-solid fa-plus"></i>
+                                <FaPlus className="h-4 w-4 lg:h-5 lg:w-5" />
                                 Agregar
                             </button>
                         </div>
@@ -251,7 +252,7 @@ export const ProductForm = ({ handleAddColor, handleRemoveColor, handleColorChan
                                             onClick={() => handleRemoveColor(index)}
                                             className="text-red-500 hover:text-red-700 text-[10px] lg:text-xs"
                                         >
-                                            <i className="fa-solid fa-trash"></i> Eliminar
+                                            <FaTrash className="inline-block h-4 w-4 lg:h-5 lg:w-5" /> Eliminar
                                         </button>
                                     )}
                                 </div>
@@ -269,7 +270,7 @@ export const ProductForm = ({ handleAddColor, handleRemoveColor, handleColorChan
                                         />
                                         {formErrors[`colors[${index}].color`] && (
                                             <span className={errorSpan}>
-                                                <i className="fas fa-exclamation-circle mr-1"></i>
+                                                <FaCircleExclamation className="inline-block h-4 w-4 lg:h-5 lg:w-5 mr-1" />
                                                 {formErrors[`colors[${index}].color`]}
                                             </span>
                                         )}
@@ -296,7 +297,7 @@ export const ProductForm = ({ handleAddColor, handleRemoveColor, handleColorChan
                                         </div>
                                         {formErrors[`colors[${index}].hex`] && (
                                             <span className={errorSpan}>
-                                                <i className="fas fa-exclamation-circle mr-1"></i>
+                                                <FaCircleExclamation className="inline-block h-4 w-4 lg:h-5 lg:w-5 mr-1" />
                                                 {formErrors[`colors[${index}].hex`]}
                                             </span>
                                         )}
@@ -322,7 +323,7 @@ export const ProductForm = ({ handleAddColor, handleRemoveColor, handleColorChan
 
                                         {formErrors[`colors[${index}].image`] && (
                                             <span className={errorSpan}>
-                                                <i className="fas fa-exclamation-circle mr-1"></i>
+                                                <FaCircleExclamation className="inline-block h-4 w-4 lg:h-5 lg:w-5 mr-1" />
                                                 {formErrors[`colors[${index}].image`]}
                                             </span>
                                         )}
@@ -336,7 +337,7 @@ export const ProductForm = ({ handleAddColor, handleRemoveColor, handleColorChan
                 {formData.colors.length > 1 && (
                     <div className="form-group">
                         <label htmlFor="minQuantity" className={label}>
-                            <i className="fa-solid fa-image mr-2"></i>
+                            <FaImage className="inline-block h-4 w-4 lg:h-5 lg:w-5 mr-2" />
                             Imagen general de todos los colores
                         </label>
                         <input
@@ -356,7 +357,7 @@ export const ProductForm = ({ handleAddColor, handleRemoveColor, handleColorChan
                         )}
                         {formErrors.generalImage && (
                             <span className={errorSpan}>
-                                <i className="fas fa-exclamation-circle mr-1"></i>
+                                <FaCircleExclamation className="inline-block h-4 w-4 lg:h-5 lg:w-5 mr-1" />
                                 {formErrors.generalImage}
                             </span>
                         )}
@@ -369,7 +370,7 @@ export const ProductForm = ({ handleAddColor, handleRemoveColor, handleColorChan
                         type="submit"
                         disabled={loading}
                     >
-                        <i className={`fa-solid ${isEdit ? 'fa-pencil' : 'fa-circle-plus'}`}></i>
+                        {isEdit ? <FaPencil className="h-4 w-4 lg:h-5 lg:w-5" /> : <FaCirclePlus className="h-4 w-4 lg:h-5 lg:w-5" />}
                         {loading ? 'Cargando...' : isEdit ? 'Actualizar Producto' : 'Crear Producto'}
                     </button>
                 </div>

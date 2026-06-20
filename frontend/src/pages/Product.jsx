@@ -8,6 +8,7 @@ import { InfoProductAdmin } from '../components/product/InfoProductAdmin';
 import { Fetch } from '../helpers/Fetch';
 import { Global } from '../helpers/Global';
 import { Seo } from '../components/seo/Seo';
+import { FaArrowLeft } from 'react-icons/fa6';
 
 export const Product = () => {
     const { id } = useParams();
@@ -72,7 +73,7 @@ export const Product = () => {
                             }}
                         >
                             <div className="flex items-center gap-2">
-                                <i className="fas fa-arrow-left text-xs lg:text-base"></i>
+                                <FaArrowLeft className="h-4 w-4 lg:h-5 lg:w-5" />
                                 <span className="font-medium text-sm lg:text-base">Volver al catálogo</span>
                             </div>
                         </Link>

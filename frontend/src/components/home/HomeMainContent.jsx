@@ -4,6 +4,7 @@ import DruckenLogo from '../../assets/logodrucken.webp';
 import { primaryButton, secondaryButton } from '../../helpers/StyleClasses';
 import { motion } from "framer-motion"
 import { slideInBottom } from "../../helpers/Motion"
+import { FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa6';
 
 export const HomeMainContent = () => {
     const scrollToSection = () => {
@@ -56,9 +57,9 @@ export const HomeMainContent = () => {
                 </div>
 
                 <div className='socialMedia-container flex justify-center sm:justify-start gap-4 text-xl lg:text-2xl'>
-                    <a href='https://www.facebook.com/share/1BaikYetVw/?mibextid=wwXIfr' target='_blank' rel='noopener noreferrer' className='text-[#1A1615] hover:text-[#9F531B] transition-all duration-300 hover:scale-110 hover:rotate-3'><i className='fab fa-facebook'></i></a>
-                    <a href='https://www.instagram.com/drucken.promocionales?igsh=eGtjOHFldnR4aGE5' target='_blank' rel='noopener noreferrer' className='text-[#1A1615] hover:text-[#9F531B] transition-all duration-300 hover:scale-110 hover:rotate-3'><i className='fab fa-instagram'></i></a>
-                    <a href='https://wa.me/523315876207' target='_blank' rel='noopener noreferrer' className='text-[#1A1615] hover:text-[#9F531B] transition-all duration-300 hover:scale-110 hover:rotate-3'><i className='fab fa-whatsapp'></i></a>
+                    <a href='https://www.facebook.com/share/1BaikYetVw/?mibextid=wwXIfr' target='_blank' rel='noopener noreferrer' className='text-[#1A1615] hover:text-[#9F531B] transition-all duration-300 hover:scale-110 hover:rotate-3'><FaFacebook className="h-4 w-4 lg:h-5 lg:w-5" /></a>
+                    <a href='https://www.instagram.com/drucken.promocionales?igsh=eGtjOHFldnR4aGE5' target='_blank' rel='noopener noreferrer' className='text-[#1A1615] hover:text-[#9F531B] transition-all duration-300 hover:scale-110 hover:rotate-3'><FaInstagram className="h-4 w-4 lg:h-5 lg:w-5" /></a>
+                    <a href='https://wa.me/523315876207' target='_blank' rel='noopener noreferrer' className='text-[#1A1615] hover:text-[#9F531B] transition-all duration-300 hover:scale-110 hover:rotate-3'><FaWhatsapp className="h-4 w-4 lg:h-5 lg:w-5" /></a>
                 </div>
             </motion.div>
 

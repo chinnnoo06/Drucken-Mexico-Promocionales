@@ -10,6 +10,7 @@ import bordado from '../assets/images_services/bordado.webp';
 import rotulosPublicitarios from '../assets/images_services/rotulosPublicitarios.webp';
 import diseñosEspeciales3D from '../assets/images_services/diseñosEspeciales3D.webp';
 import impresionDTFTextil from '../assets/images_services/impresionDTFTextil.webp';
+import { FaPhone, FaEnvelope, FaLocationDot } from 'react-icons/fa6';
 
 export const catalogs = [
     {
@@ -102,19 +103,19 @@ export const services = [
 
 export const contactDetails = [
     {
-        icon: 'fas fa-phone',
+        icon: FaPhone,
         label: 'Teléfono',
         value: '+52 33 1587 6207',
         href: 'tel:+523315876207',
     },
     {
-        icon: 'fas fa-envelope',
+        icon: FaEnvelope,
         label: 'Email',
         value: 'drucken2016@hotmail.com',
         href: 'mailto:drucken2016@hotmail.com',
     },
     {
-        icon: 'fas fa-location-dot',
+        icon: FaLocationDot,
         label: 'Dirección',
         value: 'Ramón Corona 454, Unidad República, Zapopan, Jalisco 45146',
     },

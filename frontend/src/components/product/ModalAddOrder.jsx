@@ -4,6 +4,7 @@ import { GlobalImage } from '../../helpers/Global';
 import ReactDOM from 'react-dom';
 import { primaryButton, secondaryButton } from '../../helpers/StyleClasses';
 import { useLockBodyScroll } from '../../hooks/useLockBodyScroll'
+import { FaArrowLeft, FaBagShopping } from 'react-icons/fa6';
 
 export const ModalAddOrder = ({ isOpen, onClose, order }) => {
     useLockBodyScroll(isOpen)
@@ -70,12 +71,12 @@ export const ModalAddOrder = ({ isOpen, onClose, order }) => {
                             className={`${secondaryButton} flex gap-2 items-center justify-center w-full sm:w-1/2`}
                             onClick={() => setShowModal(false)}
                         >
-                            <i className="fa-solid fa-arrow-left"></i>
+                            <FaArrowLeft className="h-4 w-4 lg:h-5 lg:w-5" />
                             Seguir comprando
                         </button>
 
                         <Link to="/pedido" className={`${primaryButton} flex gap-2 items-center justify-center w-full sm:w-1/2`}>
-                            <i className="fa-solid fa-bag-shopping"></i>
+                            <FaBagShopping className="h-4 w-4 lg:h-5 lg:w-5" />
                             Ver mi pedido
                         </Link>
                     </div>

@@ -1,4 +1,5 @@
 import { catalogs } from '../../data/constants.';
+import { FaSquareUpRight } from 'react-icons/fa6';
 
 export const CatalogsLinks = () => {
     return (
@@ -31,7 +32,7 @@ export const CatalogsLinks = () => {
                     </div>
 
                     <div className={`w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#9F531B] flex items-center justify-center text-white text-xs transform transition-transform duration-300 group-hover:translate-x-0.5 flex-shrink-0`}>
-                        <i className="fa-solid fa-square-up-right"></i>
+                        <FaSquareUpRight className="h-3 w-3 lg:h-3.5 lg:w-3.5" />
                     </div>
                 </a>
             ))}

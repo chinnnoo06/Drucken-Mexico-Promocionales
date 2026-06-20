@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useForm } from '../../hooks/useForm';
 import { input, primaryButton } from '../../helpers/StyleClasses';
+import { FaCircleExclamation } from 'react-icons/fa6';
 
 export const CategoryForm = ({ setAdding, setEditing, saveCategory, formErrors, loadingAction, categoryEdit, idCategoryEdit, removeCategory }) => {
     const { formData, setFormData, manageChange } = useForm({
@@ -27,7 +28,7 @@ export const CategoryForm = ({ setAdding, setEditing, saveCategory, formErrors, 
                     />
                     {formErrors.name && (
                         <span className="text-red-500 text-xs flex items-center mt-1">
-                            <i className="fas fa-exclamation-circle mr-1"></i>
+                            <FaCircleExclamation className="inline-block h-4 w-4 lg:h-5 lg:w-5 mr-1" />
                             {formErrors.name}
                         </span>
                     )}

@@ -3,6 +3,7 @@ import { useForm } from '../../hooks/useForm';
 import { useLoginForm } from '../../hooks/useLoginForm';
 import { useEffect } from 'react';
 import { input, label, primaryButton } from '../../helpers/StyleClasses';
+import { FaUser, FaCircleExclamation, FaLock, FaEye, FaEyeSlash, FaRightToBracket } from 'react-icons/fa6';
 
 export const LoginForm = () => {
     const navigate = useNavigate();
@@ -29,7 +30,7 @@ export const LoginForm = () => {
                     <div className="flex-1 space-y-6">
                         <div className="form-group">
                             <label htmlFor="username" className={label}>
-                                <i className="fas fa-user mr-2"></i>
+                                <FaUser className="inline-block h-4 w-4 lg:h-5 lg:w-5 mr-2" />
                                 Usuario
                             </label>
                             <input
@@ -43,7 +44,7 @@ export const LoginForm = () => {
                             />
                             {formErrors.username && (
                                 <span className="text-red-500 text-xs flex items-center mt-1">
-                                    <i className="fas fa-exclamation-circle mr-1"></i>
+                                    <FaCircleExclamation className="inline-block h-4 w-4 lg:h-5 lg:w-5 mr-1" />
                                     {formErrors.username}
                                 </span>
                             )}
@@ -52,7 +53,7 @@ export const LoginForm = () => {
 
                         <div className="form-group">
                             <label htmlFor="password" className={label}>
-                                <i className="fas fa-lock mr-2"></i>
+                                <FaLock className="inline-block h-4 w-4 lg:h-5 lg:w-5 mr-2" />
                                 Contraseña
                             </label>
 
@@ -71,12 +72,12 @@ export const LoginForm = () => {
                                     className="absolute inset-y-0 right-3 flex items-center cursor-pointer text-[#9F531B] hover:text-[#7C3E13]"
                                     onClick={passwordVisibility}
                                 >
-                                    <i className={showPassword ? "fas fa-eye-slash" : "fas fa-eye"}></i>
+                                    {showPassword ? <FaEyeSlash className="h-4 w-4 lg:h-5 lg:w-5" /> : <FaEye className="h-4 w-4 lg:h-5 lg:w-5" />}
                                 </span>
                             </div>
                             {formErrors.password && (
                                 <span className="text-red-500 text-xs flex items-center mt-1">
-                                    <i className="fas fa-exclamation-circle mr-1"></i>
+                                    <FaCircleExclamation className="inline-block h-4 w-4 lg:h-5 lg:w-5 mr-1" />
                                     {formErrors.password}
                                 </span>
                             )}
@@ -88,7 +89,7 @@ export const LoginForm = () => {
                             type="submit"
                             className={`${primaryButton} w-full flex items-center justify-center gap-2`}
                         >
-                            <i className="fa-solid fa-right-to-bracket"></i>
+                            <FaRightToBracket className="h-4 w-4 lg:h-5 lg:w-5" />
 
                             {loading ? 'Cargando...' : 'Entrar'}
                         </button>

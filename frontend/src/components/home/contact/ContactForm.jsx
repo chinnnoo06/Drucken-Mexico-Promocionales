@@ -4,6 +4,7 @@ import { useContactForm } from '../../../hooks/useContactForm';
 import { errorSpan, input, label, primaryButton } from '../../../helpers/StyleClasses';
 import { motion } from "framer-motion"
 import { slideInBottomInView } from "../../../helpers/Motion"
+import { FaCircleExclamation, FaWhatsapp } from 'react-icons/fa6';
 
 export const ContactForm = () => {
     const { formData, setFormData, manageChange } = useForm({
@@ -32,7 +33,7 @@ export const ContactForm = () => {
                     />
                     {formErrors.name && (
                         <span className={errorSpan}>
-                            <i className="fas fa-exclamation-circle mr-1"></i>
+                            <FaCircleExclamation className="inline-block h-4 w-4 lg:h-5 lg:w-5 mr-1" />
                             {formErrors.name}
                         </span>
                     )}
@@ -53,7 +54,7 @@ export const ContactForm = () => {
                     />
                     {formErrors.tittle && (
                         <span className={errorSpan}>
-                            <i className="fas fa-exclamation-circle mr-1"></i>
+                            <FaCircleExclamation className="inline-block h-4 w-4 lg:h-5 lg:w-5 mr-1" />
                             {formErrors.tittle}
                         </span>
                     )}
@@ -74,7 +75,7 @@ export const ContactForm = () => {
                     />
                     {formErrors.message && (
                         <span className={errorSpan}>
-                            <i className="fas fa-exclamation-circle mr-1"></i>
+                            <FaCircleExclamation className="inline-block h-4 w-4 lg:h-5 lg:w-5 mr-1" />
                             {formErrors.message}
                         </span>
                     )}
@@ -84,7 +85,7 @@ export const ContactForm = () => {
                     type="submit"
                     className={`${primaryButton} w-full flex items-center justify-center gap-2`}
                 >
-                    <i className="fab fa-whatsapp"></i>
+                    <FaWhatsapp className="h-4 w-4 lg:h-5 lg:w-5" />
                     Enviar por WhatsApp
                 </button>
             </form>

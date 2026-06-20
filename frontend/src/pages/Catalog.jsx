@@ -6,6 +6,7 @@ import { useScrollElementFromLocation } from '../hooks/useScrollElementFromLocat
 import { CatalogsLinks } from '../components/catalog/CatalogsLinks';
 import { input } from '../helpers/StyleClasses';
 import { Seo } from '../components/seo/Seo';
+import { FaMagnifyingGlass } from 'react-icons/fa6';
 
 export const Catalog = () => {
   const isAdmin = location.pathname.startsWith('/admin/catalogo')
@@ -38,7 +39,7 @@ export const Catalog = () => {
       <div className='flex flex-col md:flex-row w-full gap-2 mb-8'>
         <div className="relative flex-grow">
           <span className="absolute top-1/2 left-4 -translate-y-1/2 text-[#1A1615]/75">
-            <i className="fa-solid fa-magnifying-glass text-xs lg:text-sm"></i>
+            <FaMagnifyingGlass className="h-4 w-4 lg:h-5 lg:w-5" />
           </span>
           <input
             type="text"

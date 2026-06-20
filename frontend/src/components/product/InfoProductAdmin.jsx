@@ -6,6 +6,7 @@ import { Global } from '../../helpers/Global';
 import { useNavigate } from 'react-router-dom';
 import { primaryButton } from '../../helpers/StyleClasses';
 import { ModalTrigger } from "../ui/ModalTrigger"
+import { FaPenToSquare, FaTrash } from 'react-icons/fa6';
 
 export const InfoProductAdmin = ({ product, selectedColor, setSelectedColor }) => {
     const navigate = useNavigate();
@@ -91,14 +92,14 @@ export const InfoProductAdmin = ({ product, selectedColor, setSelectedColor }) =
                             })
                         }}
                     >
-                        <i className="fas fa-edit"></i>
+                        <FaPenToSquare className="h-4 w-4 lg:h-5 lg:w-5" />
                         Editar
                     </button>
 
                     <ModalTrigger
                         renderTrigger={(onOpen) => (
                             <button className={`${primaryButton} flex gap-2 items-center justify-center w-1/2`} onClick={() => onOpen()}>
-                                <i className="fas fa-trash w-4 h-4"></i>
+                                <FaTrash className="h-4 w-4 lg:h-5 lg:w-5" />
                                 Eliminar
                             </button>
                         )}
