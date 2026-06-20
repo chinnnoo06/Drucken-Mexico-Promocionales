@@ -11,7 +11,7 @@ export const ContentAbout = () => {
                 <motion.div {...slideInBottomInView} className='flex-1 bg-gradient-to-br from-[#9F531B]/5 to-[#7C3E13]/10 border border-[#9F531B]/25 rounded-lg shadow-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl'>
                     <div className='p-8 flex flex-col items-center'>
                         <div className='mb-6 p-4 bg-[#eddcca] rounded-full'>
-                            <FaEye className="h-9 w-9 lg:h-10 lg:w-10 text-[#9F531B]" />
+                            <FaEye className="h-9 w-9 lg:h-10 lg:w-10 text-[#9F531B]" aria-hidden="true" />
                         </div>
                         <h3 className='text-[#9F531B] font-semibold text-xl lg:text-2xl mb-4'>Visión</h3>
                         <p className='text-[#1A1615]/75 text-center text-sm lg:text-base leading-relaxed'>
@@ -25,7 +25,7 @@ export const ContentAbout = () => {
                 <motion.div {...slideInBottomInView} className='flex-1 bg-gradient-to-br from-[#9F531B]/5 to-[#7C3E13]/10 border border-[#9F531B]/25 rounded-lg shadow-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl'>
                     <div className='p-8 flex flex-col items-center'>
                         <div className='mb-6 p-4 bg-[#eddcca] rounded-full'>
-                            <FaBullseye className="h-9 w-9 lg:h-10 lg:w-10 text-[#9F531B]" />
+                            <FaBullseye className="h-9 w-9 lg:h-10 lg:w-10 text-[#9F531B]" aria-hidden="true" />
                         </div>
                         <h3 className='text-[#9F531B] font-semibold text-xl lg:text-2xl mb-4'>Misión</h3>
                         <p className='text-[#1A1615]/75 text-center text-sm lg:text-base leading-relaxed'>

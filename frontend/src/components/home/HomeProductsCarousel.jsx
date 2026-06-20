@@ -31,9 +31,11 @@ export const HomeProductsCarousel = () => {
           {showLeftButton && (
             <button
               onClick={() => scroll('left')}
+              type="button"
+              aria-label="Ver productos anteriores"
               className="absolute left-0 top-1/2 -translate-y-1/2 bg-[#9F531B]/90 text-white p-2 rounded-full z-10 hover:bg-[#7C3E13] w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center transition-all duration-200 shadow-lg backdrop-blur-sm"
             >
-              <FaAngleLeft className="h-4 w-4 lg:h-5 lg:w-5" />
+              <FaAngleLeft className="h-4 w-4 lg:h-5 lg:w-5" aria-hidden="true" />
             </button>
           )}
 
@@ -54,6 +56,9 @@ export const HomeProductsCarousel = () => {
                   <img
                     src={product.colors.length > 1 ? `${GlobalImage.url}${product.generalImage}` : `${GlobalImage.url}${product.colors[0].image}`}
                     alt={product.name}
+                    loading="lazy"
+                    width={600}
+                    height={800}
                     className="absolute w-full h-full object-cover object-center group-hover:opacity-90 transition-opacity duration-200"
                   />
                   <button className={thirdButton}
@@ -82,9 +87,11 @@ export const HomeProductsCarousel = () => {
           {showRightButton && (
             <button
               onClick={() => scroll('right')}
+              type="button"
+              aria-label="Ver más productos"
               className="absolute right-0 top-1/2 -translate-y-1/2 bg-[#9F531B]/90 text-white p-2 rounded-full z-10 hover:bg-[#7C3E13] w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center transition-all duration-200 shadow-lg backdrop-blur-sm"
             >
-              <FaAngleRight className="h-4 w-4 lg:h-5 lg:w-5" />
+              <FaAngleRight className="h-4 w-4 lg:h-5 lg:w-5" aria-hidden="true" />
             </button>
           )}
         </motion.div>

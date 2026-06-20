@@ -11,7 +11,9 @@ export const HeaderLogin = () => {
                         <img
                             src={DruckenLogo}
                             alt="Logo de Drucken México"
-                            className="h-10 lg:h-12 object-contain"
+                            width={2512}
+                            height={1518}
+                            className="h-10 lg:h-12 w-auto object-contain"
                         />
                     </Link>
 

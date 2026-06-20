@@ -38,6 +38,9 @@ export const PaginationButtons = ({ totalPages, currentPage, setPage, bool }) =>
                 <button
                     key={i}
                     onClick={() => goToPage(i)}
+                    type="button"
+                    aria-label={`Ir a la página ${i}`}
+                    aria-current={currentPage === i ? 'page' : undefined}
                     className={`px-4 py-1.5 text-xs lg:text-sm font-medium rounded-lg  ${currentPage === i
                         ? 'bg-[#9F531B] text-[#EEEEEF] hover:bg-[#7C3E13]'
                         : 'bg-transparent border border-[#9F531B] text-[#1A1615]/75 hover:bg-[#9F531B] hover:text-[#EEEEEF] transition'
@@ -54,14 +57,16 @@ export const PaginationButtons = ({ totalPages, currentPage, setPage, bool }) =>
     return (
         <>
             {bool && (
-                <div className="flex justify-center items-center gap-2 mt-8">
+                <nav className="flex justify-center items-center gap-2 mt-8" aria-label="Paginación del catálogo">
                     {/* Botón anterior */}
                     <button
                         onClick={() => goToPage(currentPage - 1)}
                         disabled={currentPage === 1}
+                        type="button"
+                        aria-label="Página anterior"
                         className={`px-4 py-1 text-xs lg:text-sm font-medium rounded-lg ${currentPage === 1 ? 'bg-[#9F531B]/50 text-[#EEEEEF]/50 cursor-not-allowed' : 'bg-[#9F531B] text-[#EEEEEF] hover:bg-[#7C3E13]'}`}
                     >
-                        &lt;
+                        <span aria-hidden="true">&lt;</span>
                     </button>
 
                     {/* Botones de página */}
@@ -71,11 +76,13 @@ export const PaginationButtons = ({ totalPages, currentPage, setPage, bool }) =>
                     <button
                         onClick={() => goToPage(currentPage + 1)}
                         disabled={currentPage === totalPages}
+                        type="button"
+                        aria-label="Página siguiente"
                         className={`px-4 py-1 text-xs lg:text-sm font-medium rounded-lg  ${currentPage === totalPages ? 'bg-[#9F531B]/50 text-[#EEEEEF]/50 cursor-not-allowed' : 'bg-[#9F531B] text-[#EEEEEF] hover:bg-[#7C3E13]'}`}
                     >
-                        &gt;
+                        <span aria-hidden="true">&gt;</span>
                     </button>
-                </div>
+                </nav>
             )}
         </>
 

@@ -57,9 +57,9 @@ export const HomeMainContent = () => {
                 </div>
 
                 <div className='socialMedia-container flex justify-center sm:justify-start gap-4 text-xl lg:text-2xl'>
-                    <a href='https://www.facebook.com/share/1BaikYetVw/?mibextid=wwXIfr' target='_blank' rel='noopener noreferrer' className='text-[#1A1615] hover:text-[#9F531B] transition-all duration-300 hover:scale-110 hover:rotate-3'><FaFacebook className="h-4 w-4 lg:h-5 lg:w-5" /></a>
-                    <a href='https://www.instagram.com/drucken.promocionales?igsh=eGtjOHFldnR4aGE5' target='_blank' rel='noopener noreferrer' className='text-[#1A1615] hover:text-[#9F531B] transition-all duration-300 hover:scale-110 hover:rotate-3'><FaInstagram className="h-4 w-4 lg:h-5 lg:w-5" /></a>
-                    <a href='https://wa.me/523315876207' target='_blank' rel='noopener noreferrer' className='text-[#1A1615] hover:text-[#9F531B] transition-all duration-300 hover:scale-110 hover:rotate-3'><FaWhatsapp className="h-4 w-4 lg:h-5 lg:w-5" /></a>
+                    <a href='https://www.facebook.com/share/1BaikYetVw/?mibextid=wwXIfr' target='_blank' rel='noopener noreferrer' aria-label='Síguenos en Facebook (se abre en una pestaña nueva)' className='text-[#1A1615] hover:text-[#9F531B] transition-all duration-300 hover:scale-110 hover:rotate-3'><FaFacebook className="h-4 w-4 lg:h-5 lg:w-5" aria-hidden="true" /></a>
+                    <a href='https://www.instagram.com/drucken.promocionales?igsh=eGtjOHFldnR4aGE5' target='_blank' rel='noopener noreferrer' aria-label='Síguenos en Instagram (se abre en una pestaña nueva)' className='text-[#1A1615] hover:text-[#9F531B] transition-all duration-300 hover:scale-110 hover:rotate-3'><FaInstagram className="h-4 w-4 lg:h-5 lg:w-5" aria-hidden="true" /></a>
+                    <a href='https://wa.me/523315876207' target='_blank' rel='noopener noreferrer' aria-label='Escríbenos por WhatsApp (se abre en una pestaña nueva)' className='text-[#1A1615] hover:text-[#9F531B] transition-all duration-300 hover:scale-110 hover:rotate-3'><FaWhatsapp className="h-4 w-4 lg:h-5 lg:w-5" aria-hidden="true" /></a>
                 </div>
             </motion.div>
 
@@ -87,6 +87,8 @@ export const HomeMainContent = () => {
                         <img
                             src={DruckenLogo}
                             alt='Logo Drucken México'
+                            width={2512}
+                            height={1518}
                             className='relative w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.03] drop-shadow-[0_10px_25px_rgba(159,83,27,0.18)]'
                         />
                     </div>

@@ -10,6 +10,8 @@ export const ImgProduct = ({product, selectedColor}) => {
                     src={`${GlobalImage.url}${product.colors[selectedColor].image}`}
                     alt={product.name}
                     loading="lazy"
+                    width={500}
+                    height={500}
                     className="w-full h-full object-contain"
                 />
             </div>

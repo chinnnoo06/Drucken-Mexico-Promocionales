@@ -14,11 +14,11 @@ export const ModalAddOrder = ({ isOpen, onClose, order }) => {
         transition-opacity duration-300 ${isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
             onClick={onClose}>
 
-            <div className={`max-w-xl w-full bg-[#FFF9F5] rounded-lg shadow-lg p-4 transition-all duration-300 ease-out origin-center 
+            <div role="dialog" aria-modal="true" aria-labelledby="add-order-modal-title" className={`max-w-xl w-full bg-[#FFF9F5] rounded-lg shadow-lg p-4 transition-all duration-300 ease-out origin-center
                 ${isOpen ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-95 translate-y-2"}`} onClick={(e) => e.stopPropagation()}>
-                
+
                 <div className='flex flex-col text-center'>
-                    <h3 className="text-[#9F531B] font-semibold text-lg lg:text-xl mb-4">
+                    <h3 id="add-order-modal-title" className="text-[#9F531B] font-semibold text-lg lg:text-xl mb-4">
                         ¡Producto agregado!
                     </h3>
 
@@ -33,6 +33,8 @@ export const ModalAddOrder = ({ isOpen, onClose, order }) => {
                                     src={`${GlobalImage.url}${order.ProductImage}`}
                                     alt={order.ProductName}
                                     loading="lazy"
+                                    width={400}
+                                    height={300}
                                     className="w-full h-full object-contain  transition-transform duration-300 group-hover:scale-105"
                                 />
                             </div>
@@ -71,12 +73,12 @@ export const ModalAddOrder = ({ isOpen, onClose, order }) => {
                             className={`${secondaryButton} flex gap-2 items-center justify-center w-full sm:w-1/2`}
                             onClick={() => setShowModal(false)}
                         >
-                            <FaArrowLeft className="h-4 w-4 lg:h-5 lg:w-5" />
+                            <FaArrowLeft className="h-4 w-4 lg:h-5 lg:w-5" aria-hidden="true" />
                             Seguir comprando
                         </button>
 
                         <Link to="/pedido" className={`${primaryButton} flex gap-2 items-center justify-center w-full sm:w-1/2`}>
-                            <FaBagShopping className="h-4 w-4 lg:h-5 lg:w-5" />
+                            <FaBagShopping className="h-4 w-4 lg:h-5 lg:w-5" aria-hidden="true" />
                             Ver mi pedido
                         </Link>
                     </div>

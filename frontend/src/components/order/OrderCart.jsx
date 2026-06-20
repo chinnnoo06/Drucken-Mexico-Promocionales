@@ -22,6 +22,8 @@ export const OrderCart = ({ group, totalQuantity, handleAmount, deleteProduct })
                                 src={`${GlobalImage.url}${order.ProductImage}`}
                                 alt={order.ProductName}
                                 loading="lazy"
+                                width={300}
+                                height={400}
                                 className="w-full h-full object-contain"
                             />
                         </div>
@@ -48,8 +50,8 @@ export const OrderCart = ({ group, totalQuantity, handleAmount, deleteProduct })
                                     </div>
                                 </div>
 
-                                <button onClick={() => deleteProduct(order.ProductID, order.ProductColor)}>
-                                    <FaTrash className="h-4 w-4 lg:h-5 lg:w-5 text-[#9F531B] hover:text-[#7C3E13]" />
+                                <button type="button" aria-label={`Eliminar ${order.ProductName} en color ${order.ProductColor} del pedido`} onClick={() => deleteProduct(order.ProductID, order.ProductColor)}>
+                                    <FaTrash className="h-4 w-4 lg:h-5 lg:w-5 text-[#9F531B] hover:text-[#7C3E13]" aria-hidden="true" />
                                 </button>
                             </div>
 

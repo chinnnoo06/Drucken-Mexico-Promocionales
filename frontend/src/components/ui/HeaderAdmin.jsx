@@ -18,7 +18,9 @@ export const HeaderAdmin = () => {
                             <img
                                 src={DruckenLogo}
                                 alt="Logo de Drucken México"
-                                className="h-10 lg:h-12 object-contain"
+                                width={2512}
+                                height={1518}
+                                className="h-10 lg:h-12 w-auto object-contain"
                             />
                         </Link>
                     </div>
@@ -66,40 +68,46 @@ export const HeaderAdmin = () => {
 
                 <div className='container-social-media hidden lg:flex gap-8 items-center'>
                     {[
-                        { icon: FaFacebook, url: "https://www.facebook.com/share/1BaikYetVw/?mibextid=wwXIfr" },
-                        { icon: FaInstagram, url: "https://www.instagram.com/drucken.promocionales?igsh=eGtjOHFldnR4aGE5" },
-                        { icon: FaWhatsapp, url: "https://wa.me/523315876207" }
+                        { icon: FaFacebook, url: "https://www.facebook.com/share/1BaikYetVw/?mibextid=wwXIfr", label: "Facebook" },
+                        { icon: FaInstagram, url: "https://www.instagram.com/drucken.promocionales?igsh=eGtjOHFldnR4aGE5", label: "Instagram" },
+                        { icon: FaWhatsapp, url: "https://wa.me/523315876207", label: "WhatsApp" }
                     ].map((social, index) => (
                         <a
                             key={index}
                             href={social.url}
                             target="_blank"
                             rel="noopener noreferrer"
+                            aria-label={`Síguenos en ${social.label} (se abre en una pestaña nueva)`}
                             className="text-xl xl:text-2xl text-[#1A1615] hover:text-[#9F531B] transition-colors duration-300 hover:scale-110"
                         >
-                            <social.icon className="h-4 w-4 lg:h-5 lg:w-5" />
+                            <social.icon className="h-4 w-4 lg:h-5 lg:w-5" aria-hidden="true" />
                         </a>
                     ))}
                 </div>
 
                 {/*Boton de menú responsive*/}
-                <div
+                <button
+                    type="button"
                     className="nav-responsive flex lg:hidden items-center text-[#9F531B] text-xl xl:text-2xl pr-[0.2rem] cursor-pointer hover:text-[#9F531B]"
                     onClick={toggleMenu}
+                    aria-label="Abrir menú de navegación"
+                    aria-expanded={menuVisible}
                 >
-                    <FaBars className="h-4 w-4 lg:h-5 lg:w-5" />
-                </div>
+                    <FaBars className="h-4 w-4 lg:h-5 lg:w-5" aria-hidden="true" />
+                </button>
             </header>
             </div>
 
-            <div className={`menu-lateral fixed top-0 right-0 h-screen bg-[#f8dcc6] w-64 transform ${menuVisible ? "translate-x-0" : "translate-x-full"
+            <div inert={!menuVisible} aria-hidden={!menuVisible} className={`menu-lateral fixed top-0 right-0 h-screen bg-[#f8dcc6] w-64 transform ${menuVisible ? "translate-x-0" : "translate-x-full"
                 } transition-transform duration-300 ease-in-out z-[10000] flex flex-col`}>
                 <div className="flex justify-between items-center p-4 border-b border-[#9F531B]">
                     <button
+                        type="button"
+                        aria-label="Cerrar menú de navegación"
                         className="text-[#1A1615] hover:text-[#b03a3a] text-xl"
                         onClick={toggleMenu}
                     >
-                        <FaXmark className="h-4 w-4 lg:h-5 lg:w-5" />
+                        <FaXmark className="h-4 w-4 lg:h-5 lg:w-5" aria-hidden="true" />
                     </button>
                 </div>
                 <nav className="flex flex-col p-4 gap-4">
@@ -146,18 +154,19 @@ export const HeaderAdmin = () => {
                 {/* Redes sociales en menú móvil */}
                 <div className='mt-auto p-4 flex justify-center gap-6 border-t border-[#9F531B]'>
                     {[
-                        { icon: FaFacebook, url: "https://www.facebook.com/share/1BaikYetVw/?mibextid=wwXIfr" },
-                        { icon: FaInstagram, url: "https://www.instagram.com/drucken.promocionales?igsh=eGtjOHFldnR4aGE5" },
-                        { icon: FaWhatsapp, url: "https://wa.me/523315876207" }
+                        { icon: FaFacebook, url: "https://www.facebook.com/share/1BaikYetVw/?mibextid=wwXIfr", label: "Facebook" },
+                        { icon: FaInstagram, url: "https://www.instagram.com/drucken.promocionales?igsh=eGtjOHFldnR4aGE5", label: "Instagram" },
+                        { icon: FaWhatsapp, url: "https://wa.me/523315876207", label: "WhatsApp" }
                     ].map((social, index) => (
                         <a
                             key={index}
                             href={social.url}
                             target="_blank"
                             rel="noopener noreferrer"
+                            aria-label={`Síguenos en ${social.label} (se abre en una pestaña nueva)`}
                             className="text-xl text-[#1A1615] hover:text-[#9F531B] transition-colors duration-300 hover:scale-110"
                         >
-                            <social.icon className="h-4 w-4 lg:h-5 lg:w-5" />
+                            <social.icon className="h-4 w-4 lg:h-5 lg:w-5" aria-hidden="true" />
                         </a>
                     ))}
                 </div>

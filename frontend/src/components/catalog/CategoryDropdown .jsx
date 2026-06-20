@@ -26,6 +26,9 @@ const CategoryDropdown = ({ currentCategory, selectCategory }) => {
       <button
         type="button"
         onClick={() => setOpen(!open)}
+        aria-label={`Filtrar por categoría, actual: ${selected.label}`}
+        aria-haspopup="listbox"
+        aria-expanded={open}
         className={`${input} flex gap-2 items-center justify-between `}
       >
         <span>{truncateLabel(selected.label)}</span>
@@ -34,6 +37,7 @@ const CategoryDropdown = ({ currentCategory, selectCategory }) => {
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
           fill="currentColor"
+          aria-hidden="true"
         >
           <path
             fillRule="evenodd"

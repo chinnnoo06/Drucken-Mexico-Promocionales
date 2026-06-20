@@ -57,7 +57,7 @@ export const Order = () => {
       ) : (
         <div className="flex flex-col items-center justify-center h-full text-center p-8 ">
 
-          <FaBagShopping className="h-12 w-12 lg:h-14 lg:w-14 mb-2 text-[#9F531B]" />
+          <FaBagShopping className="h-12 w-12 lg:h-14 lg:w-14 mb-2 text-[#9F531B]" aria-hidden="true" />
 
           <h3 className="text-[#9F531B] font-medium text-base lg:text-lg mb-2">Tu pedido está vacío</h3>
           <p className="text-[#1A1615]/75 max-w-md mx-auto text-sm lg:text-base mb-2">Parece que no has agregado ningún producto a tu carrito todavía.</p>

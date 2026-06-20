@@ -26,6 +26,9 @@ export const ServiceCard = ({ service }) => {
       <img
         src={currentImage}
         alt={service.name}
+        loading="lazy"
+        width={600}
+        height={800}
         className="absolute inset-0 w-full h-full object-cover saturate-[0.95] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.08]"
       />
 

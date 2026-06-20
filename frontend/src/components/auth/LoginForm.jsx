@@ -30,7 +30,7 @@ export const LoginForm = () => {
                     <div className="flex-1 space-y-6">
                         <div className="form-group">
                             <label htmlFor="username" className={label}>
-                                <FaUser className="inline-block h-4 w-4 lg:h-5 lg:w-5 mr-2" />
+                                <FaUser className="inline-block h-4 w-4 lg:h-5 lg:w-5 mr-2" aria-hidden="true" />
                                 Usuario
                             </label>
                             <input
@@ -53,7 +53,7 @@ export const LoginForm = () => {
 
                         <div className="form-group">
                             <label htmlFor="password" className={label}>
-                                <FaLock className="inline-block h-4 w-4 lg:h-5 lg:w-5 mr-2" />
+                                <FaLock className="inline-block h-4 w-4 lg:h-5 lg:w-5 mr-2" aria-hidden="true" />
                                 Contraseña
                             </label>
 
@@ -68,12 +68,15 @@ export const LoginForm = () => {
                                     value={formData.password}
                                 />
 
-                                <span
+                                <button
+                                    type="button"
                                     className="absolute inset-y-0 right-3 flex items-center cursor-pointer text-[#9F531B] hover:text-[#7C3E13]"
                                     onClick={passwordVisibility}
+                                    aria-label={showPassword ? "Ocultar contraseña" : "Mostrar contraseña"}
+                                    aria-pressed={showPassword}
                                 >
-                                    {showPassword ? <FaEyeSlash className="h-4 w-4 lg:h-5 lg:w-5" /> : <FaEye className="h-4 w-4 lg:h-5 lg:w-5" />}
-                                </span>
+                                    {showPassword ? <FaEyeSlash className="h-4 w-4 lg:h-5 lg:w-5" aria-hidden="true" /> : <FaEye className="h-4 w-4 lg:h-5 lg:w-5" aria-hidden="true" />}
+                                </button>
                             </div>
                             {formErrors.password && (
                                 <span className="text-red-500 text-xs flex items-center mt-1">
@@ -89,7 +92,7 @@ export const LoginForm = () => {
                             type="submit"
                             className={`${primaryButton} w-full flex items-center justify-center gap-2`}
                         >
-                            <FaRightToBracket className="h-4 w-4 lg:h-5 lg:w-5" />
+                            <FaRightToBracket className="h-4 w-4 lg:h-5 lg:w-5" aria-hidden="true" />
 
                             {loading ? 'Cargando...' : 'Entrar'}
                         </button>

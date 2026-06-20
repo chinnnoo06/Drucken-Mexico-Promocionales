@@ -12,7 +12,7 @@ export const ContactInfo = () => {
             <div className='divide-y divide-[#9F531B]/25'>
                 {contactDetails.map(({ icon: Icon, label, value, href }) => (
                     <div key={label} className='flex items-center gap-4 py-6'>
-                        <Icon className="h-4 w-4 lg:h-5 lg:w-5 text-[#9F531B] mt-1" />
+                        <Icon className="h-4 w-4 lg:h-5 lg:w-5 text-[#9F531B] mt-1" aria-hidden="true" />
                         <div className='flex-1'>
                             <p className='text-[10px] lg:text-xs font-semibold tracking-[0.18em] uppercase text-[#1A1615]/75 mb-1'>
                                 {label}
@@ -57,15 +57,15 @@ export const ContactInfo = () => {
                 <div className='flex gap-3'>
                     <a href='https://www.facebook.com/share/1BaikYetVw/?mibextid=wwXIfr' target='_blank' rel='noopener noreferrer' aria-label='Facebook'
                         className="w-10 h-10 rounded-full border border-[#9F531B]/25 text-[#9F531B] flex items-center justify-center hover:bg-[#9F531B] hover:text-white transition-all duration-300">
-                        <FaFacebook className="h-4 w-4 lg:h-5 lg:w-5" />
+                        <FaFacebook className="h-4 w-4 lg:h-5 lg:w-5" aria-hidden="true" />
                     </a>
                     <a href='https://www.instagram.com/drucken.promocionales?igsh=eGtjOHFldnR4aGE5' target='_blank' rel='noopener noreferrer' aria-label='Instagram'
                         className='w-10 h-10 rounded-full border border-[#9F531B]/25 text-[#9F531B] flex items-center justify-center hover:bg-[#9F531B] hover:text-white transition-all duration-300'>
-                        <FaInstagram className="h-4 w-4 lg:h-5 lg:w-5" />
+                        <FaInstagram className="h-4 w-4 lg:h-5 lg:w-5" aria-hidden="true" />
                     </a>
                     <a href='https://wa.me/523315876207' target='_blank' rel='noopener noreferrer' aria-label='WhatsApp'
                         className='w-10 h-10 rounded-full border border-[#9F531B]/25 text-[#9F531B] flex items-center justify-center hover:bg-[#9F531B] hover:text-white transition-all duration-300'>
-                        <FaWhatsapp className="h-4 w-4 lg:h-5 lg:w-5" />
+                        <FaWhatsapp className="h-4 w-4 lg:h-5 lg:w-5" aria-hidden="true" />
                     </a>
                 </div>
             </div>

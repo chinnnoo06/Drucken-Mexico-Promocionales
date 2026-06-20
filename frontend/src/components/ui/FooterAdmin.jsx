@@ -19,7 +19,9 @@ export const FooterAdmin = () => {
                             <img
                                 src={DruckenLogo}
                                 alt="Logo de Drucken México"
-                                className="h-18 lg:h-20 object-contain"
+                                width={2512}
+                                height={1518}
+                                className="h-18 lg:h-20 w-auto object-contain"
                             />
                         </Link>
                         <div className="text-center md:text-left">
@@ -115,28 +117,29 @@ export const FooterAdmin = () => {
                                     rel="noopener noreferrer"
                                     className="text-2xl text-[#1A1615] hover:text-[#9F531B] transition-all duration-300 hover:scale-110 hover:rotate-3"
                                     title={social.name}
+                                    aria-label={`Síguenos en ${social.name} (se abre en una pestaña nueva)`}
                                 >
-                                    <social.icon className="h-4 w-4 lg:h-5 lg:w-5" />
+                                    <social.icon className="h-4 w-4 lg:h-5 lg:w-5" aria-hidden="true" />
                                 </a>
                             ))}
                         </div>
 
                         <div className="flex flex-col gap-2 text-sm lg:text-base text-[#1A1615] text-center md:text-left">
                             <div className="flex items-center gap-2 justify-center md:justify-start">
-                                <FaPhone className="h-4 w-4 lg:h-5 lg:w-5 text-[#9F531B]" />
+                                <FaPhone className="h-4 w-4 lg:h-5 lg:w-5 text-[#9F531B]" aria-hidden="true" />
                                 <span>+52 33 1587 6207</span>
                             </div>
                             <div className="flex items-center gap-2 justify-center md:justify-start">
-                                <FaEnvelope className="h-4 w-4 lg:h-5 lg:w-5 text-[#9F531B]" />
+                                <FaEnvelope className="h-4 w-4 lg:h-5 lg:w-5 text-[#9F531B]" aria-hidden="true" />
                                 <span>drucken2016@hotmail.com</span>
                             </div>
                             <div className="flex items-center gap-2 justify-center md:justify-start">
-                                <FaLocationDot className="h-4 w-4 lg:h-5 lg:w-5 text-[#9F531B]" />
+                                <FaLocationDot className="h-4 w-4 lg:h-5 lg:w-5 text-[#9F531B]" aria-hidden="true" />
                                 <span>Ramón corona 454<br />Unidad República Zapopan Jalisco 45146</span>
                             </div>
                             <div className="w-full h-[200px]">
                                 <iframe
-                                    title="Mapa"
+                                    title="Mapa de ubicación de Drucken México"
                                     src="https://www.google.com/maps/embed?pb=!4v1758817539392!6m8!1m7!1s6MUCFHMBMFJ0acuw4n5Dfw!2m2!1d20.72459020010015!2d-103.3990178222977!3f24.92747185429691!4f-13.11299517827375!5f0.8173988424383203"
                                     width="100%"
                                     height="100%"
@@ -174,7 +177,7 @@ export const FooterAdmin = () => {
                         {/* Información adicional */}
                         <div className="text-center md:text-right">
                             <p className="text-[#1A1615] text-sm lg:text-base">
-                                <FaShieldHalved className="inline-block h-4 w-4 lg:h-5 lg:w-5 text-[#9F531B] mr-1" />
+                                <FaShieldHalved className="inline-block h-4 w-4 lg:h-5 lg:w-5 text-[#9F531B] mr-1" aria-hidden="true" />
                                 Sitio web seguro
                             </p>
                         </div>

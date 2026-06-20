@@ -29,6 +29,9 @@ export const MapCatalog = ({ products, loading, currentPage, currentCategory, is
                                 <img
                                     src={product.colors.length > 1 ? `${GlobalImage.url}${product.generalImage}` : `${GlobalImage.url}${product.colors[0].image}`}
                                     alt={product.name}
+                                    loading="lazy"
+                                    width={600}
+                                    height={800}
                                     className="w-full h-full object-cover group-hover:opacity-80 transition-opacity duration-200"
                                 />
                                 <button className={thirdButton}
@@ -58,7 +61,7 @@ export const MapCatalog = ({ products, loading, currentPage, currentCategory, is
                 </div>
             ) : (
                 <div className='flex flex-col justify-center items-center h-52 text-[#9F531B]'>
-                    <FaCircleExclamation className="h-12 w-12 lg:h-14 lg:w-14 mb-2" />
+                    <FaCircleExclamation className="h-12 w-12 lg:h-14 lg:w-14 mb-2" aria-hidden="true" />
                     <h3 className="font-medium text-base lg:text-lg">No hay resultados</h3>
                 </div>
             )}
