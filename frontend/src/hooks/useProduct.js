@@ -4,7 +4,6 @@ import { useState, useCallback } from "react";
 export const useProduct = (product, selectedColor) => {
   const [quantity, setQuantity] = useState(1);
   const [order, setOrder] = useState({});
-  const [showModal, setShowModal] = useState(false);
 
   const handleQuantityChange = (e) => {
     const value = Math.max(1, parseInt(e.target.value, 10) || 1);
@@ -46,14 +45,11 @@ export const useProduct = (product, selectedColor) => {
     localStorage.setItem("order", JSON.stringify(existingOrders));
 
     setOrder(newOrder);
-    setShowModal(true);
   }, [product, selectedColor, quantity]);
 
   return {
     quantity,
     order,
-    showModal,
-    setShowModal,
     handleQuantityChange,
     saveProductLocalStorage,
   };

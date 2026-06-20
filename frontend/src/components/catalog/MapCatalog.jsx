@@ -1,6 +1,7 @@
-import LoadingSpinner from '../layout/LoadingSpinner'
+import LoadingSpinner from '../ui/LoadingSpinner'
 import { useNavigate } from 'react-router-dom';
 import { GlobalImage } from '../../helpers/Global';
+import { thirdButton } from '../../helpers/StyleClasses';
 
 export const MapCatalog = ({ products, loading, currentPage, currentCategory, isAdmin }) => {
     const navigate = useNavigate();
@@ -12,28 +13,26 @@ export const MapCatalog = ({ products, loading, currentPage, currentCategory, is
     return (
         <>
             {products && products.length > 0 ? (
-                <div className="grid grid-cols-2 min-[480px]:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4 sm:gap-5  w-full">
+                <div className="grid grid-cols-2 min-[480px]:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-5  w-full">
                     {products.map((product) => (
                         <div
                             key={product._id}
                             data-product-id={product._id}
                             className="relative w-full bg-transparent flex flex-col items-center transition-all duration-200 group"
                         >
-                            {/* Etiqueta destacado */}
-                            <span className="absolute top-1 left-1 bg-[#9F531B] text-[#EEEEEF] text-xs px-1 py-0 md:px-2 md:py-1 rounded z-10">
+                            <span className="absolute top-1 left-1 bg-[#9F531B] text-[#EEEEEF] text-[10px] lg:text-xs px-1 py-0 md:px-2 md:py-1 rounded z-10">
                                 {product.span}
                             </span>
 
-                            {/* Contenedor de imagen con aspect ratio fijo */}
                             <div className='w-full aspect-[3/4] relative overflow-hidden rounded-md '>
                                 <img
                                     src={product.colors.length > 1 ? `${GlobalImage.url}${product.generalImage}` : `${GlobalImage.url}${product.colors[0].image}`}
                                     alt={product.name}
                                     className="w-full h-full object-cover group-hover:opacity-80 transition-opacity duration-200"
                                 />
-                                <button className="absolute inset-0 m-auto w-[80%] h-10 bg-[#9F531B] text-white text-sm font-medium rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center"
+                                <button className={thirdButton}
                                     onClick={() => {
-                                        navigate(isAdmin ? `/producto-admin/${product._id}` : `/producto/${product._id}`, {
+                                        navigate(isAdmin ? `/admin/producto/${product._id}` : `/producto/${product._id}`, {
                                             state: {
                                                 currentCategory,
                                                 page: currentPage,
@@ -42,36 +41,24 @@ export const MapCatalog = ({ products, loading, currentPage, currentCategory, is
                                             }
                                         })
                                     }}>
-                                    VER AHORA
+                                    Ver Ahora
                                 </button>
                             </div>
 
-                            {/* Información del producto */}
-                            <div className="w-full px-1 sm:px-2">
-                                {/* Nombre del producto */}
-                                <div className='min-h-[40px] sm:min-h-[50px] flex items-center'>
-                                    <h3 className="text-sm lg:text-base font-semibold leading-tight uppercase line-clamp-2">
+                            <div className="w-full">
+                                <div className='min-h-[40px] lg:min-h-[50px] flex items-center'>
+                                    <h3 className="text-sm lg:text-base font-medium leading-tight uppercase line-clamp-2 text-[#1A1615]/75">
                                         {product.name} ({product.key})
                                     </h3>
                                 </div>
-
-                                {/* Precio del producto */}
-                                {product.category == "Agendas" && (
-                                    <div>
-                                        <p className="text-[#9F531B] text-base font-semibold">
-                                            MXN {product.price.toFixed(2)}
-                                        </p>
-                                    </div>
-                                )}
-
                             </div>
                         </div>
                     ))}
                 </div>
             ) : (
                 <div className='flex flex-col justify-center items-center h-52 text-[#9F531B]'>
-                    <i className="fa-solid fa-circle-exclamation text-6xl lg:text-8xl mb-2"></i>
-                    <h3 className="font-semibold text-base lg:text-2xl">No hay resultados</h3>
+                    <i className="fa-solid fa-circle-exclamation text-5xl lg:text-6xl mb-2"></i>
+                    <h3 className="font-medium text-base lg:text-lg">No hay resultados</h3>
                 </div>
             )}
 

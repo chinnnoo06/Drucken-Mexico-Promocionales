@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html, body, #root {
+    font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -22,6 +28,11 @@ body {
   
   background-size: 300% 300%;
   animation: organicWaves 25s ease infinite alternate;
+}
+
+@keyframes drk-rise {
+  from { transform: translateY(110%); }
+  to   { transform: translateY(0); }
 }
 
 @keyframes organicWaves {
@@ -45,119 +56,66 @@ body {
   }
 }
 
-.content {
-  min-height: 70vh;
-}
-
-.content-login{
-  background-color: #EEEEEF;
-  min-height: 100vh;
-}
-
-@media (max-width: 1250px) {
- .container-main-content{
-  padding-left: 10px;
-  padding-right: 10px;
- }
-}
-
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.1);
+.loading-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  z-index: 1000;
-  backdrop-filter: blur(3px);
-  animation: fadeIn 0.3s ease-in-out;
+  justify-content: center;
+  gap: 1rem;
 }
 
-.modal-content {
-  background-color: #FFF9F5;
-  padding: 2rem;
-  border-radius: 1.5rem;
-  box-shadow: 0 10px 25px rgba(159, 83, 27, 0.2);
-  max-width: 90%;
-  width: 700px;
+.spinner {
   position: relative;
-  animation: slideUp 0.3s ease-in-out;
-  border: 1px solid #F0E6DE;
+  width: 5rem;
+  height: 5rem;
+  animation: spinner-rotate 2s linear infinite;
 }
 
-.close-button {
+.spinner-sector {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: transparent;
-  border: none;
-  font-size: 1.2rem;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 0.5rem solid transparent;
+}
+
+.spinner-sector-top {
+  border-top-color: #9F531B;
+  animation: spinner-top 1s ease-in-out infinite;
+}
+
+.spinner-sector-left {
+  border-left-color: #9F531B;
+  animation: spinner-left 1s ease-in-out infinite;
+}
+
+.spinner-sector-right {
+  border-right-color: #9F531B;
+  animation: spinner-right 1s ease-in-out infinite;
+}
+
+.loading-text {
   color: #9F531B;
-  cursor: pointer;
-  transition: transform 0.2s;
+  font-size: 1.2rem;
+  font-weight: 500;
 }
 
-.close-button:hover {
-  transform: scale(1.1);
-  color: #7C3E13;
+@keyframes spinner-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+@keyframes spinner-top {
+  0%, 100% { border-top-width: 0.5rem; }
+  50% { border-top-width: 1rem; }
 }
 
-.animate-fadeIn {
-  animation: fadeIn 0.3s ease-out;
+@keyframes spinner-left {
+  0%, 100% { border-left-width: 0.5rem; }
+  50% { border-left-width: 1rem; }
 }
 
-@keyframes slideUp {
-  from { 
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to { 
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes spinner-right {
+  0%, 100% { border-right-width: 0.5rem; }
+  50% { border-right-width: 1rem; }
 }
-
-/* Responsive adjustments */
-@media (max-width: 480px) {
-  .modal-content {
-    padding: 1.5rem;
-    width: 90%;
-  }
-  
-  .container-modal > div {
-    flex-direction: column;
-    gap: 0.8rem;
-  }
-}
-
-.animate-fadeUp {
-  animation: fadeUp 1s ease-out forwards;
-}
-
-@keyframes fadeUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes scaleIn {
-  0% { opacity: 0; transform: scale(0.85); }
-  100% { opacity: 1; transform: scale(1); }
-}
-.animate-scaleIn {
-  animation: scaleIn 0.25s ease-out forwards;
-}
-

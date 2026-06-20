@@ -13,15 +13,12 @@ import { DefaultLayout } from "../components/layout/DefaultLayout";
 import { AdminLayout } from "../components/layout/AdminLayout";
 import { AddProduct } from "../pages/AddProduct";
 import { EditProduct } from "../pages/EditProduct";
-import { CategorysAdmin } from "../pages/CategorysAdmin";
+import { Categories } from "../pages/Categories";
 
 export const MainRoutes = () => {
   return (
     <Routes>
-      {/* Rutas públicas con Header/Footer */}
-      <Route
-        element={<DefaultLayout />}
-      >
+      <Route element={<DefaultLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/inicio" element={<Home />} />
         <Route path="/catalogo/:category/:page" element={<Catalog />} />
@@ -29,26 +26,21 @@ export const MainRoutes = () => {
         <Route path="/producto/:id" element={<Product />} />
         <Route path="/privacidad" element={<Privacy />} />
         <Route path="/terminos" element={<Terms />} />
-        
       </Route>
 
       <Route path="*" element={<Error />} />
 
-      <Route path="/login-admin" element={<LoginAdmin />} />
+      <Route path="/admin/login" element={<LoginAdmin />} />
 
-      <Route
-        element={<AdminLayout />}
-      >
-        <Route path="/catalogo-admin/:category/:page" element={<Catalog/>} />
-        <Route path="/producto-admin/:id" element={<Product/>} />
-        <Route path="/agregar-producto-admin" element={<AddProduct/>} />
-        <Route path="/editar-producto-admin" element={<EditProduct/>} />
-        <Route path="/categorias-admin" element={<CategorysAdmin/>} />
-        <Route path="/privacidad" element={<Privacy />} />
-        <Route path="/terminos" element={<Terms />} />
+      <Route path="/admin" element={<AdminLayout />}>
+        <Route path="catalogo/:category/:page" element={<Catalog />} />
+        <Route path="producto/:id" element={<Product />} />
+        <Route path="agregar-producto" element={<AddProduct />} />
+        <Route path="editar-producto" element={<EditProduct />} />
+        <Route path="categorias" element={<Categories />} />
+        <Route path="privacidad" element={<Privacy />} />
+        <Route path="terminos" element={<Terms />} />
       </Route>
-
-
     </Routes>
   );
 };

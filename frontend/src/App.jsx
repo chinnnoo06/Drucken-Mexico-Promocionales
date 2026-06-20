@@ -1,18 +1,17 @@
-import { useState } from 'react'
 import { BrowserRouter } from "react-router-dom"
-import './App.css'
+import { HelmetProvider } from "react-helmet-async"
 import { MainRoutes } from './routes/Routes'
 
 function App() {
 
   return (
-    <>
+    <HelmetProvider>
       <BrowserRouter>
         <>
           <MainRoutes/>
         </>
       </BrowserRouter>
-    </>
+    </HelmetProvider>
   )
 }
 

@@ -30,11 +30,6 @@ export const useCategorys = () => {
         setLoading(false);
     };
 
-    useEffect(() => {
-        fetchCategorys();
-        fetchTotalCountProducts();
-    }, []);
-
     const saveCategory = async (e, formData, setAdding, setEditing, isEditing = false, idCategoryEdit = -1) => {
 
         e.preventDefault();
@@ -70,14 +65,19 @@ export const useCategorys = () => {
         setLoadingAction(false)
     }
 
-    const removeCategory = async (categoryId, setShowModal) => {
+    const removeCategory = async (categoryId) => {
         const data = await Fetch(`${Global.url}category/eliminar-categoria/${categoryId}`, "DELETE");
 
         if (data.status === "success") {
             setCategories(prev => prev.filter(cat => cat._id !== categoryId));
-            setShowModal(false)
         }
     }
+
+    useEffect(() => {
+        fetchCategorys();
+        fetchTotalCountProducts();
+    }, []);
+
 
     return { totalCount, categories, loading, saveCategory, formErrors, setFormErrors, removeCategory, loadingAction };
 };

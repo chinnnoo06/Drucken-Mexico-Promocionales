@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Outlet, Navigate } from "react-router-dom"; 
-import { HeaderAdmin } from "./HeaderAdmin";
-import { FooterAdmin } from "./FooterAdmin";
 import { Global } from "../../helpers/Global";
 import { Fetch } from "../../helpers/Fetch";
+import { HeaderAdmin } from "../ui/HeaderAdmin"
+import { FooterAdmin } from "../ui/FooterAdmin"
 
 export const AdminLayout = () => {
   const [checking, setChecking] = useState(true);

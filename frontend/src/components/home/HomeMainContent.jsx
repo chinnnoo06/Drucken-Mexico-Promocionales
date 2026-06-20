@@ -1,94 +1,105 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { Link } from 'react-router-dom';
 import DruckenLogo from '../../assets/logodrucken.webp';
-import SplitText from "../layout/SplitText";
+import { primaryButton, secondaryButton } from '../../helpers/StyleClasses';
+import { motion } from "framer-motion"
+import { slideInBottom } from "../../helpers/Motion"
 
 export const HomeMainContent = () => {
-    const [textAlign, setTextAlign] = useState('center');
-
-    useEffect(() => {
-        const mediaQuery = window.matchMedia('(min-width: 1024px)'); 
-        const handleChange = (e) => setTextAlign(e.matches ? 'left' : 'center');
-
-        handleChange(mediaQuery); // valor inicial
-        mediaQuery.addEventListener('change', handleChange);
-        return () => mediaQuery.removeEventListener('change', handleChange);
-    }, []);
-
     const scrollToSection = () => {
         const element = document.getElementById("contacto");
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
+        if (element) element.scrollIntoView({ behavior: 'smooth' });
     };
+
     return (
-        <>
-            <div className='w-full lg:w-[60%] flex flex-col items-center text-center lg:items-start lg:text-left gap-2'>
-                <div className="inline-flex items-center gap-1 sm:gap-2 bg-gradient-to-r from-[#9F531B]/10 to-[#7C3E13]/10 border border-[#9F531B]/20 rounded-full px-1.5 py-0.5 sm:px-2 sm:py-1 md:px-3 md:py-1.5 lg:px-4 lg:py-2 w-fit relative overflow-hidden group">
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#9F531B]/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
-                    <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#9F531B] rounded-full animate-pulse relative">
-                        <div className="absolute inset-0 rounded-full border border-[#9F531B] animate-ping opacity-20"></div>
-                    </div>
-                    <span className="text-[#9F531B] font-semibold text-xs lg:text-base relative z-10">
-                        <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
-                            Empresa Mexicana desde 2016
+        <div className='flex flex-col md:flex-row items-center gap-8 lg:gap-10 w-full min-h-auto lg:min-h-[clamp(640px,100dvh,800px)] mx-auto max-w-7xl px-4 pt-[120px] pb-10 lg:pt-20 lg:pb-0'>
+            <motion.div  {...slideInBottom} className='w-full lg:w-[55%] flex flex-col items-start gap-4'>
+                <p className='flex items-center gap-2 text-[11px] lg:text-[13px] font-bold tracking-[0.18em] uppercase text-[#7C3E13]'>
+                    <span className='w-8 h-[1.5px] bg-[#7C3E13] inline-block'></span>
+                    Publicidad para tu marca
+                </p>
+
+                <h1 className='text-[#1A1615] font-semibold text-4xl sm:text-5xl lg:text-6xl tracking-tight'>
+                    <span className='block overflow-hidden pb-2'>
+                        <span className='block' style={{ animation: 'drk-rise 0.9s cubic-bezier(.2,.7,.2,1) 0.15s both' }}>
+                            Artículos promocionales
                         </span>
                     </span>
-                </div>
-                <div className='text-container w-full flex flex-col items-center lg:items-start gap-2'>
-                    <div className='flex justify-center lg:justify-start w-full'>
-                        <SplitText
-                            text="Drucken México Promocionales"
-                            className="text-[#9F531B] font-extrabold text-4xl lg:text-5xl"
-                            delay={50}
-                            duration={0.3}
-                            ease="power3.out"
-                            splitType="chars"
-                            from={{ opacity: 0, y: 40 }}
-                            to={{ opacity: 1, y: 0 }}
-                            threshold={0.1}
-                            rootMargin="-100px"
-                            textAlign={textAlign}
-                        />
-                    </div>
-                    <h3 className='text-[#1A1615] font-semibold text-2xl lg:text-3xl'>
-                        Promociona con impacto, vende con resultados.
-                    </h3>
-                    <span className='text-[#9F531B] text-lg lg:text-xl font-medium mt-2 block relative max-w-[32rem] sm:max-w-none mx-auto sm:mx-0 sm:pl-2 sm:border-l-2 border-[#9F531B]/20'>
-                        Drucken es una empresa mexicana dedicada a la distribución de artículos promocionales, desde el año 2016 contamos
-                        con un equipo de trabajo preparado, comprometido y responsable, que busca brindarle el mejor servicio
-                        y las mejores alternativas de marketing promocional.
+                    <span className='block overflow-hidden pb-2'>
+                        <span className='block' style={{ animation: 'drk-rise 0.9s cubic-bezier(.2,.7,.2,1) 0.28s both' }}>
+                            y regalos de empresa
+                        </span>
                     </span>
-                </div>
+                    <span className='block overflow-hidden pb-2'>
+                        <span className='block' style={{ animation: 'drk-rise 0.9s cubic-bezier(.2,.7,.2,1) 0.41s both' }}>
+                            en{' '}
+                            <span className='relative text-[#9F531B] italic'>
+                                México.
+                            </span>
+                        </span>
+                    </span>
+                </h1>
 
-                <div className='butons-container flex flex-col sm:flex-row flex-wrap justify-center sm:justify-start gap-4 pt-4 w-full sm:w-auto'>
+                <p className='text-[#9F531B] text-base lg:text-lg font-medium block relative sm:pl-2 sm:border-l-2 border-[#9F531B]/20'>
+                    Empresa mexicana especializada en artículos promocionales y regalos corporativos desde 2016.
+                </p>
+
+                <div className='butons-container flex flex-col sm:flex-row flex-wrap justify-center sm:justify-start gap-4 w-full sm:w-auto'>
                     <Link to="/catalogo/todos/1" className='no-underline w-full sm:w-auto'>
-                        <button className='w-full sm:w-auto px-5 py-2 text-base lg:text-lg bg-[#9F531B] text-[#EEEEEF] rounded-xl hover:bg-[#7C3E13]  hover:text-[#EEEEEF] transition-all duration-300 font-semibold shadow-md hover:shadow-lg transform hover:-translate-y-1'>
-                            <span>Ver Catálogo</span>
+                        <button className={`${primaryButton} w-full sm:w-auto`}>
+                            Ver Catálogo
                         </button>
                     </Link>
-
-                    <button onClick={scrollToSection} className='w-full sm:w-auto px-5 py-2 text-base lg:text-lg bg-[#9F531B] text-[#EEEEEF] rounded-xl hover:bg-[#7C3E13]  hover:text-[#EEEEEF] transition-all duration-300 font-semibold shadow-md hover:shadow-lg transform hover:-translate-y-1'>
+                    <button onClick={scrollToSection} className={`${secondaryButton} w-full sm:w-auto`}>
                         Contactar
                     </button>
                 </div>
 
-                <div className='socialMedia-container flex justify-center sm:justify-start gap-4 pt-4 text-xl lg:text-2xl'>
+                <div className='socialMedia-container flex justify-center sm:justify-start gap-4 text-xl lg:text-2xl'>
                     <a href='https://www.facebook.com/share/1BaikYetVw/?mibextid=wwXIfr' target='_blank' rel='noopener noreferrer' className='text-[#1A1615] hover:text-[#9F531B] transition-all duration-300 hover:scale-110 hover:rotate-3'><i className='fab fa-facebook'></i></a>
                     <a href='https://www.instagram.com/drucken.promocionales?igsh=eGtjOHFldnR4aGE5' target='_blank' rel='noopener noreferrer' className='text-[#1A1615] hover:text-[#9F531B] transition-all duration-300 hover:scale-110 hover:rotate-3'><i className='fab fa-instagram'></i></a>
                     <a href='https://wa.me/523315876207' target='_blank' rel='noopener noreferrer' className='text-[#1A1615] hover:text-[#9F531B] transition-all duration-300 hover:scale-110 hover:rotate-3'><i className='fab fa-whatsapp'></i></a>
                 </div>
-            </div>
+            </motion.div>
 
-            <div className='col2 flex w-full max-w-[250px] sm:max-w-[450px] lg:max-w-[550px] xl:max-w-[650px] mx-auto sm:mx-0 mb-6 sm:mb-16 lg:mb-0 relative'>
-                <div className='relative group'>
-                    <img
-                        src={DruckenLogo}
-                        alt='Logo Drucken México'
-                        className='w-full h-auto object-contain transition-all duration-700 group-hover:scale-x-100 group-hover:rotate-2'
-                    />
+            <motion.div  {...slideInBottom} className='col2 flex w-full lg:w-[45%] max-w-[320px] sm:max-w-[420px] md:max-w-[480px] relative mx-auto'>
+                <div className='relative group w-full flex items-center justify-center py-6'>
+
+                    <div aria-hidden='true'
+                        className='absolute z-0 w-[78%] aspect-square border border-[#9F531B]/40 translate-x-5 translate-y-5'
+                        style={{ borderRadius: '28px 28px 28px 80px' }}>
+                    </div>
+
+                    <span aria-hidden='true'
+                        className='absolute left-[2%] top-1/2 -translate-y-1/2 h-[55%] w-px bg-gradient-to-b from-transparent via-[#9F531B]/50 to-transparent z-0'></span>
+
+                    <div
+                        className='relative z-10 w-[82%] aspect-square flex items-center justify-center overflow-hidden p-9 sm:p-11
+                       bg-white/35 backdrop-blur-md border border-white/50
+                       shadow-[0_30px_70px_-25px_rgba(26,22,21,0.55)]
+                       transition-all duration-700 group-hover:-translate-y-1'
+                        style={{ borderRadius: '28px 28px 28px 80px' }}>
+
+                        <span aria-hidden='true'
+                            className='absolute inset-0 bg-gradient-to-tr from-transparent via-white/30 to-transparent opacity-60 pointer-events-none'></span>
+
+                        <img
+                            src={DruckenLogo}
+                            alt='Logo Drucken México'
+                            className='relative w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.03] drop-shadow-[0_10px_25px_rgba(159,83,27,0.18)]'
+                        />
+                    </div>
+
+                    <svg viewBox='0 0 60 60' aria-hidden='true'
+                        className='absolute -top-1 right-[4%] w-14 h-14 opacity-60 z-20 pointer-events-none'>
+                        <g fill='#9F531B'>
+                            <circle cx='6' cy='6' r='2.2' /><circle cx='24' cy='6' r='2.2' /><circle cx='42' cy='6' r='2.2' />
+                            <circle cx='6' cy='24' r='2.2' /><circle cx='24' cy='24' r='2.2' /><circle cx='42' cy='24' r='2.2' />
+                            <circle cx='6' cy='42' r='2.2' /><circle cx='24' cy='42' r='2.2' /><circle cx='42' cy='42' r='2.2' />
+                        </g>
+                    </svg>
                 </div>
-            </div>
-        </>
+            </motion.div>
+        </div>
     )
 }

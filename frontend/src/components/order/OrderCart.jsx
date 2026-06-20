@@ -5,7 +5,7 @@ export const OrderCart = ({ group, totalQuantity, handleAmount, deleteProduct })
 
     return (
         <div className="p-4 bg-gradient-to-br from-[#9F531B]/5 to-[#7C3E13]/10 border border-[#9F531B]/20 hover:shadow-md transition-shadow duration-300 rounded-lg" key={group.ProductID}>
-            <h3 className="font-semibold text-[#9F531B] text-lg lg:text-2xl mb-3 w-full">
+            <h3 className="font-semibold text-[#9F531B] text-lg lg:text-xl mb-3 w-full">
                 {group.ProductName} ({group.ProductKey})
             </h3>
 
@@ -25,8 +25,6 @@ export const OrderCart = ({ group, totalQuantity, handleAmount, deleteProduct })
                         </div>
 
                         <div className="flex-1 flex flex-col justify-center">
-
-
                             <div className="flex justify-between items-center gap-10 pb-3">
                                 <div className="flex flex-row gap-10 sm:items-center">
                                     {/* Color */}
@@ -41,7 +39,7 @@ export const OrderCart = ({ group, totalQuantity, handleAmount, deleteProduct })
                                                     backgroundColor: order.ProductHexColor || "#ccc",
                                                 }}
                                             ></span>
-                                            <span className="text-sm lg:text-base text-gray-700">
+                                            <span className="text-sm lg:text-base text-[#1A1615]/75">
                                                 {order.ProductColor}
                                             </span>
                                         </div>
@@ -84,11 +82,11 @@ export const OrderCart = ({ group, totalQuantity, handleAmount, deleteProduct })
             </div>
 
             <div className="pt-3">
-                <p className="text-xs lg:text-sm text-gray-700">
+                <p className="text-xs lg:text-sm text-[#1A1615]/75">
                     Cantidad total seleccionada:{" "}
                     <span className="font-semibold">{totalQuantity}</span>
                 </p>
-                <p className="text-xs lg:text-sm text-gray-700">
+                <p className="text-xs lg:text-sm text-[#1A1615]/75">
                     Cantidad mínima requerida:{" "}
                     <span className="font-semibold">{group.minQuantity}</span>
                 </p>

@@ -14,5 +14,4 @@ export const closeSession = async () => {
         console.error("Error cerrando sesión:", error);
         alert("Error al cerrar sesión");
     }
-
 };

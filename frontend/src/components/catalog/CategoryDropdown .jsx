@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useCategorys } from '../../hooks/useCategorys';
+import { input } from '../../helpers/StyleClasses';
 
 const CategoryDropdown = ({ currentCategory, selectCategory }) => {
   const [open, setOpen] = useState(false);
@@ -25,8 +26,7 @@ const CategoryDropdown = ({ currentCategory, selectCategory }) => {
       <button
         type="button"
         onClick={() => setOpen(!open)}
-        className="flex justify-between items-center w-full px-4 py-2 text-xs lg:text-base 
-                  rounded-lg border-2  bg-white text-[#9F531B] border-[#9F531B]/30 focus:outline-none focus:ring-2 focus:ring-[#9F531B]/50 focus:border-[#9F531B] transition-all duration-300 hover:border-[#9F531B]/50"
+        className={`${input} flex gap-2 items-center justify-between `}
       >
         <span>{truncateLabel(selected.label)}</span>
         <svg
@@ -52,7 +52,7 @@ const CategoryDropdown = ({ currentCategory, selectCategory }) => {
                 selectCategory(category.value);
                 setOpen(false);
               }}
-              className={`block w-full text-left px-4 py-2 text-sm lg:text-base 
+              className={`block w-full text-left px-4 py-2 text-xs lg:text-sm 
                          transition-colors duration-200
                 ${currentCategory === category.value
                   ? "bg-[#FFD8A8] text-[#9F531B] font-semibold"

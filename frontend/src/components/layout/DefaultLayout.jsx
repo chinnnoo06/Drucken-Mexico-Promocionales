@@ -1,15 +1,15 @@
 import React from "react";
-import { Header } from "./Header";
-import { Footer } from "./Footer";
-import { Outlet } from "react-router-dom"; 
+import { Outlet } from "react-router-dom";
+import { Header } from "../ui/Header"
+import { Footer } from "../ui/Footer"
 
 export const DefaultLayout = () => {
   return (
     <>
       <Header />
-      <section id="content" className="content">
-        <Outlet /> 
-      </section>
+      <main className="min-h-[80vh]">
+        <Outlet />
+      </main>
       <Footer />
     </>
   );

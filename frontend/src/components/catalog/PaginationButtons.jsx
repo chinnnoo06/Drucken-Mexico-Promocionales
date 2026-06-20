@@ -38,9 +38,9 @@ export const PaginationButtons = ({ totalPages, currentPage, setPage, bool }) =>
                 <button
                     key={i}
                     onClick={() => goToPage(i)}
-                    className={`px-2 py-1 sm:px-2 sm:py-1 md:px-4 md-py-2 lg:px-4 lg:py-2 text-sm lg:text-base font-bold rounded ${currentPage === i
+                    className={`px-4 py-1.5 text-xs lg:text-sm font-medium rounded-lg  ${currentPage === i
                         ? 'bg-[#9F531B] text-[#EEEEEF] hover:bg-[#7C3E13]'
-                        : 'bg-[#f8dcc6] border border-[#9F531B] text-[#1A1615]/70 hover:bg-[#9F531B] hover:text-[#EEEEEF] transition'
+                        : 'bg-transparent border border-[#9F531B] text-[#1A1615]/75 hover:bg-[#9F531B] hover:text-[#EEEEEF] transition'
                         }`}
                 >
                     {i}
@@ -59,7 +59,7 @@ export const PaginationButtons = ({ totalPages, currentPage, setPage, bool }) =>
                     <button
                         onClick={() => goToPage(currentPage - 1)}
                         disabled={currentPage === 1}
-                        className={`px-2 py-1 md:px-4 md-py-1 text-xs lg:text-base font-bold rounded ${currentPage === 1 ? 'bg-[#9F531B]/50 text-[#EEEEEF]/40 cursor-not-allowed' : 'bg-[#9F531B] text-[#EEEEEF] hover:bg-[#7C3E13]'}`}
+                        className={`px-4 py-1 text-xs lg:text-sm font-medium rounded-lg ${currentPage === 1 ? 'bg-[#9F531B]/50 text-[#EEEEEF]/50 cursor-not-allowed' : 'bg-[#9F531B] text-[#EEEEEF] hover:bg-[#7C3E13]'}`}
                     >
                         &lt;
                     </button>
@@ -71,7 +71,7 @@ export const PaginationButtons = ({ totalPages, currentPage, setPage, bool }) =>
                     <button
                         onClick={() => goToPage(currentPage + 1)}
                         disabled={currentPage === totalPages}
-                        className={`px-2 py-1 md:px-4 md-py-1 text-xs lg:text-base font-bold rounded ${currentPage === totalPages ? 'bg-[#9F531B]/50 text-[#EEEEEF]/40 cursor-not-allowed' : 'bg-[#9F531B] text-[#EEEEEF] hover:bg-[#7C3E13]'}`}
+                        className={`px-4 py-1 text-xs lg:text-sm font-medium rounded-lg  ${currentPage === totalPages ? 'bg-[#9F531B]/50 text-[#EEEEEF]/50 cursor-not-allowed' : 'bg-[#9F531B] text-[#EEEEEF] hover:bg-[#7C3E13]'}`}
                     >
                         &gt;
                     </button>

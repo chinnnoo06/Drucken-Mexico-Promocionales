@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { SectionWrapper } from '../components/layout/SectionWrapper';
 import { Link } from 'react-router-dom';
 import { MapOrder } from '../components/order/MapOrder';
 import { OrderSummary } from '../components/order/OrderSummary';
+import { primaryButton } from '../helpers/StyleClasses';
+import { Seo } from '../components/seo/Seo';
 
 export const Order = () => {
   const [orders, setOrders] = useState([]);
@@ -26,13 +27,20 @@ export const Order = () => {
   }, [orders]);
 
   return (
-    <SectionWrapper className='container-main-content flex flex-col pt-28 pb-10 gap-5 mx-auto max-w-[1300px]'>
-      <div className="text-center">
-        <h1 className='text-[#9F531B] titulo-seccion font-bold text-5xl lg:text-6xl mb-6 relative inline-block'>
-          Tu pedido
-          <span className="absolute left-1/2 transform -translate-x-1/2 bottom-[-20px] w-24 h-1.5 bg-[rgb(159,83,27)] rounded-full"></span>
-        </h1>
-        <p className="text-gray-700 text-base lg:text-2xl font-medium mt-2 block">
+    <section className='max-w-7xl mx-auto px-4 pb-10 pt-[120px]'>
+      <Seo
+        title="Tu Pedido | Drucken México Promocionales"
+        description="Revisa los artículos promocionales que has seleccionado y solicita tu cotización con Drucken México."
+        path="/pedido"
+      />
+      <div className="mb-8">
+        <span className="text-[11px] lg:text-[13px] font-semibold tracking-[0.18em] uppercase text-[#7C3E13]">
+          Pedido
+        </span>
+        <h2 className='mt-2 font-semibold text-4xl lg:text-5xl tracking-tight text-[#9F531B]'>
+          Tu Pedido
+        </h2>
+        <p className="mt-4 text-[#1A1615]/75 text-base lg:text-lg leading-relaxed">
           Todo lo que has elegido está aquí, listo para ti.
         </p>
       </div>
@@ -47,18 +55,14 @@ export const Order = () => {
         </div>
       ) : (
         <div className="flex flex-col items-center justify-center h-full text-center p-8 ">
-          <div className='mb-6 p-4 bg-[#e9d4bd] rounded-full'>
-            <i className="fa-solid fa-bag-shopping text-3xl lg:text-5xl text-[#9F531B]"></i>
-          </div>
-          <h3 className="font-semibold text-[#9F531B] text-lg lg:text-2xl mb-2">Tu pedido está vacío</h3>
-          <p className="text-gray-500 max-w-md mx-auto mb-6">Parece que no has agregado ningún producto a tu carrito todavía.</p>
-          <Link to="/catalogo/todos/1" className='no-underline'>
-            <button
-              className='px-3.5 py-1.5 text-sm md:px-5 md:py-2 lg:text-lg rounded-xl font-semibold transition-all duration-300
-                        text-[#EEEEEF] bg-[#9F531B] hover:bg-[#7C3E13]
-                        shadow-lg hover:shadow-xl flex items-center justify-center gap-2'
 
-            >
+          <i className="fa-solid fa-bag-shopping text-5xl lg:text-6xl mb-2 text-[#9F531B]"></i>
+
+          <h3 className="text-[#9F531B] font-medium text-base lg:text-lg mb-2">Tu pedido está vacío</h3>
+          <p className="text-[#1A1615]/75 max-w-md mx-auto text-sm lg:text-base mb-2">Parece que no has agregado ningún producto a tu carrito todavía.</p>
+
+          <Link to="/catalogo/todos/1" className='no-underline'>
+            <button className={primaryButton} >
               Explorar productos
             </button>
           </Link>
@@ -66,6 +70,6 @@ export const Order = () => {
         </div>
       )}
 
-    </SectionWrapper>
+    </section>
   );
 };

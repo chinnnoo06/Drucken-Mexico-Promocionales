@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import { useSummary } from '../../hooks/useSummary';
+import { primaryButton, secondaryButton } from '../../helpers/StyleClasses';
 
 export const OrderSummary = ({ orders }) => {
     const { isDisabled, sendOrder } = useSummary(orders);
@@ -8,31 +9,23 @@ export const OrderSummary = ({ orders }) => {
     return (
         <div className="col2 flex flex-col flex-[30%] h-1/2 bg-gradient-to-br from-[#9F531B]/5 to-[#7C3E13]/10 p-6 rounded-xl border border-[#9F531B]/20 shadow-sm">
             <div className='flex flex-col space-y-6'>
-      
+
                 <div className="space-y-3">
-                    <h3 className="text-lg lg:text-2xl font-semibold text-[#9F531B] border-b pb-2 border-[#9F531B]/20">
+                    <h3 className="text-lg lg:text-xl font-semibold text-[#9F531B] border-b pb-2 border-[#9F531B]/20">
                         Resumen del pedido
                     </h3>
 
-                    <div className="flex justify-between items-center text-sm lg:text-lg">
-                        <span className="text-[#1A1615]">Productos:</span>
+                    <div className="flex justify-between items-center text-sm lg:text-base text-[#1A1615]/75">
+                        <span className="">Productos:</span>
                         <span className="font-medium">{orders.length}</span>
                     </div>
 
                 </div>
 
-                {/* Botones de acción */}
                 <div className='flex flex-col gap-4'>
                     <div className='flex flex-col'>
                         <button
-                            className={`w-full 
-                            px-3 py-1 text-base        /* base (xs) → pequeño */
-                            sm:px-5 sm:py-2 /* sm → más grande */
-                            md:px-3 md:py-1 /* md → más pequeño */
-                            lg:px-5 lg:py-2 lg:text-lg /* lg → normal */
-                            rounded-xl font-semibold transition-all duration-300
-                            text-[#EEEEEF] flex items-center justify-center gap-3 
-                            ${isDisabled ? 'bg-[#8e8e92] cursor-not-allowed' : 'bg-[#9F531B] hover:bg-[#7C3E13] hover:shadow-md shadow-sm'}`}
+                            className={`${primaryButton} flex gap-2 items-center justify-center`}
                             disabled={isDisabled}
                             onClick={sendOrder}
                         >
@@ -40,37 +33,29 @@ export const OrderSummary = ({ orders }) => {
                             Realizar Pedido
                         </button>
                         {isDisabled && (
-                            <p className="text-xs text-red-500 mt-1">
+                            <p className="text-[10px] lg:text-xs text-red-500 mt-1">
                                 * Uno o más productos no cumplen con la cantidad mínima de pedido
                             </p>
                         )}
                     </div>
 
-                    <Link
-                        to="/catalogo/todos/1"
-                        className="no-underline"
-                    >
-                        <button
-                            className="w-full 
-                            px-3 py-1 text-base        /* base */
-                            sm:px-5 sm:py-2 /* sm más grande */
-                            md:px-3 md:py-1 /* md más pequeño */
-                            lg:px-5 lg:py-2 /* lg normal */
-                            rounded-xl font-semibold transition-all duration-300
-                            text-[#9F531B] bg-transparent hover:bg-[#9F531B]/10
-                            border-2 border-[#9F531B] flex items-center justify-center gap-3"
+                    <div className='flex justify-center items-center'>
+                        <Link
+                            to="/catalogo/todos/1"
+                            className="no-underline w-full"
                         >
-                            <i className="fas fa-arrow-left"></i>
-                            Comprar más
-                        </button>
-                    </Link>
+                            <button className={`${secondaryButton} w-full flex gap-2 items-center justify-center`} >
+                                <i className="fas fa-arrow-left"></i>
+                                Comprar Más
+                            </button>
+                        </Link>
+                    </div>
+
                 </div>
 
-                {/* Nota adicional */}
-                <p className="text-xs text-[#9F531B]/70 text-center mt-2">
+                <p className="text-[10px] lg:text-xs text-[#9F531B]/70 text-center mt-2">
                     * Los precios se proporcionarán en la cotización directamente por mensaje
                 </p>
-
             </div>
         </div>
     )

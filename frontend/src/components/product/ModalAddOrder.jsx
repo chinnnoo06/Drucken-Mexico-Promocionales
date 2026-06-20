@@ -2,28 +2,32 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import { GlobalImage } from '../../helpers/Global';
 import ReactDOM from 'react-dom';
+import { primaryButton, secondaryButton } from '../../helpers/StyleClasses';
+import { useLockBodyScroll } from '../../hooks/useLockBodyScroll'
 
+export const ModalAddOrder = ({ isOpen, onClose, order }) => {
+    useLockBodyScroll(isOpen)
 
-export const ModalAddOrder = ({ order, showModal, setShowModal }) => {
-    if (!showModal) return null;
-    return ReactDOM.createPortal( // Usa createPortal aquí
-        <div className="modal-overlay bg-gradient-to-br from-[#9F531B]/5 to-[#7C3E13]/10" onClick={() => setShowModal(false)}>
-            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                <button className="close-button btn hover:scale-110" onClick={() => setShowModal(false)}>
-                    <i className="fa-solid fa-xmark text-xl"></i>
-                </button>
+    return ReactDOM.createPortal(
+        <div className={`fixed inset-0 z-100 flex items-center justify-center px-4 backdrop-blur-sm bg-black/5
+        transition-opacity duration-300 ${isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+            onClick={onClose}>
 
-                <div className='container-modal flex flex-col text-center'>
-
-                    <h3 className="text-[#9F531B] font-bold text-base lg:text-2xl mb-4">
+            <div className={`max-w-xl w-full bg-[#FFF9F5] rounded-lg shadow-lg p-4 transition-all duration-300 ease-out origin-center 
+                ${isOpen ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-95 translate-y-2"}`} onClick={(e) => e.stopPropagation()}>
+                
+                <div className='flex flex-col text-center'>
+                    <h3 className="text-[#9F531B] font-semibold text-lg lg:text-xl mb-4">
                         ¡Producto agregado!
                     </h3>
 
-                    {/* Product Info */}
-                    <div className="flex flex-col md:flex-row gap-6 items-center mb-5 md:mb-8">
-                        {/* Product Image */}
-                        <div className="w-4/5 md:w-1/4 flex justify-center">
-                            <div className="relative w-full max-w-xs h-48 bg-white rounded-xl shadow-sm border border-[#9F531B] overflow-hidden group">
+                    <p className='text-[#1A1615]/75 text-sm lg:text-base mb-4'>
+                        Tu producto se agregó correctamente. Puedes seguir comprando o ir a revisar tu pedido.
+                    </p>
+
+                    <div className="flex flex-col md:flex-row gap-6 items-center justify-center mb-4">
+                        <div className="w-4/5 md:w-1/2 flex justify-center">
+                            <div className="relative w-full max-w-md h-48 bg-white rounded-xl shadow-sm border border-[#9F531B] overflow-hidden group">
                                 <img
                                     src={`${GlobalImage.url}${order.ProductImage}`}
                                     alt={order.ProductName}
@@ -33,18 +37,17 @@ export const ModalAddOrder = ({ order, showModal, setShowModal }) => {
                             </div>
                         </div>
 
-                        {/* Product Details */}
-                        <div className="w-full md:w-3/4 flex flex-col ">
-                            <h4 className="text-[#9F531B] font-semibold text-left text-base lg:text-2xl mb-2">{order.ProductName} ({order.ProductKey})</h4>
+                        <div className="w-full md:w-1/2 flex flex-col ">
+                            <h4 className="text-[#9F531B] font-semibold text-left text-base lg:text-lg mb-2">{order.ProductName} ({order.ProductKey})</h4>
 
                             <div className="space-y-2 mb-2">
-                                <div className="flex items-center gap-2 text-sm lg:text-lg">
-                                    <span className="text-[#9F531B]">Color:</span>
-                                    <span className="font-medium text-gray-600">{order.ProductColor}</span>
+                                <div className="flex items-center gap-2 text-sm lg:text-base">
+                                    <span className="text-[#9F531B]">Color Seleccionado:</span>
+                                    <span className="font-medium text-[#1A1615]/75">{order.ProductColor}</span>
                                 </div>
-                                <div className="flex items-center gap-2 text-sm lg:text-lg">
-                                    <span className="text-[#9F531B]">Cantidad:</span>
-                                    <span className="font-medium text-gray-600">{order.OrderQuantity}</span>
+                                <div className="flex items-center gap-2 text-sm lg:text-base">
+                                    <span className="text-[#9F531B]">Cantidad Agregada:</span>
+                                    <span className="font-medium text-[#1A1615]/75">{order.OrderQuantity}</span>
                                 </div>
                             </div>
 
@@ -62,24 +65,16 @@ export const ModalAddOrder = ({ order, showModal, setShowModal }) => {
                         </div>
                     </div>
 
-                    {/* Actions */}
                     <div className="flex flex-col sm:flex-row gap-3 justify-center">
                         <button
-                            className="w-full md:w-1/2 px-3.5 py-1.5 text-sm md:px-5 md:py-2 lg:text-lg rounded-xl font-semibold
-                                    text-[#9F531B] bg-transparent hover:bg-[#9F531B]/10
-                                    border-2 border-[#9F531B] flex items-center justify-center gap-3 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1"
+                            className={`${secondaryButton} flex gap-2 items-center justify-center w-full sm:w-1/2`}
                             onClick={() => setShowModal(false)}
                         >
                             <i className="fa-solid fa-arrow-left"></i>
                             Seguir comprando
                         </button>
 
-                        <Link
-                            to="/pedido"
-                            className='w-full md:w-1/2 px-3.5 py-1.5 text-sm md:px-5 md:py-2 lg:text-lg rounded-xl font-semibold
-                                    text-[#EEEEEF] bg-[#9F531B] flex items-center justify-center gap-3
-                                    hover:bg-[#7C3E13] transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1'
-                        >
+                        <Link to="/pedido" className={`${primaryButton} flex gap-2 items-center justify-center w-full sm:w-1/2`}>
                             <i className="fa-solid fa-bag-shopping"></i>
                             Ver mi pedido
                         </Link>
