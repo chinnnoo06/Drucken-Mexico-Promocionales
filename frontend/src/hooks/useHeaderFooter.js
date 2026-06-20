@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
-export const useHeaderFooter = () => {
+export const useHeaderFooter = (offset = 80) => {
     const [menuVisible, setMenuVisible] = useState(false);
     const [activeSection, setActiveSection] = useState('inicio');
     const [scrolled, setScrolled] = useState(false);
@@ -19,7 +19,7 @@ export const useHeaderFooter = () => {
 
         const handleScroll = () => {
             const sections = ['inicio', 'nosotros', 'servicios', 'contacto'];
-            const scrollPosition = window.scrollY + 100; // Offset para mejor detección
+            const scrollPosition = window.scrollY + offset; 
 
             for (let i = sections.length - 1; i >= 0; i--) {
                 const section = document.getElementById(sections[i]);
@@ -31,10 +31,10 @@ export const useHeaderFooter = () => {
         };
 
         window.addEventListener('scroll', handleScroll);
-        handleScroll(); // Llamar una vez al cargar para establecer el estado inicial
+        handleScroll();
 
         return () => window.removeEventListener('scroll', handleScroll);
-    }, [isInicio]);
+    }, [isInicio, offset]);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -48,14 +48,12 @@ export const useHeaderFooter = () => {
 
     useEffect(() => {
         const handleResize = () => {
-            if (window.innerWidth >= 1024) { // lg: breakpoint de Tailwind
+            if (window.innerWidth >= 1024) {
                 setMenuVisible(false);
             }
         };
 
         window.addEventListener("resize", handleResize);
-
-        // Llamada inicial para asegurarse de que el estado sea correcto al montar
         handleResize();
 
         return () => window.removeEventListener("resize", handleResize);
@@ -64,7 +62,8 @@ export const useHeaderFooter = () => {
     const scrollToSection = (sectionId) => {
         const element = document.getElementById(sectionId);
         if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
+            const top = element.getBoundingClientRect().top + window.scrollY - offset;
+            window.scrollTo({ top, behavior: 'smooth' });
             setMenuVisible(false);
         }
     };
@@ -74,7 +73,8 @@ export const useHeaderFooter = () => {
         setTimeout(() => {
             const element = document.getElementById(sectionId);
             if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
+                const top = element.getBoundingClientRect().top + window.scrollY - offset;
+                window.scrollTo({ top, behavior: 'smooth' });
                 setMenuVisible(false);
             }
         }, 500);
@@ -84,5 +84,5 @@ export const useHeaderFooter = () => {
         setMenuVisible(!menuVisible);
     };
 
-    return {scrollToSection, navigateToSection, toggleMenu, menuVisible, activeSection, scrolled, isInicio};
+    return { scrollToSection, navigateToSection, toggleMenu, menuVisible, activeSection, scrolled, isInicio };
 }

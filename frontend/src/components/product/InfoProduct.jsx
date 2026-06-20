@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { ModalAddOrder } from './ModalAddOrder';
 import { useProduct } from '../../hooks/useProduct';
-import { input, primaryButton } from '../../helpers/StyleClasses';
+import { primaryButton } from '../../helpers/StyleClasses';
 import { ModalTrigger } from "../ui/ModalTrigger"
+import { QuantityButtons } from '../order/QuantityButtons';
 
 export const InfoProduct = ({ product, selectedColor, setSelectedColor }) => {
-    const { quantity, order, handleQuantityChange, saveProductLocalStorage } = useProduct(product, selectedColor);
+    const { quantity, order, increaseQuantity, decreaseQuantity, saveProductLocalStorage } = useProduct(product, selectedColor);
 
     return (
         <>
@@ -70,17 +71,8 @@ export const InfoProduct = ({ product, selectedColor, setSelectedColor }) => {
                 </div>
 
                 <div className='mb-5'>
-                    <label htmlFor='quantity' className='block text-[#7C3E13] text-sm lg:text-base font-medium mb-2'>Cantidad</label>
-                    <input
-                        type="number"
-                        id='quantity'
-                        name='quantity'
-                        min="1"
-                        value={quantity}
-                        onChange={handleQuantityChange}
-                        className={input}
-                    />
-
+                    <span className='block text-[#7C3E13] text-sm lg:text-base font-medium mb-2'>Cantidad</span>
+                    <QuantityButtons decreaseQuantity={decreaseQuantity} increaseQuantity={increaseQuantity} quantity={quantity} />
                 </div>
 
                 <ModalTrigger
@@ -95,7 +87,7 @@ export const InfoProduct = ({ product, selectedColor, setSelectedColor }) => {
                     )}
                 >
                     {(onClose, isOpen) => (
-                        <ModalAddOrder isOpen={isOpen} onClose={onClose} order={order}/>
+                        <ModalAddOrder isOpen={isOpen} onClose={onClose} order={order} />
                     )}
                 </ModalTrigger>
             </div>

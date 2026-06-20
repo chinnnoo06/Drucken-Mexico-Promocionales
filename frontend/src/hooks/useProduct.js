@@ -5,10 +5,8 @@ export const useProduct = (product, selectedColor) => {
   const [quantity, setQuantity] = useState(1);
   const [order, setOrder] = useState({});
 
-  const handleQuantityChange = (e) => {
-    const value = Math.max(1, parseInt(e.target.value, 10) || 1);
-    setQuantity(value);
-  };
+  const increaseQuantity = () => setQuantity((prev) => prev + 1);
+  const decreaseQuantity = () => setQuantity((prev) => Math.max(1, prev - 1));
 
   const saveProductLocalStorage = useCallback(() => {
     let alreadyExist = false;
@@ -50,7 +48,8 @@ export const useProduct = (product, selectedColor) => {
   return {
     quantity,
     order,
-    handleQuantityChange,
+    increaseQuantity,
+    decreaseQuantity,
     saveProductLocalStorage,
   };
 };

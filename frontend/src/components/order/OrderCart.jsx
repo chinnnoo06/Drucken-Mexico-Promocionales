@@ -1,5 +1,6 @@
 import React from 'react'
 import { GlobalImage } from '../../helpers/Global'
+import { QuantityButtons } from './QuantityButtons'
 
 export const OrderCart = ({ group, totalQuantity, handleAmount, deleteProduct }) => {
 
@@ -52,29 +53,9 @@ export const OrderCart = ({ group, totalQuantity, handleAmount, deleteProduct })
                             </div>
 
                             <div className="flex items-center justify-between pt-4 border-t border-[#9f531b]">
-                                <div className="flex items-center gap-2">
-                                    {order.OrderQuantity > 1 && (
-                                        <>
-                                            <button
-                                                className="px-3 py-1 text-sm lg:text-base text-[#EEEEEF] bg-[#9F531B] hover:bg-[#7C3E13]"
-                                                onClick={() => handleAmount(order.ProductID, order.ProductColor, 0)}
-                                            >
-                                                -
-                                            </button>
-                                        </>
-                                    )}
-
-                                    <span className="text-sm lg:text-base py-1 bg-[#EEEEEF] text-center w-12">
-                                        {order.OrderQuantity}
-                                    </span>
-                                    <button
-                                        className="px-3 py-1 text-sm lg:text-base text-[#EEEEEF] bg-[#9F531B] hover:bg-[#7C3E13]"
-                                        onClick={() => handleAmount(order.ProductID, order.ProductColor, 1)}
-                                    >
-                                        +
-                                    </button>
-                                </div>
-
+                                <QuantityButtons decreaseQuantity={() => handleAmount(order.ProductID, order.ProductColor, 0)} 
+                                increaseQuantity={() => handleAmount(order.ProductID, order.ProductColor, 1)} 
+                                quantity={order.OrderQuantity} />
                             </div>
                         </div>
                     </div>
@@ -100,7 +81,6 @@ export const OrderCart = ({ group, totalQuantity, handleAmount, deleteProduct })
                     </p>
                 )}
             </div>
-
         </div>
     )
 }
