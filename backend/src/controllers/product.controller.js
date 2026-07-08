@@ -3,7 +3,7 @@ const spanOptions = require("../helpers/spanOptions")
 const productService = require('../services/product.service')
 
 const getProducts = async (req, res, next) => {
-    const category = req.params.category;
+    const category = req.params.category === "todos" ? "todos" : req.params.category.replace(/-/g, " ");
     let page = parseInt(req.params.page);
     if (isNaN(page) || page < 1) page = 1;
 
@@ -44,7 +44,7 @@ const getOneProduct = async (req, res, next) => {
 
 const findProducts = async (req, res, next) => {
     const search = req.params.search || "";
-    const category = req.params.category;
+    const category = req.params.category === "todos" ? "todos" : req.params.category.replace(/-/g, " ");
     let page = parseInt(req.params.page);
     if (isNaN(page) || page < 1) page = 1;
 

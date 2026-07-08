@@ -45,7 +45,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 router.get("/obtener-productos/:category/:page",
-  param('category').isAlpha('es-ES', { ignore: ' -_' }).withMessage('La categoría es obligatoria').trim(),
+  param('category').trim().notEmpty().withMessage('La categoría es obligatoria').matches(/^[a-z0-9]+(?:-[a-z0-9]+)*$/).withMessage('Formato de categoría inválido (usa minúsculas y guiones)'),
   param('page').isInt({ min: 1 }).withMessage('La página debe ser un número mayor a 0'),
   handleInputErrors,
   ProductController.getProducts
@@ -58,11 +58,10 @@ router.get("/obtener-producto/:id",
 );
 
 router.get("/buscar-productos/:category/:search/:page",
-  param('category').isAlpha('es-ES', { ignore: ' -_' }).withMessage('La categoría es obligatoria').trim(),
+  param('category').trim().notEmpty().withMessage('La categoría es obligatoria').matches(/^[a-z0-9]+(?:-[a-z0-9]+)*$/).withMessage('Formato de categoría inválido (usa minúsculas y guiones)'),
   param('page').isInt({ min: 1 }).withMessage('La página debe ser un número mayor a 0'),
   handleInputErrors,
   ProductController.findProducts
-
 );
 
 router.get("/obtener-productos-carrusel",

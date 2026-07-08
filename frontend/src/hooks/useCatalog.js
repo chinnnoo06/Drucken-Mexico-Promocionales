@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { useNavigate, useParams } from 'react-router-dom';
 import { Fetch } from "../helpers/Fetch";
 import { Global } from "../helpers/Global";
+import { slugify } from "../helpers/Format";
 
 export const useCatalog = (isAdmin) => {
     const { category = "todos", page = "1" } = useParams();
@@ -45,17 +46,19 @@ export const useCatalog = (isAdmin) => {
 
     // Cambiar categoría → URL
     const selectCategory = (newCategory) => {
+        const slug = slugify(newCategory);
+
         if (isAdmin) {
-            navigate(`/catalogo-admin/${newCategory}/1`);
+            navigate(`/admin/catalogo/${slug}/1`);
         } else {
-            navigate(`/catalogo/${newCategory}/1`);
+            navigate(`/catalogo/${slug}/1`);
         }
     };
 
     // Cambiar página → URL
-    const setPage = (newPage) => {
+    const setPage = (newPage) => {        
         if (isAdmin) {
-            navigate(`/catalogo-admin/${currentCategory}/${newPage}`);
+            navigate(`/admin/catalogo/${currentCategory}/${newPage}`);
         } else {
             navigate(`/catalogo/${currentCategory}/${newPage}`);
         }

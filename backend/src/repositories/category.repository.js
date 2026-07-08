@@ -35,7 +35,7 @@ const categoryRepository = {
     },
 
     async findByName(name) {
-        return Category.findOne({ name });
+        return Category.findOne({ name }).collation({ locale: "es", strength: 1 });
     },
 
     async updateMany(oldCategoryName, data) {
