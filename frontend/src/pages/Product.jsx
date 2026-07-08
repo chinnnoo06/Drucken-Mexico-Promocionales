@@ -63,7 +63,7 @@ export const Product = () => {
                     />
                     <nav className="border-b border-amber-700/25 pb-5">
                         <Link
-                            to={isAdmin ? `/catalogo-admin/${location.state?.currentCategory || 'todos'}/${location.state?.page || 1}`
+                            to={isAdmin ? `/admin/catalogo/${location.state?.currentCategory || 'todos'}/${location.state?.page || 1}`
                                 : `/catalogo/${location.state?.currentCategory || 'todos'}/${location.state?.page || 1}`}
                             className="text-amber-700 hover:text-amber-800 transition-colors duration-200"
                             state={{
