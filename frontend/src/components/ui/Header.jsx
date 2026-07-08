@@ -133,7 +133,7 @@ export const Header = () => {
                         aria-label="Abrir menú de navegación"
                         aria-expanded={menuVisible}
                     >
-                        <FaBars className="h-4 w-4 lg:h-5 lg:w-5" aria-hidden="true" />
+                        <FaBars className="h-5 w-5" aria-hidden="true" />
                     </button>
                 </header>
             </div>
