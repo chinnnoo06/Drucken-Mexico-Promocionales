@@ -10,92 +10,92 @@ export const HeaderAdmin = () => {
 
     return (
         <>
-           <div className={`flex justify-center fixed top-0 inset-x-0 z-[100] h-20 px-4 border-b border-[#9F531B]/20 backdrop-blur-md transition-colors duration-300 ${scrolled ? 'bg-[#f8dcc6]/95' : 'bg-[#f8dcc6]/50'}`}>
+            <div className={`flex justify-center fixed top-0 inset-x-0 z-[100] h-20 px-4 border-b border-[#9F531B]/20 backdrop-blur-md transition-colors duration-300 ${scrolled ? 'bg-[#f8dcc6]/95' : 'bg-[#f8dcc6]/50'}`}>
                 <header className='max-w-7xl mx-auto w-full flex justify-between items-center gap-4 px-4 py-2.5'>
-                <div className='container-logo-nav flex items-center gap-5 lg:gap-10'>
-                    <div className='logo transition-transform duration-300 hover:scale-105'>
-                        <Link to="/" className='no-underline'>
-                            <img
-                                src={DruckenLogo}
-                                alt="Logo de Drucken México"
-                                width={2512}
-                                height={1518}
-                                className="h-10 lg:h-12 w-auto object-contain"
-                            />
-                        </Link>
-                    </div>
+                    <div className='container-logo-nav flex items-center gap-5 lg:gap-10'>
+                        <div className='logo transition-transform duration-300 hover:scale-105'>
+                            <Link to="/" className='no-underline'>
+                                <img
+                                    src={DruckenLogo}
+                                    alt="Logo de Drucken México"
+                                    width={2512}
+                                    height={1518}
+                                    className="h-10 lg:h-12 w-auto object-contain"
+                                />
+                            </Link>
+                        </div>
 
-                    <nav className='desktop-nav hidden lg:flex gap-5 items-center'>
-                        {(
-                            // Enlaces internos cuando estamos en la página de inicio
-                            [
-                                { to: "/admin/catalogo/todos/1", text: "Catálogo" },
-                                { to: "/admin/agregar-producto", text: "Agregar Producto" },
-                                { to: "/admin/categorias", text: "Administrar Categorias" },
-                                { id: 'Cerrar Sesión', action: closeSession, text: "Cerrar Sesión" },
-                            ]
-                                .map((item, index) => (
-                                    item.to ? (
-                                        <NavLink
-                                            key={index}
-                                            to={item.to}
-                                            className={({ isActive }) =>
-                                                `relative px-2 py-1 font-[400] text-sm xl:text-base  transition-colors duration-300 cursor-pointer
+                        <nav className='desktop-nav hidden lg:flex gap-5 items-center'>
+                            {(
+                                // Enlaces internos cuando estamos en la página de inicio
+                                [
+                                    { to: "/admin/catalogo/todos/1", text: "Catálogo" },
+                                    { to: "/admin/agregar-producto", text: "Agregar Producto" },
+                                    { to: "/admin/categorias", text: "Administrar Categorias" },
+                                    { id: 'Cerrar Sesión', action: closeSession, text: "Cerrar Sesión" },
+                                ]
+                                    .map((item, index) => (
+                                        item.to ? (
+                                            <NavLink
+                                                key={index}
+                                                to={item.to}
+                                                className={({ isActive }) =>
+                                                    `relative px-2 py-1 font-[400] text-sm xl:text-base  transition-colors duration-300 cursor-pointer
                                         ${isActive ? 'text-[#9F531B]' : 'text-[#1A1615] hover:text-[#9F531B]'}
                                         after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 
                                         after:bg-[#9F531B] after:transition-all after:duration-300
                                         hover:after:w-full ${isActive ? 'after:w-full' : ''}`
-                                            }
-                                        >
-                                            {item.text}
-                                        </NavLink>
-                                    ) : (
-                                        <button
-                                            key={index}
-                                            onClick={item.action}
-                                            className={`relative px-2 py-1 font-[400] text-sm xl:text-base transition-colors duration-300 cursor-pointer
+                                                }
+                                            >
+                                                {item.text}
+                                            </NavLink>
+                                        ) : (
+                                            <button
+                                                key={index}
+                                                onClick={item.action}
+                                                className={`relative px-2 py-1 font-[400] text-sm xl:text-base transition-colors duration-300 cursor-pointer
                                     after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 
                                     after:bg-[#9F531B] after:transition-all after:duration-300
                                     hover:after:w-full`}
-                                        >
-                                            {item.text}
-                                        </button>
-                                    )
-                                ))
-                        )}
-                    </nav>
-                </div>
+                                            >
+                                                {item.text}
+                                            </button>
+                                        )
+                                    ))
+                            )}
+                        </nav>
+                    </div>
 
-                <div className='container-social-media hidden lg:flex gap-8 items-center'>
-                    {[
-                        { icon: FaFacebook, url: "https://www.facebook.com/share/1BaikYetVw/?mibextid=wwXIfr", label: "Facebook" },
-                        { icon: FaInstagram, url: "https://www.instagram.com/drucken.promocionales?igsh=eGtjOHFldnR4aGE5", label: "Instagram" },
-                        { icon: FaWhatsapp, url: "https://wa.me/523315876207", label: "WhatsApp" }
-                    ].map((social, index) => (
-                        <a
-                            key={index}
-                            href={social.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label={`Síguenos en ${social.label} (se abre en una pestaña nueva)`}
-                            className="text-xl xl:text-2xl text-[#1A1615] hover:text-[#9F531B] transition-colors duration-300 hover:scale-110"
-                        >
-                            <social.icon className="h-4 w-4 lg:h-5 lg:w-5" aria-hidden="true" />
-                        </a>
-                    ))}
-                </div>
+                    <div className='container-social-media hidden lg:flex gap-8 items-center'>
+                        {[
+                            { icon: FaFacebook, url: "https://www.facebook.com/share/1BaikYetVw/?mibextid=wwXIfr", label: "Facebook" },
+                            { icon: FaInstagram, url: "https://www.instagram.com/drucken.promocionales?igsh=eGtjOHFldnR4aGE5", label: "Instagram" },
+                            { icon: FaWhatsapp, url: "https://wa.me/523315876207", label: "WhatsApp" }
+                        ].map((social, index) => (
+                            <a
+                                key={index}
+                                href={social.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label={`Síguenos en ${social.label} (se abre en una pestaña nueva)`}
+                                className="text-xl xl:text-2xl text-[#1A1615] hover:text-[#9F531B] transition-colors duration-300 hover:scale-110"
+                            >
+                                <social.icon className="h-4 w-4 lg:h-5 lg:w-5" aria-hidden="true" />
+                            </a>
+                        ))}
+                    </div>
 
-                {/*Boton de menú responsive*/}
-                <button
-                    type="button"
-                    className="nav-responsive flex lg:hidden items-center text-[#9F531B] text-xl xl:text-2xl pr-[0.2rem] cursor-pointer hover:text-[#9F531B]"
-                    onClick={toggleMenu}
-                    aria-label="Abrir menú de navegación"
-                    aria-expanded={menuVisible}
-                >
-                    <FaBars className="h-5 w-5" aria-hidden="true" />
-                </button>
-            </header>
+                    {/*Boton de menú responsive*/}
+                    <button
+                        type="button"
+                        className="nav-responsive flex lg:hidden items-center text-[#9F531B] text-xl xl:text-2xl pr-[0.2rem] cursor-pointer hover:text-[#9F531B]"
+                        onClick={toggleMenu}
+                        aria-label="Abrir menú de navegación"
+                        aria-expanded={menuVisible}
+                    >
+                        <FaBars className="h-[1.45rem] w-[1.45rem]" aria-hidden="true" />
+                    </button>
+                </header>
             </div>
 
             <div inert={!menuVisible} aria-hidden={!menuVisible} className={`menu-lateral fixed top-0 right-0 h-screen bg-[#f8dcc6] w-64 transform ${menuVisible ? "translate-x-0" : "translate-x-full"

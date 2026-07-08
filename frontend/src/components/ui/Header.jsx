@@ -128,12 +128,12 @@ export const Header = () => {
                     {/*Boton de menú responsive*/}
                     <button
                         type="button"
-                        className="nav-responsive flex lg:hidden items-center text-[#9F531B] text-xl xl:text-2xl pr-[0.2rem] cursor-pointer hover:text-[#9F531B]"
+                        className="nav-responsive flex lg:hidden items-center text-[#9F531B] cursor-pointer hover:text-[#9F531B]"
                         onClick={toggleMenu}
                         aria-label="Abrir menú de navegación"
                         aria-expanded={menuVisible}
                     >
-                        <FaBars className="h-5 w-5" aria-hidden="true" />
+                        <FaBars className="h-[1.45rem] w-[1.45rem]" aria-hidden="true" />
                     </button>
                 </header>
             </div>
