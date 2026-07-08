@@ -25,7 +25,7 @@ export const catalogs = [
     },
     {
         title: "Calendarios",
-        href: "https://heyzine.com/flip-book/7c655c971b.html",
+        href: "https://heyzine.com/flip-book/d6621be1e3.html",
         icon: "📅"
     },
     {
